@@ -1,20 +1,20 @@
 <header>
     <nav id="site-menu">
         <ul>
-            <li {% if include.content == "/" %}aria-current="page"{% endif %}><a href="/"><img src="/assets/secureblue.svg" alt=""/>secureblue</a></li>
-            <li>{{ include.content }}</li>
-            <li {% if include.content == "code-of-conduct" %}aria-current="page"{% endif %}><a href="/code-of-conduct"></a>Code of conduct</li>
-            <li {% if include.content == "contributing" %}aria-current="page"{% endif %}><a href="/contributing"></a>Contributing</li>
-            <li {% if include.content == "donate" %}aria-current="page"{% endif %}><a href="/donate"></a>Donate</li>
-            <li {% if include.content == "faq" %}aria-current="page"{% endif %}><a href="/faq"></a>FAQ</li>
-            <li {% if include.content == "images" %}aria-current="page"{% endif %}><a href="/images"></a>Images</li>
-            <li {% if include.content == "kargs" %}aria-current="page"{% endif %}><a href="/kargs"></a>kargs</li>
-            <li {% if include.content == "postinstall-readme" %}aria-current="page"{% endif %}><a href="/postinstall-readme">Postinstall Readme</a></li>
-            <li {% if include.content == "preinstall-readme" %}aria-current="page"{% endif %}><a href="/preinstall-readme">Preinstall Readme</a></li>
-            <li {% if include.content == "recommended" %}aria-current="page"{% endif %}><a href="/recommended">Recommended</a></li>
-            <li {% if include.content == "security" %}aria-current="page"{% endif %}><a href="/security">Security</a></li>
-            <li {% if include.content == "support" %}aria-current="page"{% endif %}><a href="/support">Support</a></li>
-            <li {% if include.content == "userns" %}aria-current="page"{% endif %}><a href="/userns">userns</a></li>
+            {% assign current_page = include.content | remove ".md" %}
+            <li {% if current_page == "/" %}aria-current="page"{% endif %}><a href="/"><img src="/assets/secureblue.svg" alt=""/>secureblue</a></li>
+            <li {% if current_page == "code-of-conduct" %}aria-current="page"{% endif %}><a href="/code-of-conduct"></a>Code of conduct</li>
+            <li {% if current_page == "contributing" %}aria-current="page"{% endif %}><a href="/contributing"></a>Contributing</li>
+            <li {% if current_page == "donate" %}aria-current="page"{% endif %}><a href="/donate"></a>Donate</li>
+            <li {% if current_page == "faq" %}aria-current="page"{% endif %}><a href="/faq"></a>FAQ</li>
+            <li {% if current_page == "images" %}aria-current="page"{% endif %}><a href="/images"></a>Images</li>
+            <li {% if current_page == "kargs" %}aria-current="page"{% endif %}><a href="/kargs"></a>kargs</li>
+            <li {% if current_page == "postinstall-readme" %}aria-current="page"{% endif %}><a href="/postinstall-readme">Postinstall Readme</a></li>
+            <li {% if current_page == "preinstall-readme" %}aria-current="page"{% endif %}><a href="/preinstall-readme">Preinstall Readme</a></li>
+            <li {% if current_page == "recommended" %}aria-current="page"{% endif %}><a href="/recommended">Recommended</a></li>
+            <li {% if current_page == "security" %}aria-current="page"{% endif %}><a href="/security">Security</a></li>
+            <li {% if current_page == "support" %}aria-current="page"{% endif %}><a href="/support">Support</a></li>
+            <li {% if current_page == "userns" %}aria-current="page"{% endif %}><a href="/userns">userns</a></li>
         </ul>
     </nav>
 </header>
