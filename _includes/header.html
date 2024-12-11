@@ -1,7 +1,7 @@
 <header>
     <nav id="site-menu">
         <ul>
-            {% assign current_page = include.content | remove: ".md" %}
+            {% assign current_page = include.content | remove: ".md" | downcase %}
             <li {% if current_page == "/" %}aria-current="page"{% endif %}><a href="/"><img src="/assets/secureblue.svg" alt=""/>secureblue</a></li>
             <li {% if current_page == "code-of-conduct" %}aria-current="page"{% endif %}><a href="/code-of-conduct"></a>Code of conduct</li>
             <li {% if current_page == "contributing" %}aria-current="page"{% endif %}><a href="/contributing"></a>Contributing</li>
