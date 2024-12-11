@@ -15,7 +15,7 @@ permalink: /
 [![secureblue](https://github.com/secureblue/secureblue/actions/workflows/build.yml/badge.svg)](https://github.com/secureblue/secureblue/actions/workflows/build.yml)
 [![trivy](https://github.com/secureblue/secureblue/actions/workflows/trivy.yml/badge.svg)](https://github.com/secureblue/secureblue/actions/workflows/trivy.yml)
 [![Discord](https://img.shields.io/discord/1202086019298500629?style=flat&logo=discord&logoColor=white&label=Discord&labelColor=%235F6AE9&color=%2333CB56)](https://discord.com/invite/qMTv5cKfbF)
-[![Donate](https://img.shields.io/badge/Donate-blue.svg)](DONATE.md)
+[![Donate](https://img.shields.io/badge/Donate-blue.svg)](DONATE)
 
 This repo uses [BlueBuild](https://blue-build.org/) to generate hardened operating system images, using [Fedora Atomic Desktop](https://fedoraproject.org/atomic-desktops/)'s [base images](https://pagure.io/workstation-ostree-config) as a starting point.
 
@@ -43,7 +43,7 @@ The following are not in scope:
 - Adds per-network MAC randomization
 - Blacklisting numerous unused kernel modules to reduce attack surface <sup>[details](https://github.com/secureblue/secureblue/blob/live/files/system/etc/modprobe.d/blacklist.conf)</sup>
 - Enabling only the [flathub-verified](https://flathub.org/apps/collection/verified/1) remote by default
-- Sets numerous hardening kernel arguments (Inspired by [Madaidan's Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)) <sup>[details](KARGS.md)</sup>
+- Sets numerous hardening kernel arguments (Inspired by [Madaidan's Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)) <sup>[details](KARGS)</sup>
 - Require wheel user authentication via polkit for `rpm-ostree install` <sup>[why?](https://github.com/rohanssrao/silverblue-privesc)
 - Brute force protection by locking user accounts for 24 hours after 50 failed login attempts, hardened password encryption and password quality suggestions
 - Installing usbguard and providing `ujust` commands to automatically configure it
@@ -72,21 +72,21 @@ If you want to add your own customizations on top of secureblue, you are advised
 
 # FAQ
 
-If you're encountering a problem or have a question, please consult the [FAQ](FAQ.md). If you can't find your answer there, please ask in the support channel on Discord.
+If you're encountering a problem or have a question, please consult the [FAQ](FAQ). If you can't find your answer there, please ask in the support channel on Discord.
 
 # Sponsor
 
-Sponsorship options are on the [Donate](DONATE.md) page. All donations are appreciated. Sponsors get a role on the Discord if desired. If you've donated but haven't yet been tagged with the role, please reach out to me.
+Sponsorship options are on the [Donate](DONATE) page. All donations are appreciated. Sponsors get a role on the Discord if desired. If you've donated but haven't yet been tagged with the role, please reach out to me.
 
 # Installation
 
-Have a look at [PREINSTALL-README](PREINSTALL-README.md) before proceeding.
+Have a look at [PREINSTALL-README](PREINSTALL-README) before proceeding.
 
 ## Rebasing
 > [!NOTE]
 > If you don't already have a Fedora Atomic installation, use a Fedora Atomic ISO that matches your secureblue target image to install one. If you want to use a secureblue Silverblue image, start with the Fedora Silverblue ISO, Kinoite for Kinoite, Sericea (Sway Atomic) for Sericea and all the Wayblue images, and CoreOS for all the securecore images.
 > 
-> For more details on the available images, have a look at [IMAGES](IMAGES.md) before proceeding.
+> For more details on the available images, have a look at [IMAGES](IMAGES) before proceeding.
 
 To rebase a [Fedora Atomic](https://fedoraproject.org/atomic-desktops/) or [Fedora CoreOS](https://fedoraproject.org/coreos/) installation, download the script below:
 
@@ -103,15 +103,15 @@ bash install_secureblue.sh
 
 After installation, [yafti](https://github.com/ublue-os/yafti) will open. Make sure to follow the steps listed carefully and read the directions closely.
 
-Then follow the [POSTINSTALL-README](POSTINSTALL-README.md).
+Then follow the [POSTINSTALL-README](POSTINSTALL-README).
 
 # Contributing
 
-Follow the [contributing documentation](CONTRIBUTING.md#contributing), and make sure to respect the [CoC](CODE_OF_CONDUCT.md).
+Follow the [contributing documentation](CONTRIBUTING#contributing), and make sure to respect the [CoC](CODE_OF_CONDUCT).
 
 ## Development
 
-For local Development [building locally](CONTRIBUTING.md#building-locally) is the recommended approach.
+For local Development [building locally](CONTRIBUTING#building-locally) is the recommended approach.
 
 ## Community
 Opening issues is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well.

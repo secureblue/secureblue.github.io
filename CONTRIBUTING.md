@@ -7,7 +7,7 @@ permalink: /contributing
 
 Thanks for taking the time to look into helping out!
 All contributions are appreciated!
-Please refer to our [Code of Conduct](CODE_OF_CONDUCT.md) while you're at it!
+Please refer to our [Code of Conduct](CODE-OF-CONDUCT) while you're at it!
 
 Feel free to report issues as you find them!
 
@@ -36,7 +36,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the
-[CONTRIBUTING.md Code of Conduct](CODE_OF_CONDUCT.md).
+[CONTRIBUTING Code of Conduct](CODE-OF-CONDUCT).
 By participating, you are expected to uphold this code. Please report unacceptable behavior
 to secureblueadmin@proton.me
 
@@ -167,4 +167,4 @@ test: ensure Tayne retains clothing
 ```
 
 ## Attribution
-This guide is based on the **contributing.md**. [Make your own](https://contributing.md/)!
+This guide is based on the **contributing**. [Make your own](https://contributing/)!

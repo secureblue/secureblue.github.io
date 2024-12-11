@@ -16,25 +16,25 @@ permalink: /images
 
 ### Recommended <sup>[why?](RECOMMENDED.md)</sup>
 #### Silverblue
-| Name                                      | Base      | Nvidia Support         | Unpriv. Userns |
+| Name                                      | Base      | Nvidia Support          | Unpriv. Userns               |
 |-------------------------------------------|-----------|-------------------------|------------------------------|
-| `silverblue-main-hardened`               | Silverblue| No                      | No                           |
-| `silverblue-nvidia-hardened`             | Silverblue| Yes, closed drivers     | No                           |
-| `silverblue-nvidia-open-hardened`        | Silverblue| Yes, open drivers       | No                           |
-| `silverblue-main-userns-hardened`        | Silverblue| No                      | Yes                          |
-| `silverblue-nvidia-userns-hardened`      | Silverblue| Yes, closed drivers     | Yes                          |
-| `silverblue-nvidia-open-userns-hardened` | Silverblue| Yes, open drivers       | Yes                          |
+| `silverblue-main-hardened`                | Silverblue| No                      | No                           |
+| `silverblue-nvidia-hardened`              | Silverblue| Yes, closed drivers     | No                           |
+| `silverblue-nvidia-open-hardened`         | Silverblue| Yes, open drivers       | No                           |
+| `silverblue-main-userns-hardened`         | Silverblue| No                      | Yes                          |
+| `silverblue-nvidia-userns-hardened`       | Silverblue| Yes, closed drivers     | Yes                          |
+| `silverblue-nvidia-open-userns-hardened`  | Silverblue| Yes, open drivers       | Yes                          |
 
 ### Stable
 #### Kinoite
-| Name                                      | Base      | Nvidia Support         | Unpriv. Userns |
+| Name                                      | Base      | Nvidia Support          | Unpriv. Userns |
 |-------------------------------------------|-----------|-------------------------|------------------------------|
-| `kinoite-main-hardened`                  | Kinoite   | No                      | No                           |
-| `kinoite-nvidia-hardened`                | Kinoite   | Yes, closed drivers     | No                           |
-| `kinoite-nvidia-open-hardened`           | Kinoite   | Yes, open drivers       | No                           |
-| `kinoite-main-userns-hardened`           | Kinoite   | No                      | Yes                          |
-| `kinoite-nvidia-userns-hardened`         | Kinoite   | Yes, closed drivers     | Yes                          |
-| `kinoite-nvidia-open-userns-hardened`    | Kinoite   | Yes, open drivers       | Yes                          |
+| `kinoite-main-hardened`                   | Kinoite   | No                      | No                           |
+| `kinoite-nvidia-hardened`                 | Kinoite   | Yes, closed drivers     | No                           |
+| `kinoite-nvidia-open-hardened`            | Kinoite   | Yes, open drivers       | No                           |
+| `kinoite-main-userns-hardened`            | Kinoite   | No                      | Yes                          |
+| `kinoite-nvidia-userns-hardened`          | Kinoite   | Yes, closed drivers     | Yes                          |
+| `kinoite-nvidia-open-userns-hardened`     | Kinoite   | Yes, open drivers       | Yes                          |
 
 #### Sericea
 | Name                                      | Base      | Nvidia Support         | Unpriv. Userns |
