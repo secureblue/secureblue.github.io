@@ -1,5 +1,5 @@
 ---
-layout: main-page.html
+layout: main-page
 title: "secureblue: Hardened Fedora Atomic and Fedora CoreOS images"
 permalink: /
 ---

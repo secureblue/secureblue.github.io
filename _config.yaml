@@ -1,3 +1,5 @@
 domain: esselownitro.github.io
 url: https://esselownitro.github.io
-baseurl: /esselownitro.github.io/website
+baseurl: /esselownitro.github.io/website/
+source: /website/
+destination: /website/_site
