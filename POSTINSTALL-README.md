@@ -1,7 +1,7 @@
 ---
 layout: common-page
 title: "Post-install instructions | secureblue"
-permalink: /post-install
+permalink: /postinstall-readme
 ---
 # secureblue
 

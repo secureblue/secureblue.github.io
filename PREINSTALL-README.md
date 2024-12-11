@@ -1,7 +1,7 @@
 ---
 layout: common-page
 title: "Pre-install instructions | secureblue"
-permalink: /pre-install
+permalink: /preinstall-readme
 ---
 # secureblue
 
