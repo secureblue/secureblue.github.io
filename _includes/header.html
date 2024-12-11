@@ -1,14 +1,14 @@
+{% assign current_page = include.content | remove: ".md" | downcase %}
 <header>
     <nav id="site-menu">
         <ul>
-            {% assign current_page = include.content | remove: ".md" | downcase %}
             <li {% if current_page == "/" %}aria-current="page"{% endif %}><a href="/"><img src="/assets/secureblue.svg" alt=""/>secureblue</a></li>
-            <li {% if current_page == "code-of-conduct" %}aria-current="page"{% endif %}><a href="/code-of-conduct"></a>Code of conduct</li>
-            <li {% if current_page == "contributing" %}aria-current="page"{% endif %}><a href="/contributing"></a>Contributing</li>
-            <li {% if current_page == "donate" %}aria-current="page"{% endif %}><a href="/donate"></a>Donate</li>
-            <li {% if current_page == "faq" %}aria-current="page"{% endif %}><a href="/faq"></a>FAQ</li>
-            <li {% if current_page == "images" %}aria-current="page"{% endif %}><a href="/images"></a>Images</li>
-            <li {% if current_page == "kargs" %}aria-current="page"{% endif %}><a href="/kargs"></a>kargs</li>
+            <li {% if current_page == "code-of-conduct" %}aria-current="page"{% endif %}><a href="/code-of-conduct">Code of conduct</a></li>
+            <li {% if current_page == "contributing" %}aria-current="page"{% endif %}><a href="/contributing">Contributing</a></li>
+            <li {% if current_page == "donate" %}aria-current="page"{% endif %}><a href="/donate">Donate</a></li>
+            <li {% if current_page == "faq" %}aria-current="page"{% endif %}><a href="/faq">FAQ</a></li>
+            <li {% if current_page == "images" %}aria-current="page"{% endif %}><a href="/images">Images</a></li>
+            <li {% if current_page == "kargs" %}aria-current="page"{% endif %}><a href="/kargs">kargs</a></li>
             <li {% if current_page == "postinstall-readme" %}aria-current="page"{% endif %}><a href="/postinstall-readme">Postinstall Readme</a></li>
             <li {% if current_page == "preinstall-readme" %}aria-current="page"{% endif %}><a href="/preinstall-readme">Preinstall Readme</a></li>
             <li {% if current_page == "recommended" %}aria-current="page"{% endif %}><a href="/recommended">Recommended</a></li>
