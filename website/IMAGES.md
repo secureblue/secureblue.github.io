@@ -1,3 +1,8 @@
+---
+layout: common-page
+title: "Images | secureblue"
+permalink: /images
+---
 # Images
 
 > [!NOTE]

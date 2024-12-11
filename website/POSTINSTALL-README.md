@@ -1,3 +1,8 @@
+---
+layout: common-page
+title: "Post-install instructions | secureblue"
+permalink: /post-install
+---
 # secureblue
 
 After rebasing to secureblue, follow the following steps in order.

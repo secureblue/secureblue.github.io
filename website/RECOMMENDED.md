@@ -1,3 +1,8 @@
+---
+layout: common-page
+title: "Recommended DEs | secureblue"
+permalink: /recommended
+---
 > [!NOTE]
 > This is a relative recommendation between the desktop environments available on secureblue. GNOME has some extra security niceties like the ones listed below. It however does not solve any of the fundamental issues with desktop linux security.
 

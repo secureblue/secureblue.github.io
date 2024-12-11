@@ -1,3 +1,8 @@
+---
+layout: common-page
+title: "kargs | secureblue"
+permalink: /kargs
+---
 ## Included in set-kargs-hardening
 
 **Zero newly allocated pages and heaps, mitigating use-after-free vulnerabilities**

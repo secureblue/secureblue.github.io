@@ -1,3 +1,8 @@
+---
+layout: common-page
+title: "userns advice | secureblue"
+permalink: /userns
+---
 # User namespaces
 
 [User namespaces](https://en.wikipedia.org/wiki/Linux_namespaces#User_ID_(user)) are a kernel feature introduced in kernel version 3.8. When an unprivileged user asks the kernel to create a namespace, the kernel needs to permit that user to do so. Whether this is permitted by the kernel is controlled via a sysctl flag.

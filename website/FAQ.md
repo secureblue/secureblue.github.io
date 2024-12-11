@@ -1,3 +1,8 @@
+---
+layout: common-page
+title: "FAQ | secureblue"
+permalink: /faq
+---
 # FAQ
 
 #### Why is flatpak included? Should I use flatpak?

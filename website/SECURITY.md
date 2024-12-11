@@ -1,3 +1,8 @@
+---
+layout: common-page
+title: "Security policy | secureblue"
+permalink: /security
+---
 # Security Policy
 
 ## Reporting a Vulnerability
