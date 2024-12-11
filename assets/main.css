@@ -147,7 +147,11 @@ var {
 }
 
 #site-menu ul li[aria-current] img {
-    filter: invert(60%) sepia(24%) saturate(997%) hue-rotate(168deg) brightness(107%) contrast(93%);
+    filter: none;
+}
+
+#site-menu ul li img {
+    filter: grayscale(1);
 }
 
 main {
