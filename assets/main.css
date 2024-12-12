@@ -32,20 +32,20 @@ body {
     font-family: Roboto, sans-serif;
     line-height: 1.5;
     letter-spacing: 0.009375rem;
-    background-color: #ffffff;
-    color: rgba(0 0 0 / 87%); /* 87% black */
+    background-color: #f6fafe;
+    color: #241f31;
     margin: 0;
     padding: 0;
     overflow-y: scroll;
 }
 
 a {
-    color: #1565c0; /* blue800 */
+    color: #1a5fb4;
     text-decoration: none;
 }
 
 a:visited {
-    color: #6a1b9a; /* purple800 */
+    color: #613583;
 }
 
 a:hover {
@@ -53,7 +53,7 @@ a:hover {
 }
 
 h1 a, h1 a:visited, h2 a, h2 a:visited, h3 a, h3 a:visited, h4 a, h4 a:visited, h5 a, h5 a:visited, h6 a, h6 a:visited {
-    color: rgba(0 0 0 / 87%); /* 87% black */
+    color: #241f31;
 }
 
 h1 {
@@ -116,11 +116,11 @@ pre {
 
 code {
     border-radius: 8px;
-    padding: 0.25rem;
+    padding: 0 0.25rem;
 }
 
 var {
-    color: #ba1a1a;
+    color: #a51d2d;
 }
 
 #site-menu ul {
@@ -132,7 +132,7 @@ var {
 }
 
 #site-menu {
-    background-color: #212121; /* grey900 */
+    background-color: #241f31;
     white-space: nowrap;
 }
 
@@ -142,11 +142,11 @@ var {
 }
 
 #site-menu ul li:hover {
-    background-color: #424242; /* grey800 */
+    background-color: #343147;
 }
 
 #site-menu ul li a {
-    color: #fff; /* 100% white */
+    color: #fff;
     display: flex;
     text-decoration: none;
     padding: 1em;
@@ -154,11 +154,11 @@ var {
 }
 
 #site-menu ul li a:visited {
-    color: #fff; /* 100% white */
+    color: #fff;
 }
 
 #site-menu ul li[aria-current] a {
-    color: #64b5f6; /* blue300 */
+    color: #76c9f6;
 }
 
 #site-menu img {
@@ -196,7 +196,7 @@ button, .button, .button:visited {
     font-size: 0.9em;
     font-weight: bold;
     letter-spacing: 0.0892857143em;
-    background-color: #005c8a;
+    background-color: #0b7bb7;
     border-radius: 20px;
     border: none;
     height: 40px;
@@ -204,13 +204,13 @@ button, .button, .button:visited {
 }
 
 button:hover, .button:hover {
-    background-color: #1863ad; /* color between default and pressed */
+    background-color: #086ba1;
     cursor: pointer;
 }
 
 button:focus, .button:focus {
-    background-color: #2f73b4; /* button pressed on Android */
-    box-shadow: 0 2px 4px -1px rgba(0 0 0 / 20%), 0 4px 5px 0 rgba(0 0 0 / 14%), 0 1px 10px 0 rgba(0 0 0 / 12%);
+    background-color: #075e8d; /* button pressed on Android */
+    box-shadow: inset 0 2px 4px -1px rgba(0 0 0 / 20%), inset 0 4px 5px 0 rgba(0 0 0 / 14%), inset 0 1px 10px 0 rgba(0 0 0 / 12%);
 }
 
 button:disabled {
@@ -403,7 +403,7 @@ details[open] summary {
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: local("Roboto"), local("Roboto-Regular"), url("/fonts/roboto-v30-regular-latin.woff2") format("woff2");
+    src: local("Roboto"), local("Roboto-Regular"), url("/assets/fonts/roboto-v30-regular-latin.woff2") format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -413,7 +413,7 @@ details[open] summary {
     font-style: italic;
     font-weight: 400;
     font-display: swap;
-    src: local("Roboto Italic"), local("Roboto-Italic"), url("/fonts/roboto-v30-regular-italic-latin.woff2") format("woff2");
+    src: local("Roboto Italic"), local("Roboto-Italic"), url("/assets/fonts/roboto-v30-regular-italic-latin.woff2") format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -423,7 +423,7 @@ details[open] summary {
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: local("Roboto Bold"), local("Roboto-Bold"), url("/fonts/roboto-v30-bold-latin.woff2") format("woff2");
+    src: local("Roboto Bold"), local("Roboto-Bold"), url("/assets/fonts/roboto-v30-bold-latin.woff2") format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -433,7 +433,7 @@ details[open] summary {
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: local("Roboto Mono"), local("RobotoMono-Regular"), url("/fonts/robotomono-v23-regular-latin.woff2") format("woff2");
+    src: local("Roboto Mono"), local("RobotoMono-Regular"), url("/assets/fonts/robotomono-v23-regular-latin.woff2") format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -443,7 +443,7 @@ details[open] summary {
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: local("Roboto Mono Bold"), local("RobotoMono-Bold"), url("/fonts/robotomono-v23-bold-latin.woff2") format("woff2");
+    src: local("Roboto Mono Bold"), local("RobotoMono-Bold"), url("/assets/fonts/robotomono-v23-bold-latin.woff2") format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -522,10 +522,6 @@ details[open] summary {
 
     .laptop-img {
         filter: brightness(0.87);
-    }
-
-    .laptop-logo-img {
-        filter: invert(87%);
     }
 
     .surface {
