@@ -30,7 +30,7 @@ THE SOFTWARE.
     <body>
         {% include header.html content = current_page %}
 
-        {% if page.permalink == "" %}
+        {% if current_page == "" %}
             {% include hero.html %}
         {% endif %}
         <main class="normalize">
