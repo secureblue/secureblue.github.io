@@ -3,11 +3,12 @@ layout: common-page
 title: "Contributing | secureblue"
 permalink: /contributing
 ---
+
 # Welcome to secureblue
 
 Thanks for taking the time to look into helping out!
 All contributions are appreciated!
-Please refer to our [Code of Conduct](CODE-OF-CONDUCT) while you're at it!
+Please refer to our [Code of Conduct](CODE_OF_CONDUCT.md) while you're at it!
 
 Feel free to report issues as you find them!
 
@@ -36,7 +37,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the
-[CONTRIBUTING Code of Conduct](CODE-OF-CONDUCT).
+[CONTRIBUTING.md Code of Conduct](CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code. Please report unacceptable behavior
 to secureblueadmin@proton.me
 
@@ -89,10 +90,9 @@ Start from your own fork with a branch for the pull request/feature you want to 
 
 Once it's done running, go to your VM running Fedora Atomic (we recommend GNOME Boxes, the recommended Atomic Desktop Silverblue's iso for can be found at here https://fedoraproject.org/atomic-desktops/silverblue/download). Now just we need to build the rpm-ostree rebase command to run in your VM. Getting this is a little tricky, start with 'rpm-ostree rebase ostree-unverified-registry:ghcr.io/'. Then open your branch, on the main page there should be a "packages" in the sidebar below releases and above languages. (This will only appear after you have a successful build-secureblue action run.) Now, look at the pregenerated docker pull command and copy everything from .io/ til sha256 and paste it to a note. Now look below for the tag the action generated, generally it will be br-'branch name'-'fedora version number'. Then paste :'tag name' after the previous paste. It should look like this:
 
-    `rpm-ostree rebase ostree-unverified-registry:ghcr.io/YOURUSERNAME/silverblue-main-hardened:br-YOURBRANCHNAME-41`
+    rpm-ostree rebase ostree-unverified-registry:ghcr.io/YOURUSERNAME/silverblue-main-hardened:br-YOURBRANCHNAME-41
 
 Voilà now your branch is deployed in your VM. You can clone this branch to your development machine, develop your feature, commit, push, rerun the github action, and finally rebase the VM to your branch. (In GNOME boxes, you can create a snapshot just before you rebase to save time.)
-
 
 ## Building Locally
 
@@ -122,6 +122,7 @@ This usually involved editing the `Containerfile`. Most techniques for building 
 Check out CoreOS's [layering examples](https://github.com/coreos/layering-examples) for more information on customizing.
 
 ## Using Blue-build locally
+
 ### Requirements
 
 - [Blue-build CLI](https://github.com/blue-build/cli)
@@ -163,6 +164,7 @@ Configuration is stored in `recipes` folder in form of YAML files. Other files t
 Run the image using `podman run` to get a root shell in your newly built image and verify the changes made prior.
 
 ## Styleguides
+
 ### Commit Messages
 
 We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) and enforce them with a bot to keep the changelogs tidy:
@@ -176,6 +178,3 @@ refactor: share logic between 4d3d3d3 and flarhgunnstow
 style: convert tabs to spaces
 test: ensure Tayne retains clothing
 ```
-
-## Attribution
-This guide is based on the **contributing**. [Make your own](https://contributing/)!

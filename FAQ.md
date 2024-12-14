@@ -3,6 +3,7 @@ layout: common-page
 title: "FAQ | secureblue"
 permalink: /faq
 ---
+
 # FAQ
 
 #### Why is flatpak included? Should I use flatpak?
@@ -47,11 +48,9 @@ First check if the README already has an equivalent or better feature. If it doe
 
 #### How do I install Steam?
 
-To use Steam you can either:
-
-- Install the [flatpak](https://flathub.org/apps/com.valvesoftware.Steam)
-- Install Steam via the [bazzite-arch](https://github.com/ublue-os/bazzite-arch) distrobox
-- Layering Steam is not recommended
+```
+ujust install-steam
+```
 
 #### Why are bluetooth kernel modules disabled? How do I enable them?
 

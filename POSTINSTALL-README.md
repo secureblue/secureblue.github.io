@@ -3,6 +3,7 @@ layout: common-page
 title: "Post-install instructions | secureblue"
 permalink: /postinstall-readme
 ---
+
 # secureblue
 
 After rebasing to secureblue, follow the following steps in order.

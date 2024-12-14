@@ -3,6 +3,7 @@ layout: common-page
 title: "Code of Conduct | secureblue"
 permalink: /code-of-conduct
 ---
+
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
