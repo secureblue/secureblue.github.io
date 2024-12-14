@@ -28,9 +28,9 @@ THE SOFTWARE.
         <meta charset="utf-8"/>
         <title>{{ current_page | capitalize | replace "-", "" }} | secureblue</title>
 
-        <meta name="description" content="smth"/>
-        <meta property="og:title" content="smth"/>
-        <meta property="og:description" content="smth"/>
+        <meta name="description" content="{{ page.description }}"/>
+        <meta property="og:title" content="{{ current_page | capitalize | replace "-", "" }} | secureblue"/>
+        <meta property="og:description" content="{{ page.description }}"/>
     </head>
     <body>
         {% include header.html content=current_page %}
