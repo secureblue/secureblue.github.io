@@ -31,6 +31,8 @@ THE SOFTWARE.
         <meta name="description" content="{{ page.description }}"/>
         <meta property="og:title" content="{{ current_page | capitalize | replace "-", "" }} | secureblue"/>
         <meta property="og:description" content="{{ page.description }}"/>
+
+        {% include meta-generic.html content=current_page %}
     </head>
     <body>
         {% include header.html content=current_page %}
