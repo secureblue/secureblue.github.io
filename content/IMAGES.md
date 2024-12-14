@@ -2,6 +2,7 @@
 layout: common-page
 title: "Images | secureblue"
 permalink: /images
+description: "List of available secureblue hardened operating system images"
 ---
 
 # Images
