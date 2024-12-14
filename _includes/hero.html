@@ -20,26 +20,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 -->
 
-{% assign current_page = page.name | remove: ".md" | downcase %}
+<div class="content hero">
 
-<!DOCTYPE html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
-    <head>
-        <meta charset="utf-8"/>
-        <title>{{ current_page | capitalize | replace "-", "" }} | secureblue</title>
+    <div>
+        <h1><a href="#secureblue">secureblue</a></h1>
+        <p>Offering hardened operating system images and the hardened-chromium package. Developed collaboratively as an open source project.</p>
+        <a class="button" href="/install">Get secureblue</a>
+    </div>
 
-        <meta name="description" content="{{ page.description }}"/>
-        <meta property="og:title" content="{{ current_page | capitalize | replace "-", "" }} | secureblue"/>
-        <meta property="og:description" content="{{ page.description }}"/>
+    <figure class="device-img">
+        <img class="laptop-img" width="288" height="171" src="/assets/some-random-laptop.svg" alt=""/>
+        <img class="laptop-logo-img" width="120" height="120" src="/assets/secureblue.svg" alt=""/>
+    </figure>
 
-        {% include meta-generic.html content=current_page %}
-    </head>
-    <body>
-        {% include header.html content=current_page %}
-        <main class="normalize" id="smth">
-            <div class="content">
-                {{ content }}
-            </div>
-        </main>
-    </body>
-</html>
+</div>

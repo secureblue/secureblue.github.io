@@ -1,8 +1,7 @@
 ---
-layout: common-page
 title: "Code of Conduct | secureblue"
-permalink: /code-of-conduct
 description: "secureblue's Code of Conduct"
+permalink: /code-of-conduct
 ---
 
 # Contributor Covenant Code of Conduct

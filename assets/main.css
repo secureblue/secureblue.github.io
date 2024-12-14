@@ -176,6 +176,13 @@ var {
     filter: grayscale(1);
 }
 
+hr {
+    display: unset;
+    visibility: hidden;
+    margin: 0;
+    width: calc(100% - 2px);
+}
+
 main {
     margin-left: auto;
     margin-right: auto;
@@ -260,25 +267,6 @@ footer {
 
 footer a, footer a:visited {
     color: #616161; /* grey500 */
-}
-
-#social {
-    line-height: 2;
-    margin-top: 2em;
-    padding: 0;
-    list-style-type: none;
-    max-inline-size: 60ch;
-}
-
-#social li {
-    display: inline-block;
-    padding: 0 0.5em;
-}
-
-#stable-channel ul, #beta-channel ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
 }
 
 .error-text {
@@ -536,5 +524,9 @@ details[open] summary {
         border-color: #8e9099 /* outline */;
         background-color: #3e4758 /* secondary container */;
         color: #dae2f9 /* on secondary container */;
+    }
+
+    hr {
+        visibility: visible;
     }
 }

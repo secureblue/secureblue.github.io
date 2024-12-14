@@ -1,8 +1,7 @@
 ---
-layout: common-page
 title: "Security policy | secureblue"
-permalink: /security
 description: "Project security policy"
+permalink: /security
 ---
 
 # Security Policy

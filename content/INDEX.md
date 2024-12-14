@@ -1,8 +1,7 @@
 ---
-layout: main-page
 title: "secureblue: Hardened Fedora Atomic and Fedora CoreOS images"
-permalink: /
 description: "secureblue offers hardened operating system images based on Fedora Atomic Desktop and Fedora CoreOS"
+permalink: /
 ---
 
 secureblue offers hardened operating system images generated with [BlueBuild](https://blue-build.org/), using [Fedora Atomic Desktop](https://fedoraproject.org/atomic-desktops/)'s [base images](https://pagure.io/workstation-ostree-config) as a starting point.

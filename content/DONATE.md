@@ -1,8 +1,7 @@
 ---
-layout: common-page
 title: "Donate to secureblue"
-permalink: /donate
 description: "Donation options for secureblue"
+permalink: /donate
 ---
 
 There are multiple options available for donation:

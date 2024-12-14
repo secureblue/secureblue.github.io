@@ -1,3 +1,10 @@
 domain: esselownitro.github.io
 url: https://esselownitro.github.io
 baseurl: /esselownitro.github.io/
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "page.html"

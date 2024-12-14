@@ -1,8 +1,7 @@
 ---
-layout: common-page
 title: "FAQ | secureblue"
-permalink: /faq
 description: "Answers to frequently asked questions about secureblue"
+permalink: /faq
 ---
 
 # FAQ

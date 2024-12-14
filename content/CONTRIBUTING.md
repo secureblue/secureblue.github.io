@@ -1,8 +1,7 @@
 ---
-layout: common-page
 title: "Contributing | secureblue"
-permalink: /contributing
 description: "How to contribute to secureblue"
+permalink: /contributing
 ---
 
 # Welcome to secureblue
