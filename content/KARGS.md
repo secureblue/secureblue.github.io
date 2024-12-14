@@ -2,6 +2,7 @@
 layout: common-page
 title: "kargs | secureblue"
 permalink: /kargs
+description: "An overview of the hardening boot kargs used in secureblue"
 ---
 
 ## Included in set-kargs-hardening

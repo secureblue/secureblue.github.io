@@ -2,6 +2,7 @@
 layout: common-page
 title: "Donate to secureblue"
 permalink: /donate
+description: "Donation options for secureblue"
 ---
 
 There are multiple options available for donation:

@@ -2,6 +2,7 @@
 layout: common-page
 title: "Contributing | secureblue"
 permalink: /contributing
+description: "How to contribute to secureblue"
 ---
 
 # Welcome to secureblue

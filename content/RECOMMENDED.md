@@ -2,6 +2,7 @@
 layout: common-page
 title: "Recommended DEs | secureblue"
 permalink: /recommended
+description: "Relative recommendation between the desktop environments available on secureblue"
 ---
 
 > [!NOTE]

@@ -2,6 +2,7 @@
 layout: common-page
 title: "userns advice | secureblue"
 permalink: /userns
+description: "A small document about unprivileged user namespaces"
 ---
 
 # User namespaces

@@ -2,6 +2,7 @@
 layout: common-page
 title: "Post-install instructions | secureblue"
 permalink: /postinstall-readme
+description: "Instructions meant to be followed succeeding a secureblue installation"
 ---
 
 # secureblue

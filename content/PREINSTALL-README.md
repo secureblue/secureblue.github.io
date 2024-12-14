@@ -2,6 +2,7 @@
 layout: common-page
 title: "Pre-install instructions | secureblue"
 permalink: /preinstall-readme
+description: "Instructions meant to be followed before a secureblue installation"
 ---
 
 # secureblue
