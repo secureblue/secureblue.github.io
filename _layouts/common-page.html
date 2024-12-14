@@ -20,17 +20,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 -->
 
+{% assign current_page = page.name | remove: ".md" | downcase %}
+
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
     <head>
         <meta charset="utf-8"/>
-        <title>common page title</title>
+        <title>{{ current_page | capitalize | replace "-", "" }} | secureblue</title>
 
         <meta name="description" content="smth"/>
         <meta property="og:title" content="smth"/>
         <meta property="og:description" content="smth"/>
-        <meta property="og:url" content="https://secureblue.io/smth"/>
-        <link rel="canonical" href="https://secureblue.io/smth"/>
+        <meta property="og:url" content="https://secureblue.io/{{ current_page }}"/>
+        <link rel="canonical" href="https://secureblue.io/{{ current_page }}"/>
         <link rel="stylesheet" href="/assets/main.css"/>
 
         <meta name="theme-color" content="#00293d"/>
@@ -53,7 +55,7 @@ THE SOFTWARE.
         <!-- link rel="license" href="/LICENSE.txt"/ -->
     </head>
     <body>
-        {% include header.html content=page.name %}
+        {% include header.html content=current_page %}
         <main class="normalize" id="smth">
             <div class="content">
                 {{ content }}
