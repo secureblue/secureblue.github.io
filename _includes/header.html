@@ -23,9 +23,9 @@
     <nav id="site-menu">
         <ul>
             <li {% if include.content == "" %}aria-current="page"{% endif %}><a href="/"><img src="/assets/secureblue.svg" alt=""/>secureblue</a></li>
-            {% for page in site.pages %}
-                {% if page.permalink != "/" %}
-                    <li {% if include.content == page.permalink | remove: "/" %}aria-current="page"{% endif %}><a href="{{ page.permalink }}">{{ page.short_title }}</a></li>
+            {% for i in site.pages %}
+                {% if i.permalink != "/" %}
+                    <li {% if include.content == i.permalink | remove: "/" %}aria-current="page"{% endif %}><a href="{{ i.permalink }}">{{ i.short_title }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
