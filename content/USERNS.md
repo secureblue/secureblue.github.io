@@ -1,5 +1,6 @@
 ---
 title: "userns advice | secureblue"
+short_title: "userns"
 description: "A small document about unprivileged user namespaces"
 permalink: /userns
 ---

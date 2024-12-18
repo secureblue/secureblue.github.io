@@ -1,5 +1,6 @@
 ---
 title: "Support | secureblue"
+short_title: "Support"
 description: "Get support with secureblue issues"
 permalink: /support
 ---

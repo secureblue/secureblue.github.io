@@ -1,5 +1,6 @@
 ---
 title: "Images | secureblue"
+short_title: "Images"
 description: "List of available secureblue hardened operating system images"
 permalink: /images
 ---

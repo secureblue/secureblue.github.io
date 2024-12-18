@@ -1,5 +1,6 @@
 ---
 title: "Security policy | secureblue"
+short_title: "Security"
 description: "Project security policy"
 permalink: /security
 ---

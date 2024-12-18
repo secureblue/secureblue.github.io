@@ -1,5 +1,6 @@
 ---
 title: "Install secureblue"
+short_title: "Install"
 description: "Steps to install secureblue"
 permalink: /install
 ---

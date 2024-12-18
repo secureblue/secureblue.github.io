@@ -1,5 +1,6 @@
 ---
 title: "Recommended DEs | secureblue"
+short_title: "Recommended"
 description: "Relative recommendation between the desktop environments available on secureblue"
 permalink: /recommended
 ---
