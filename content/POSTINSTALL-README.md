@@ -1,7 +1,7 @@
 ---
 title: "Post-install instructions | secureblue"
-description: "Instructions meant to be followed succeeding a secureblue installation"
-permalink: /postinstall-readme
+description: "Instructions meant to be followed succeeding a secureblue rebase"
+permalink: /post-install
 ---
 
 # secureblue
@@ -10,7 +10,7 @@ After rebasing to secureblue, follow the following steps in order.
 
 ## Subscribe to secureblue release notifications
 
-[FAQ](FAQ.md#releases)
+[FAQ](/faq#releases)
 
 ## Nvidia
 If you are using an nvidia image, run this after installation:
@@ -34,7 +34,7 @@ ujust enroll-secure-boot-key
 ## Set hardened kargs
 
 > [!NOTE]
-> Learn about the hardening applied by the kargs set by the command below [here](KARGS.md).
+> Learn about the hardening applied by the kargs set by the command below [here](/kargs).
 
 ```
 ujust set-kargs-hardening
@@ -44,7 +44,7 @@ This command applies a fixed set of hardened boot parameters, and asks you wheth
 ### 32-bit support
 If you answer `N`, or press enter without any input, support for 32-bit programs will be disabled on the next boot. If you run exclusively modern software, chances are likely you don't need this, so it's safe to disable for additional attack surface reduction.
 
-However, there are certain exceptions. A couple common usecases are if you need Steam, or run an ocassional application in Wine you'll likely want to keep support for 32-bit programs. If this is the case, answer `Y`.
+However, there are certain exceptions. A couple common usecases are if you need Steam, or run an occasional application in Wine you'll likely want to keep support for 32-bit programs. If this is the case, answer `Y`.
 
 ### Force disable simultaneous multithreading
 If you answer `Y` when prompted, simultaneous multithreading (SMT, often called Hyperthreading) will be disabled on all hardware, regardless of known vulnerabilities. This can cause a reduction in the performance of certain tasks in favor of security.
@@ -151,4 +151,4 @@ You can read about these settings [here](https://github.com/secureblue/hardened-
 
 ## Read the FAQ
 
-Lots of important stuff is covered in the [FAQ](FAQ.md). AppImage toggles, GNOME extension toggles, Xwayland toggles, etc.
+Lots of important stuff is covered in the [FAQ](/faq). AppImage toggles, GNOME extension toggles, Xwayland toggles, etc.

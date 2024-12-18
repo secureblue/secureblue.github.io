@@ -64,33 +64,6 @@ If you're encountering a problem or have a question, please consult the [FAQ](FA
 
 Sponsorship options are on the [Donate](DONATE.md) page. All donations are appreciated. Sponsors get a role on the Discord if desired. If you've donated but haven't yet been tagged with the role, please reach out to me.
 
-# Installation
-
-Have a look at [PREINSTALL-README](PREINSTALL-README.md) before proceeding.
-
-## Rebasing
-
-> [!NOTE]
-> If you don't already have a Fedora Atomic installation, use a Fedora Atomic ISO that matches your secureblue target image to install one. If you want to use a secureblue Silverblue image, start with the Fedora Silverblue ISO, Kinoite for Kinoite, Sericea (Sway Atomic) for Sericea and all the Wayblue images, and CoreOS for all the securecore images.
-> 
-> For more details on the available images, have a look at [IMAGES](IMAGES.md) before proceeding.
-
-To rebase a [Fedora Atomic](https://fedoraproject.org/atomic-desktops/) or [Fedora CoreOS](https://fedoraproject.org/coreos/) installation, download the script below. This script does not install secureblue into the existing system. It rebases (fully replaces the existing system) with secureblue.
-
-[![Download](https://shields.io/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white)](https://github.com/secureblue/secureblue/releases/latest/download/install_secureblue.sh)
-
-Then, run it from the directory you downloaded it to:
-
-```
-bash install_secureblue.sh
-```
-
-# Post-install
-
-After installation, [yafti](https://github.com/ublue-os/yafti) will open. Make sure to follow the steps listed carefully and read the directions closely.
-
-Then follow the [POSTINSTALL-README](POSTINSTALL-README.md).
-
 # Contributing
 
 Follow the [contributing documentation](CONTRIBUTING.md#contributing), and make sure to respect the [CoC](CODE_OF_CONDUCT.md).
