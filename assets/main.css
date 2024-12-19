@@ -98,6 +98,10 @@ h6 {
     letter-spacing: 0.03125rem;
 }
 
+em {
+    font-weight: bold;
+}
+
 code, pre {
     background-color: #e0e2ec; /* surface-variant */
     color: #44474e; /* on-surface-variant */

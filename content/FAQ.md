@@ -9,15 +9,15 @@ permalink: /faq
 
 #### Why is flatpak included? Should I use flatpak?
 
-https://github.com/secureblue/secureblue/issues/125#issuecomment-1859610560
+[https://github.com/secureblue/secureblue/issues/125#issuecomment-1859610560](https://github.com/secureblue/secureblue/issues/125#issuecomment-1859610560)
 
 #### Should I use electron apps? Why don't they work well with hardened_malloc?
 
-https://github.com/secureblue/secureblue/issues/193#issuecomment-1953323680
+[https://github.com/secureblue/secureblue/issues/193#issuecomment-1953323680](https://github.com/secureblue/secureblue/issues/193#issuecomment-1953323680)
 
 #### My fans are really loud, is this normal?
 
-During rpm-ostree operations, it's normal. Outside of that, make sure you followed the nvidia steps in the readme if you're using nvidia.
+During rpm-ostree operations, it's normal. Outside of that, make sure you followed the nvidia steps in the [post-install instructions](/post-install) if you're using nvidia.
 
 #### Should I use firejail?
 
@@ -32,10 +32,6 @@ During rpm-ostree operations, it's normal. Outside of that, make sure you follow
 
 `mitigations=auto,nosmt` is set on secureblue. This means that if your CPU is vulnerable to attacks that utilize [Simultaneous Multithreading](https://en.wikipedia.org/wiki/Simultaneous_multithreading), SMT will be disabled.
 
-#### Should I use a userns image or not? What's the difference?
-
-[USERNS](USERNS.md)
-
 #### How do I install software?
 
 1. Check if it's already installed using `rpm -qa | grep x`
@@ -45,7 +41,7 @@ During rpm-ostree operations, it's normal. Outside of that, make sure you follow
 
 #### Another security project has a feature that's missing in secureblue, can you add it?
 
-First check if the README already has an equivalent or better feature. If it doesn't, open a new github issue.
+First check the hardening section [here](/) on whether it already has an equivalent or better feature. If it doesn't, open a new [github issue](https://github.com/secureblue/secureblue/issues).
 
 #### How do I install Steam?
 

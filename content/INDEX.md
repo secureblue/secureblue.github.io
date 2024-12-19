@@ -14,6 +14,7 @@ secureblue applies hardening with the following goals in mind:
 - Avoid sacrificing usability for most use cases where possible.
 
 The following are not in scope:
+
 - Anything that sacrifices security for "privacy". Fedora is already sufficiently private and "privacy" often serves as a euphemism for security theater. This is especially true when at odds with improving security.
 - Anything related to "degoogling" chromium. For example, we will not be replacing [hardened-chromium](https://github.com/secureblue/hardened-chromium) with Brave or ungoogled-chromium. Both of them make changes that sacrifice security for "privacy", such as enabling MV2. <sup>[why?](https://developer.chrome.com/docs/extensions/develop/migrate/improve-security)</sup>
 
@@ -30,7 +31,7 @@ The following are not in scope:
 - Adds per-network MAC randomization
 - Blacklisting numerous unused kernel modules to reduce attack surface <sup>[details](https://github.com/secureblue/secureblue/blob/live/files/system/etc/modprobe.d/blacklist.conf)</sup>
 - Enabling only the [flathub-verified](https://flathub.org/apps/collection/verified/1) remote by default
-- Sets numerous hardening kernel arguments (Inspired by [Madaidan's Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)) <sup>[details](KARGS.md)</sup>
+- Sets numerous hardening kernel arguments (Inspired by [Madaidan's Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)) <sup>[details](/kargs)</sup>
 - Require wheel user authentication via polkit for `rpm-ostree install` <sup>[why?](https://github.com/rohanssrao/silverblue-privesc)
 - Brute force protection by locking user accounts for 24 hours after 50 failed login attempts, hardened password encryption and password quality suggestions
 - Installing usbguard and providing `ujust` commands to automatically configure it
@@ -49,29 +50,20 @@ The following are not in scope:
 
 Fedora is one of the few distributions that ships with selinux and associated tooling built-in and enabled by default. This makes it advantageous as a starting point for building a hardened system. However, out of the box it's lacking hardening in numerous other areas. This project's goal is to improve on that significantly.
 
-
 For more info on BlueBuild, check out the [BlueBuild homepage](https://blue-build.org/).
 
 # Customization
 
 If you want to add your own customizations on top of secureblue, you are advised strongly against forking. Instead, create a repo for your own image by using the [BlueBuild template](https://github.com/blue-build/template), then change your `base-image` to a secureblue image. This will allow you to apply your customizations to secureblue in a concise and maintainable way, without the need to constantly sync with upstream.
 
-# FAQ
+## Development
 
-If you're encountering a problem or have a question, please consult the [FAQ](FAQ.md). If you can't find your answer there, please ask in the support channel on Discord.
+For local Development [building locally](/contributing#building-locally) is the recommended approach.
 
 # Sponsor
 
-Sponsorship options are on the [Donate](DONATE.md) page. All donations are appreciated. Sponsors get a role on the Discord if desired. If you've donated but haven't yet been tagged with the role, please reach out to me.
-
-# Contributing
-
-Follow the [contributing documentation](CONTRIBUTING.md#contributing), and make sure to respect the [CoC](CODE_OF_CONDUCT.md).
-
-## Development
-
-For local Development [building locally](CONTRIBUTING.md#building-locally) is the recommended approach.
+Sponsorship options are on the [Donate](/DONATE) page. All donations are appreciated. Sponsors get a role on the Discord if desired. If you've donated but haven't yet been tagged with the role, please reach out to RoyalOughtness.
 
 ## Community
 
-Opening issues is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well.
+Opening [GitHub issues](https://github.com/secureblue/secureblue) is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well.

@@ -7,8 +7,21 @@ permalink: /images
 
 # Images
 
-> [!NOTE]
-> Learn about unprivileged user namespaces [here](USERNS.md).
+Table of Contents
+- [Desktop](#desktop)
+- - [Recommended](#recommended)
+- - - [Silverblue](#silverblue)
+- - [Stable](#stable)
+- - - [Kinoite](#kinoite)
+- - - [Sericea](#sericea)
+- - [Beta](#beta)
+- - - [Wayfire](#wayfire)
+- - - [Hyprland](#hyprland)
+- - - [River](#river)
+- - - [Sway](#sway)
+- - [Experimental](#experimental)
+- - - [Cosmic](#cosmic)
+- [Server](#server)
 
 ## Desktop
 
@@ -16,7 +29,7 @@ permalink: /images
 
 *`nvidia` images are recommended for systems with Nvidia GPUs Pascal or older. These include the closed kernel modules from Nvidia.*
 
-### Recommended <sup>[why?](RECOMMENDED.md)</sup>
+### Recommended
 
 #### Silverblue
 
@@ -25,6 +38,13 @@ permalink: /images
 | `silverblue-main-hardened`               | Silverblue| No                      |
 | `silverblue-nvidia-hardened`             | Silverblue| Yes, closed drivers     |
 | `silverblue-nvidia-open-hardened`        | Silverblue| Yes, open drivers       |
+
+> [!NOTE]
+> This is a relative recommendation between the desktop environments available on secureblue. GNOME has some extra security niceties like the ones listed below. It however does not solve any of the fundamental issues with desktop linux security.
+
+Silverblue utilizes GNOME, which is the only desktop that secures privileged wayland protocols like screencopy. This means that on non-GNOME systems, applications can access screen content of the entire desktop. This implicitly includes the content of other applications. It's primarily for this reason that GNOME images are recommended. KDE has [plans](https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/issues/7) to fix this.
+
+GNOME also provides [thumbnailer sandboxing](https://gitlab.gnome.org/GNOME/gnome-desktop/-/issues/213) in Gnome Files, which mitigates attacks [via thumbnailers](https://scarybeastsecurity.blogspot.com/2016/11/0day-exploit-compromising-linux-desktop.html).
 
 ### Stable
 
@@ -82,6 +102,16 @@ permalink: /images
 | `wayblue-sway-nvidia-hardened`           | Wayblue-Sway          | Yes, closed drivers     |
 | `wayblue-sway-nvidia-open-hardened`      | Wayblue-Sway          | Yes, open drivers       |
 
+### Experimental
+
+#### Cosmic
+
+| Name                                      | Base                  | Nvidia Support         |
+|-------------------------------------------|-----------------------|-------------------------|
+| `cosmic-main-hardened`          | Cosmic       | No                      |
+| `cosmic-nvidia-hardened`        | Cosmic       | Yes, closed drivers     |
+| `cosmic-nvidia-open-hardened`   | Cosmic       | Yes, open drivers       |
+
 ## Server
 
 > [!NOTE]
@@ -95,14 +125,3 @@ permalink: /images
 | `securecore-zfs-main-hardened`           | CoreOS    | No                      | Yes         |
 | `securecore-zfs-nvidia-hardened`         | CoreOS    | Yes, closed drivers     | Yes         |
 | `securecore-zfs-nvidia-open-hardened`    | CoreOS    | Yes, open drivers       | Yes         |
-
-
-### Experimental
-
-#### Cosmic
-
-| Name                                      | Base                  | Nvidia Support         |
-|-------------------------------------------|-----------------------|-------------------------|
-| `cosmic-main-hardened`          | Cosmic       | No                      |
-| `cosmic-nvidia-hardened`        | Cosmic       | Yes, closed drivers     |
-| `cosmic-nvidia-open-hardened`   | Cosmic       | Yes, open drivers       |

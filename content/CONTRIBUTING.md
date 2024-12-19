@@ -9,7 +9,7 @@ permalink: /contributing
 
 Thanks for taking the time to look into helping out!
 All contributions are appreciated!
-Please refer to our [Code of Conduct](CODE_OF_CONDUCT.md) while you're at it!
+Please refer to our [Code of Conduct](/CODE-OF-CONDUCT) while you're at it!
 
 Feel free to report issues as you find them!
 
@@ -18,7 +18,7 @@ Feel free to report issues as you find them!
 All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions.
 
 > And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
-> - Star the project
+> - Star the project [in GitHub](https://github.com/secureblue/secureblue)
 > - Tweet about it
 > - Refer this project in your project's readme
 > - Mention the project at local meetups and tell your friends/colleagues
@@ -38,7 +38,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the
-[CONTRIBUTING.md Code of Conduct](CODE_OF_CONDUCT.md).
+[CONTRIBUTING.md Code of Conduct](/CODE-OF-CONDUCT).
 By participating, you are expected to uphold this code. Please report unacceptable behavior
 to secureblueadmin@proton.me
 
