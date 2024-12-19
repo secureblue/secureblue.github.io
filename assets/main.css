@@ -389,6 +389,46 @@ details[open] summary {
     margin-bottom: 0.5em;
 }
 
+.alert {
+    border-left: .25em solid;
+    padding-left: 16px;
+}
+
+.alert em {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.alert svg {
+    margin-right: 8px
+}
+
+.note {
+    border-left-color: #4493f8;
+    fill: #4493f8;
+}
+
+.tip {
+    border-left-color: #58a6ff;
+    fill: #58a6ff;
+}
+
+.important {
+    border-left-color: #ab7df8;
+    fill: #ab7df8;
+}
+
+.warning {
+    border-left-color: #d29922;
+    fill: #d29922;
+}
+
+.caution {
+    border-left-color: #f0883e;
+    fill: #f0883e;
+}
+
 /* latin */
 @font-face {
     font-family: Roboto;
