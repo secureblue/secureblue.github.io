@@ -1,4 +1,4 @@
-{% assign text = include.content | split: '' %}
+{% assign text = include.content | split: '<br>' %}
 
 <div class="alert {{ include.type }}">
     <p>
@@ -19,11 +19,9 @@
             {{ include.type | capitalize }}
         </em>
         {% for line in text %}
-            {% if line != '' %}
-                <p>
-                    {{ line }}
-                </p>
-            {% endif %}
+            <p>
+                {{ line }}
+            </p>
         {% endfor %}
     </p>
 </div>
