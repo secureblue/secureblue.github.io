@@ -429,6 +429,10 @@ details[open] summary {
     fill: #f0883e;
 }
 
+ul ul {
+    padding-left: 20px;
+}
+
 /* latin */
 @font-face {
     font-family: Roboto;
