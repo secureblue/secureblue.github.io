@@ -39,12 +39,11 @@ Table of Contents
 | `silverblue-nvidia-hardened`             | Silverblue| Yes, closed drivers     |
 | `silverblue-nvidia-open-hardened`        | Silverblue| Yes, open drivers       |
 
-> [!NOTE]
-> This is a relative recommendation between the desktop environments available on secureblue. GNOME has some extra security niceties like the ones listed below. It however does not solve any of the fundamental issues with desktop linux security.
+{% include alert.html type='note' content='This is a relative recommendation between the desktop environments available on secureblue. GNOME has some extra security niceties like the ones listed below. It however does not solve any of the fundamental issues with desktop linux security.' %}
 
-Silverblue utilizes GNOME, which is the only desktop that secures privileged wayland protocols like screencopy. This means that on non-GNOME systems, applications can access screen content of the entire desktop. This implicitly includes the content of other applications. It's primarily for this reason that GNOME images are recommended. KDE has [plans](https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/issues/7) to fix this.
+{% include alert.html type='caution' content='Silverblue utilizes GNOME, which is the only desktop that secures privileged wayland protocols like screencopy. This means that on non-GNOME systems, applications can access screen content of the entire desktop. This implicitly includes the content of other applications. It's primarily for this reason that GNOME images are recommended. KDE has [plans](https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/issues/7) to fix this.
 
-GNOME also provides [thumbnailer sandboxing](https://gitlab.gnome.org/GNOME/gnome-desktop/-/issues/213) in Gnome Files, which mitigates attacks [via thumbnailers](https://scarybeastsecurity.blogspot.com/2016/11/0day-exploit-compromising-linux-desktop.html).
+GNOME also provides <a href="https://gitlab.gnome.org/GNOME/gnome-desktop/-/issues/213">thumbnailer sandboxing</a> in Gnome Files, which mitigates attacks <a href="https://scarybeastsecurity.blogspot.com/2016/11/0day-exploit-compromising-linux-desktop.html">via thumbnailers</a>.' %}
 
 ### Stable
 
@@ -66,8 +65,7 @@ GNOME also provides [thumbnailer sandboxing](https://gitlab.gnome.org/GNOME/gnom
 
 ### Beta
 
-> [!NOTE]
-> Learn about wayblue [here](https://github.com/wayblueorg/wayblue).
+{% include alert.html type='note' content='Learn about wayblue <a href="https://github.com/wayblueorg/wayblue">here</a>.' %}
 
 #### Wayfire
 
@@ -114,8 +112,9 @@ GNOME also provides [thumbnailer sandboxing](https://gitlab.gnome.org/GNOME/gnom
 
 ## Server
 
-> [!NOTE]
-> After you finish setting up your [Fedora CoreOS](https://fedoraproject.org/coreos/) installation, you will need to disable `zincati.service` before rebasing to securecore.
+{% include alert.html type='note' content='
+After you finish setting up your <a href="https://fedoraproject.org/coreos/">Fedora CoreOS</a> installation, you will need to disable `zincati.service` before rebasing to securecore.
+' %}
 
 | Name                                      | Base      | Nvidia Support         | ZFS Support |
 |-------------------------------------------|-----------|-------------------------|-------------|
