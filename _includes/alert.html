@@ -19,13 +19,9 @@
             {{ include.type | capitalize }}
         </em>
         {% for line in text %}
-            {% if line != '<el>' %}
-                <p>
-                    {{ line }}
-                </p>
-            {% else %}
-                <br />
-            {% endif %}
+            <p>
+                {{ line }}
+            </p>
         {% endfor %}
     </p>
 </div>

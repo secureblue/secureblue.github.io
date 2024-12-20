@@ -394,7 +394,7 @@ details[open] summary {
     padding-left: 16px;
 }
 
-.alert em {
+.alert em:first-of-type {
     display: flex;
     align-items: center;
     line-height: 1;
