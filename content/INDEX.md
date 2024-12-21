@@ -4,7 +4,9 @@ description: "secureblue offers hardened operating system images based on Fedora
 permalink: /
 ---
 
-secureblue offers hardened operating system images generated with [BlueBuild](https://blue-build.org/), using [Fedora Atomic Desktop](https://fedoraproject.org/atomic-desktops/)'s [base images](https://pagure.io/workstation-ostree-config) as a starting point.
+secureblue offers hardened operating system images generated with [BlueBuild](https://blue-build.org/), using [Fedora Atomic Desktop](https://fedoraproject.org/atomic-desktops/)'s [base images](https://pagure.io/workstation-ostree-config) as a starting point. Fedora is one of the few Linux distributions that ships with selinux and associated tooling built-in and enabled by default. This makes it advantageous as a starting point for building a hardened system. However, out of the box it's lacking hardening in numerous other areas. This project's goal is to improve on that significantly.
+
+The project also maintains [hardened-chromium](https://github.com/secureblue/hardened-chromium), a hardened fork inspired by GrapheneOS's [Vanadium](https://github.com/GrapheneOS/Vanadium), using [Fedora's Chromium](https://src.fedoraproject.org/rpms/chromium) as a base, intended for use with [hardened_malloc](https://github.com/GrapheneOS/hardened_malloc) as packaged and provided by secureblue. In fact, hardened-chromium is included in the secureblue desktop images.
 
 # Scope
 
@@ -12,11 +14,18 @@ secureblue applies hardening with the following goals in mind:
 
 - Increase defenses against the exploitation of both known and unknown vulnerabilities.
 - Avoid sacrificing usability for most use cases where possible.
+- Avoid sacrificing tangible security for "privacy", as that's often a euphemism for security theater.
 
-The following are not in scope:
+For hardened-chromium, these goals are extended to specifically include the following:
 
-- Anything that sacrifices security for "privacy". Fedora is already sufficiently private and "privacy" often serves as a euphemism for security theater. This is especially true when at odds with improving security.
-- Anything related to "degoogling" chromium. For example, we will not be replacing [hardened-chromium](https://github.com/secureblue/hardened-chromium) with Brave or ungoogled-chromium. Both of them make changes that sacrifice security for "privacy", such as enabling MV2. <sup>[why?](https://developer.chrome.com/docs/extensions/develop/migrate/improve-security)</sup>
+- Desktop-relevant patches from Vanadium.
+- Changes that make secondary browser features opt-in instead of opt-out (for example, making the password manager and search suggestions opt-in).
+- Changes that disable opt-in metrics and data collection, so long as they have no security implications.
+
+The following is out of scope across all secureblue projects:
+
+- Any novel functionality that is unrelated to security.
+- Anything related to "degoogling" chromium. For example, we will not be replacing [hardened-chromium](https://github.com/secureblue/hardened-chromium) with Brave or ungoogled-chromium. Both of them make changes that sacrifice tangible security for "privacy", such as enabling MV2. <sup>[why?](https://developer.chrome.com/docs/extensions/develop/migrate/improve-security)</sup>
 
 # Hardening
 
@@ -46,20 +55,12 @@ The following are not in scope:
 - Removal of the unmaintained and suid-root fuse2 by default
 - Disabling unprivileged user namespaces by default for the unconfined domain and the container domain <sup>[why?](/userns)</sup>
 
-# Rationale
-
-Fedora is one of the few distributions that ships with selinux and associated tooling built-in and enabled by default. This makes it advantageous as a starting point for building a hardened system. However, out of the box it's lacking hardening in numerous other areas. This project's goal is to improve on that significantly.
-
-For more info on BlueBuild, check out the [BlueBuild homepage](https://blue-build.org/).
-
 # Customization
 
 If you want to add your own customizations on top of secureblue, you are advised strongly against forking. Instead, create a repo for your own image by using the [BlueBuild template](https://github.com/blue-build/template), then change your `base-image` to a secureblue image. This will allow you to apply your customizations to secureblue in a concise and maintainable way, without the need to constantly sync with upstream.
 
-## Development
+For local development, [building locally](/contributing#building-locally) is the recommended approach.
 
-For local Development [building locally](/contributing#building-locally) is the recommended approach.
+# Support and community
 
-## Support / Community
-
-Opening [GitHub issues](https://github.com/secureblue/secureblue) is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well.
+Opening [GitHub issues](https://github.com/secureblue/secureblue) for support is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well and it counts with a community of secureblue users.
