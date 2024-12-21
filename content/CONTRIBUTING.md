@@ -9,7 +9,7 @@ permalink: /contributing
 
 Thanks for taking the time to look into helping out!
 All contributions are appreciated!
-Please refer to our [Code of Conduct](/CODE-OF-CONDUCT) while you're at it!
+Please refer to our [Code of Conduct](/code-of-conduct) while you're at it!
 
 Feel free to report issues as you find them!
 
@@ -38,13 +38,13 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the
-[CONTRIBUTING.md Code of Conduct](/CODE-OF-CONDUCT).
+CONTRIBUTING.md Code of Conduct.
 By participating, you are expected to uphold this code. Please report unacceptable behavior
 to secureblueadmin@proton.me
 
 ## I Have a Question
 
-> If you want to ask a question, ask in [Issues](https://github.com/secureblue/secureblue/issues).
+> If you want to ask a question, opening a [GitHub issue](https://github.com/secureblue/secureblue) for it is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well.
 
 ## I Want To Contribute
 
@@ -118,7 +118,7 @@ TODO: Set up and push to your own local registry
 
 ### Make your changes
 
-This usually involved editing the `Containerfile`. Most techniques for building containers apply here, if you're new to containers using the term "Dockerfile" in your searches usually shows more results when you're searching for information.
+This usually involved editing the `Containerfile`. Most techniques for building containers apply here. If you're new to containers, using the term "Dockerfile" in your searches usually shows more results when you're searching for information.
 
 Check out CoreOS's [layering examples](https://github.com/coreos/layering-examples) for more information on customizing.
 

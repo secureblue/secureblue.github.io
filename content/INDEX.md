@@ -44,7 +44,7 @@ The following are not in scope:
 - Set all default container policies to `reject`, `signedBy`, or `sigstoreSigned`
 - Disable a variety of services by default (including cups, geoclue, passim, and others)
 - Removal of the unmaintained and suid-root fuse2 by default
-- Disabling unprivileged user namespaces by default for the unconfined domain and the container domain
+- Disabling unprivileged user namespaces by default for the unconfined domain and the container domain <sup>[why?](/userns)</sup>
 
 # Rationale
 
@@ -60,10 +60,6 @@ If you want to add your own customizations on top of secureblue, you are advised
 
 For local Development [building locally](/contributing#building-locally) is the recommended approach.
 
-# Sponsor
-
-Sponsorship options are on the [Donate](/DONATE) page. All donations are appreciated. Sponsors get a role on the Discord if desired. If you've donated but haven't yet been tagged with the role, please reach out to RoyalOughtness.
-
-## Community
+## Support / Community
 
 Opening [GitHub issues](https://github.com/secureblue/secureblue) is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well.

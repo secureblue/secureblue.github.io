@@ -5,7 +5,13 @@ description: "An overview of the hardening boot kargs used in secureblue"
 permalink: /kargs
 ---
 
-## Included in set-kargs-hardening
+Table of contents
+- [Stable](#stable)
+- [Unstable](#unstable)
+
+## Stable
+
+Stable kargs that are always applied by the `set-kargs-hardening` ujust script.
 
 **Zero newly allocated pages and heaps, mitigating use-after-free vulnerabilities**
 
@@ -91,7 +97,9 @@ permalink: /kargs
 
 `nosmt=force`
 
-### Additional (unstable) kargs
+## Unstable
+
+Unstable kargs that can be inclusively set alongside the stable kargs detailed above. The `set-kargs-hardening` command prompts the user on whether to add these.
 
 **Fill IOMMU protection gap by setting the busmaster bit during early boot**
 
@@ -102,6 +110,7 @@ permalink: /kargs
 `debugfs=off` 
 
 **Disables support for 32-bit processes, and syscalls**
+This is considered unstable but the user is prompted separately on whether they want this.
 
 `ia32_emulation=0`
 

@@ -5,6 +5,8 @@ description: "Donation options for secureblue"
 permalink: /donate
 ---
 
+All donations are appreciated. Sponsors get a role on the [Discord](https://discord.gg/qMTv5cKfbF) if desired. If you've donated but haven't yet been tagged with the role, please reach out to RoyalOughtness.
+
 There are multiple options available for donation:
 
 ## Github Sponsors

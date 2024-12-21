@@ -433,6 +433,14 @@ ul ul {
     padding-left: 20px;
 }
 
+th, tr, td {
+    border: 1px solid;
+}
+
+th {
+    background-color: #3264FF22;
+}
+
 /* latin */
 @font-face {
     font-family: Roboto;

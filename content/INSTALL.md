@@ -9,7 +9,14 @@ The recommended method to install secureblue is to first install a Fedora Atomic
 
 Following the recommended method, you *must not* rebase from a Fedora Atomic Desktop install to securecore, or from a Fedora CoreOS install to secureblue, or from secureblue to securecore or vice-versa.
 
-# Pre-installation
+Table of Contents
+- [Pre-install](#pre-install)
+- - [Fedora installation](#fedora-installation)
+- - [BIOS hardening](#bios-hardening)
+- [Rebase](#rebase)
+- [Post-install](#post-install)
+
+# Pre-install
 
 The following is advice on what to do before and during the installation of a Fedora ISO, and how.
 
@@ -33,7 +40,7 @@ Before rebasing and during the installation, the following checks are recommende
 - Disable booting from USB (some manufacturers allow firmware changes from live systems).
 - Set a BIOS password to prevent tampering.
 
-# Installation (rebasing)
+# Rebase
 
 To rebase a Fedora Atomic or Fedora CoreOS installation to a secureblue image, download the script below. This script does not install secureblue into the existing system. It rebases (fully replaces the existing system) with secureblue.
 
