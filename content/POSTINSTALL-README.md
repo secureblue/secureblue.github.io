@@ -3,7 +3,6 @@ title: "Post-install instructions | secureblue"
 short_title: "Post-install"
 description: "Instructions meant to be followed succeeding a secureblue rebase"
 permalink: /post-install
-{::options auto_ids="false" /}
 ---
 
 # secureblue post-install
@@ -28,11 +27,13 @@ After rebasing to secureblue, follow the following steps in order:
 - [Optional: `hardened-chromium` Flags](#hardened-chromium-flags)
 - [Read the FAQ](#faq)
 
-## Subscribe to secureblue release notifications {: #release-notifications}
+## Subscribe to secureblue release notifications
+{: #release-notifications}
 
 [FAQ](/faq#releases)
 
-## Set Nvidia-specific kargs if applicable {: #nvidia}
+## Set Nvidia-specific kargs if applicable
+{: #nvidia}
 If you are using an nvidia image, run this after installation:
 
 ```

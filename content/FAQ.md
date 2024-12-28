@@ -3,7 +3,6 @@ title: "FAQ | secureblue"
 short_title: "FAQ"
 description: "Answers to frequently asked questions about secureblue"
 permalink: /faq
-{::options auto_ids="false" /}
 ---
 
 # FAQ
