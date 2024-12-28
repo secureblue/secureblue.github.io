@@ -63,4 +63,4 @@ For local development, [building locally](/contributing#building-locally) is the
 
 # Support and community
 
-Opening [GitHub issues](https://github.com/secureblue/secureblue) for support is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well and it counts with a community of secureblue users.
+Opening [GitHub issues](https://github.com/secureblue/secureblue) for support is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well and it counts with a broader community of secureblue users.

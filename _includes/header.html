@@ -22,7 +22,7 @@
     -->
     <nav id="site-menu">
         <ul>
-            <li {% if include.content == "" %}aria-current="page"{% endif %}><a href="/"><img src="/assets/secureblue.svg" alt=""/>secureblue</a></li>
+            <li {% if include.content == "" %}aria-current="page"{% endif %}><a href="/"><img src="/assets/favicon.svg" alt=""/>secureblue</a></li>
             {% for i in site.pages %}
                 {% if i.permalink != "/" %}
                     {% assign slashless_permalink = i.permalink | remove: "/" %}

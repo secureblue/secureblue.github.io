@@ -6,10 +6,13 @@ permalink: /kargs
 ---
 
 Table of contents
-- [Stable](#stable)
-- [Unstable](#unstable)
+- [Standard](#standard)
+- [Additional](#additional)
+- - [Disable 32-bit processes and syscalls](#32-bit)
+- - [Force disable simultaneous multithreading](#smt)
+- - [Unstable kargs](#unstable)
 
-## Stable
+# Standard {: #standard}
 
 Stable kargs that are always applied by the `set-kargs-hardening` ujust script.
 
@@ -95,23 +98,25 @@ Stable kargs that are always applied by the `set-kargs-hardening` ujust script.
 
 `kvm-intel.vmentry_l1d_flush=always`
 
-## Optional
+# Additional  {: #additional}
 
-Optional kargs that can be inclusively set alongside the stable kargs detailed above. The `set-kargs-hardening` command prompts the user on whether to add these.
+Sets of additional kargs that can be selectively set alongside the standard kargs detailed above. The `set-kargs-hardening` command prompts the user on whether to add the 3 sets of kargs detailed below:
 
-### Disable 32-bit processes and syscalls
+## Disable 32-bit processes and syscalls {: #32-bit}
 
 **32-bit support is needed by some legacy software, such as Steam**
 
 `ia32_emulation=0`
 
-### Force disable simultaneous multithreading
+## Force disable simultaneous multithreading {: #smt}
 
 **Disables this hardware feature on user request, regardless of whether it is affected by known vulnerabilities**
 
 `nosmt=force`
 
-### Unstable kargs: may cause issues on some hardware
+## Unstable kargs  {: #unstable}
+
+These may cause issues on some hardware.
 
 **Fill IOMMU protection gap by setting the busmaster bit during early boot**
 
