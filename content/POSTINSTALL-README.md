@@ -3,6 +3,7 @@ title: "Post-install instructions | secureblue"
 short_title: "Post-install"
 description: "Instructions meant to be followed succeeding a secureblue rebase"
 permalink: /post-install
+{::options auto_ids="false" /}
 ---
 
 # secureblue post-install
