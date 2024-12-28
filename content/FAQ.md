@@ -34,32 +34,39 @@ Table of contents:
 - [Why don't some websites that require JIT/WebAssembly work in `hardened-chromium` even with the V8 Optimizer toggle enabled?](#hardened-chromium-exceptions)
 - [Why don't extensions work in `hardened-chromium`?](#hardened-chromium-extensions)
 
-#### Why is Flatpak included? Should I use Flatpak? {: #flatpak}
+#### Why is Flatpak included? Should I use Flatpak?
+{: #flatpak}
 
 [https://github.com/secureblue/secureblue/issues/125#issuecomment-1859610560](https://github.com/secureblue/secureblue/issues/125#issuecomment-1859610560)
 
-#### Should I use Electron apps? Why don't they work well with hardened_malloc? {: #electron}
+#### Should I use Electron apps? Why don't they work well with hardened_malloc?
+{: #electron}
 
 [https://github.com/secureblue/secureblue/issues/193#issuecomment-1953323680](https://github.com/secureblue/secureblue/issues/193#issuecomment-1953323680)
 
-#### My fans are really loud, is this normal? {: #fans}
+#### My fans are really loud, is this normal?
+{: #fans}
 
 During rpm-ostree operations, it's normal. Outside of that, make sure you followed the NVIDIA steps in the [post-install instructions](/post-install#nvidia) if you're using an NVIDIA GPU.
 
-#### Should I use firejail? {: #firejail}
+#### Should I use firejail?
+{: #firejail}
 
 [No](https://madaidans-insecurities.github.io/linux.html#firejail), use ``bubblejail`` if there's no flatpak available for an app.
 
-#### An app I use won't start due to a malloc issue. How do I fix it?  {: #standard-malloc}
+#### An app I use won't start due to a malloc issue. How do I fix it?
+{: #standard-malloc}
 
 - For flatpaks, remove the `LD_PRELOAD` environment variable via Flatseal. To re-enable hardened_malloc for the respective flatpak, replace the removed variable.
 - For layered packages and packages installed via brew, run the application with `ujust with-standard-malloc APP`. This starts the app without hardened_malloc only once, it does not disable hardened_malloc for the app persistently.
 
-#### On secureblue half of my CPU cores are gone. Why is this? {: #smt}
+#### On secureblue half of my CPU cores are gone. Why is this?
+{: #smt}
 
 `mitigations=auto,nosmt` is set on secureblue. This means that if your CPU is vulnerable to attacks that utilize [Simultaneous Multithreading](https://en.wikipedia.org/wiki/Simultaneous_multithreading), SMT will be disabled.
 
-#### How do I install software? {: #software}
+#### How do I install software?
+{: #software}
 
 1. Check if it's already installed using `rpm -qa | grep x`
 2. For GUI packages, you can install the flatpak if available using the Software store or using `flatpak install`. A catalogue of flatpaks is available at https://flathub.org.
@@ -68,17 +75,20 @@ During rpm-ostree operations, it's normal. Outside of that, make sure you follow
 
 Steam is an exception to the above.
 
-#### How do I install Steam?  {: #steam}
+#### How do I install Steam?
+{: #steam}
 
 ```
 ujust install-steam
 ```
 
-#### Another security project has a feature that's missing in secureblue, can you add it? {: #feature-request}
+#### Another security project has a feature that's missing in secureblue, can you add it?
+{: #feature-request}
 
 First check [this](/#hardening) on whether it already lists an equivalent or better feature. If it doesn't, open a new [GitHub issue](https://github.com/secureblue/secureblue/issues).
 
-#### Why are bluetooth kernel modules disabled? How do I enable them? {: #bluetooth}
+#### Why are bluetooth kernel modules disabled? How do I enable them?
+{: #bluetooth}
 
 Bluetooth has a long and consistent history of security issues. However, if you still need it, run:
 
@@ -86,11 +96,13 @@ Bluetooth has a long and consistent history of security issues. However, if you 
 ujust toggle-bluetooth-modules
 ```
 
-#### Why are upgrades so large? {: #upgrade-size}
+#### Why are upgrades so large?
+{: #upgrade-size}
 
 This is an issue with rpm-ostree image-based systems generally, and not specific to secureblue. Ideally upgrades would come in the form of a zstd-compressed container diff, but it's not there yet. Check out [this upstream issue](https://github.com/coreos/rpm-ostree/issues/4012) for more information.
 
-#### Why can't I install new KDE themes? {: #ghns}
+#### Why can't I install new KDE themes?
+{: #ghns}
 
 The functionality that provides this, called GHNS, is disabled by default due to the risk posed by the installation of potentially damaging or malicious scripts. This has caused [real damage](https://blog.davidedmundson.co.uk/blog/kde-store-content/).
 
@@ -100,7 +112,8 @@ If you still want to enable this functionality, run:
 ujust toggle-ghns
 ```
 
-#### Why doesn't my Xwayland app work? {: #xwayland}
+#### Why doesn't my Xwayland app work?
+{: #xwayland}
 
 Xwayland is disabled by default on GNOME, KDE Plasma, and Sway. If you need it, run:
 
@@ -108,7 +121,8 @@ Xwayland is disabled by default on GNOME, KDE Plasma, and Sway. If you need it, 
 ujust toggle-xwayland
 ```
 
-#### Why I can't install nor use any GNOME user extensions? {: #gnome-extensions}
+#### Why I can't install nor use any GNOME user extensions?
+{: #gnome-extensions}
 
 This is because support for installing & using them has been intentionally disabled by default in secureblue.
 Only GNOME system extensions are trusted, if they are installed.
@@ -119,23 +133,27 @@ To enable support for installing GNOME user extensions, you can run ujust comman
 ujust toggle-gnome-extensions
 ```
 
-#### My clock is wrong and it's not getting automatically set. How do I fix this? {: #clock}
+#### My clock is wrong and it's not getting automatically set. How do I fix this?
+{: #clock}
 
 If your system time is off by an excessive amount due to rare conditions like a CMOS reset, your network will not connect. A one-time manual reset will fix this. This should never be required except under very rare circumstances.
 
 For more technical detail, see [#268](https://github.com/secureblue/secureblue/issues/268)
 
-#### Why is DNS broken on my secureblue VM? {: #vm-dns}
+#### Why is DNS broken on my secureblue VM?
+{: #vm-dns}
 
 The DNSSEC setting we set in `/etc/systemd/resolved.conf.d/securedns.conf` causes known issues with network connectivity when secureblue is used in a VM. To fix it, comment out `DNSSEC=allow-downgrade` in that file and manually set a dns provider in network settings.
 
-#### How do I get notified of new releases? {: #releases}
+#### How do I get notified of new releases?
+{: #releases}
 
 To subscribe to release notifications, on the secureblue GitHub page, click "Watch", and then "Custom", and select Releases like so:
 
 ![image](https://github.com/user-attachments/assets/38146394-f730-4b84-8bfa-4fbbf29350ff)
 
-#### Why don't my AppImages work? {: #appimage}
+#### Why don't my AppImages work?
+{: #appimage}
 
 AppImages depend on fuse2, which is unmaintained and depends on a suid root binary. For this reason, fuse2 support is removed by default. It's strongly recommended that you find alternative mechanisms to install your applications (flatpak, distrobox, etc). If you can't find an alternative and still need fuse2, you can add it back by layering something that depends on it.
 
@@ -145,17 +163,20 @@ For example:
 rpm-ostree install zfs-fuse
 ```
 
-#### Why don't KDE Vaults work? {: #kde-vaults}
+#### Why don't KDE Vaults work?
+{: #kde-vaults}
 
 Similar to the AppImage FAQ, the KDE Vault default backend `cryfs` depends on fuse2. For this reason it's recommended that you migrate to an alternative that doesn't depend on fuse2, for example `fscrypt`. If you don't want to do so, you can add fuse2 back by layering something that depends on it, as described in the AppImage FAQ.
 
-#### How do I provision signed distroboxes? {: #distrobox-assemble}
+#### How do I provision signed distroboxes?
+{: #distrobox-assemble}
 
 ```
 ujust distrobox-assemble
 ```
 
-#### Why aren't my apps loading on Nvidia Optimus? {: #nvidia-optimus}
+#### Why aren't my apps loading on Nvidia Optimus?
+{: #nvidia-optimus}
 
 There is an [upstream bug](https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/21). You may need to run:
 
@@ -165,21 +186,26 @@ mkdir -p ~/.config/environment.d && echo "GSK_RENDERER=gl" >> ~/.config/environm
 
 This should no longer be required as of F41: https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/42
 
-#### Why won't `hardened-chromium` start? {: #hardened-chromium-start}
+#### Why won't `hardened-chromium` start?
+{: #hardened-chromium-start}
 
 Try starting `hardened-chromium` from the commandline by running `chromium-browser`. If you get an error about the current profile already running on another device, this is an issue with upstream chromium which can happen when you `rpm-ostree update` or `rpm-ostree rebase`. To fix this, simply run `rm ~/.config/chromium/SingletonLock`.
 
 `bubblejail` **SHOULD NOT** be used on `hardened-chromium`, there are issues reported with the pairing and removing the `bubblejail` config after it is applied can be difficult. It should also be noted that applying additional sandboxing may interfere with chromium's own internal sandbox, so it can end up reducing security.
 
-#### Why won't `hardened-chromium` start on Nvidia? {: #hardened-chromium-start-nvidia}
+#### Why won't `hardened-chromium` start on Nvidia?
+{: #hardened-chromium-start-nvidia}
 
 On some Nvidia machines, `hardened-chromium` defaults to the X11 backend. Since secureblue disables Xwayland by default, this means that you will need to run `ujust toggle-xwayland` and reboot, for `hardened-chromium` to work.
 
-#### Why don't some websites that require JIT/WebAssembly work in `hardened-chromium` even with the V8 Optimizer toggle enabled? {: #hardened-chromium-exceptions}
+#### Why don't some websites that require JIT/WebAssembly work in `hardened-chromium` even with the V8 Optimizer toggle enabled?
+{: #hardened-chromium-exceptions}
 
 This is an [upstream bug](https://issues.chromium.org/issues/373893056) that prevents V8 optimization settings from being applied to iframes embedded within a parent website. As a result, WebAssembly may not function on services that use a separate URL for their content delivery network or other included domains, such as VSCode Web ([https://github.dev](https://github.dev)). To make VSCode Web work properly, you need to manually allow V8 optimizations for the CDN by adding `https://[*.]vscode-cdn.net` to your list of trusted websites.
 
-#### Why don't extensions work in `hardened-chromium`? {: #hardened-chromium-extensions}
+#### Why don't extensions work in `hardened-chromium`?
+{: #hardened-chromium-extensions}
+
 Extensions in `hardened-chromium` are disabled by default, for security reasons it is not advised to use them. If you want content/ad blocking, that is already built into `hardened-chromium` and enabled by default. If you require extensions, you can re-enable them by disabling the `Disable Extensions` toggle under `chrome://settings/security`, then restart your browser (this toggle is per-profile).
 \
 \

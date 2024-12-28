@@ -12,7 +12,8 @@ Table of contents
 - - [Force disable simultaneous multithreading](#smt)
 - - [Unstable kargs](#unstable)
 
-# Standard {: #standard}
+# Standard
+{: #standard}
 
 Stable kargs that are always applied by the `set-kargs-hardening` ujust script.
 
@@ -98,23 +99,27 @@ Stable kargs that are always applied by the `set-kargs-hardening` ujust script.
 
 `kvm-intel.vmentry_l1d_flush=always`
 
-# Additional  {: #additional}
+# Additional
+{: #additional}
 
 Sets of additional kargs that can be selectively set alongside the standard kargs detailed above. The `set-kargs-hardening` command prompts the user on whether to add the 3 sets of kargs detailed below:
 
-## Disable 32-bit processes and syscalls {: #32-bit}
+## Disable 32-bit processes and syscalls
+{: #32-bit}
 
 **32-bit support is needed by some legacy software, such as Steam**
 
 `ia32_emulation=0`
 
-## Force disable simultaneous multithreading {: #smt}
+## Force disable simultaneous multithreading
+{: #smt}
 
 **Disables this hardware feature on user request, regardless of whether it is affected by known vulnerabilities**
 
 `nosmt=force`
 
-## Unstable kargs  {: #unstable}
+## Unstable kargs
+{: #unstable}
 
 These may cause issues on some hardware.
 
