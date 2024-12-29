@@ -59,7 +59,7 @@ ujust enroll-secure-boot-key
 {: #kargs}
 
 [!NOTE]
-Learn about the hardening applied by the kargs set by the command below [here](/kargs).
+Learn about the hardening applied by the kargs set by the command below [here](/articles/kargs).
 
 ```
 ujust set-kargs-hardening

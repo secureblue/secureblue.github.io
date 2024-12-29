@@ -1,8 +1,8 @@
 ---
-title: "userns advice | secureblue"
+title: "userns | secureblue"
 short_title: "userns"
-description: "A small document about unprivileged user namespaces"
-permalink: /userns
+description: "Brief explanation of unprivileged user namespaces and how the feature is handled in secureblue"
+permalink: /articles/userns
 ---
 
 # User namespaces

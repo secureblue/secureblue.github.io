@@ -40,7 +40,7 @@ The following is out of scope across all secureblue projects:
 - Adds per-network MAC randomization
 - Blacklisting numerous unused kernel modules to reduce attack surface <sup>[details](https://github.com/secureblue/secureblue/blob/live/files/system/etc/modprobe.d/blacklist.conf)</sup>
 - Enabling only the [flathub-verified](https://flathub.org/apps/collection/verified/1) remote by default
-- Sets numerous hardening kernel arguments (Inspired by [Madaidan's Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)) <sup>[details](/kargs)</sup>
+- Sets numerous hardening kernel arguments (Inspired by [Madaidan's Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)) <sup>[details](/articles/kargs)</sup>
 - Require wheel user authentication via polkit for `rpm-ostree install` <sup>[why?](https://github.com/rohanssrao/silverblue-privesc)
 - Brute force protection by locking user accounts for 24 hours after 50 failed login attempts, hardened password encryption and password quality suggestions
 - Installing usbguard and providing `ujust` commands to automatically configure it
@@ -53,7 +53,7 @@ The following is out of scope across all secureblue projects:
 - Set all default container policies to `reject`, `signedBy`, or `sigstoreSigned`
 - Disable a variety of services by default (including cups, geoclue, passim, and others)
 - Removal of the unmaintained and suid-root fuse2 by default
-- Disabling unprivileged user namespaces by default for the unconfined domain and the container domain <sup>[why?](/userns)</sup>
+- Disabling unprivileged user namespaces by default for the unconfined domain and the container domain <sup>[why?](/articles/userns)</sup>
 
 # Customization
 

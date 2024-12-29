@@ -1,8 +1,8 @@
 ---
 title: "kargs | secureblue"
 short_title: "kargs"
-description: "An overview of the hardening boot kargs used in secureblue"
-permalink: /kargs
+description: "An overview of the hardened boot kargs used in secureblue"
+permalink: /articles/kargs
 ---
 
 Table of contents
