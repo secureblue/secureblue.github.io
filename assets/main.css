@@ -542,10 +542,6 @@ th {
         color: #9f9f9f;
     }
 
-    footer img {
-        filter: invert(87%);
-    }
-
     .error-text {
         /* Baseline Material dark error color */
         color: #cf6679;
