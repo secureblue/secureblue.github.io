@@ -126,7 +126,7 @@ Creating a dedicated wheel user and removing wheel from your primary user helps 
 5. `exit`
 6. `reboot`
 
-{% include alert.html type='note' content='We log in as admin to do the final step of removing the user account's wheel privileges in order to make the operation of removing those privileges depend on having access to your admin account, and the admin account functioning correctly first.' %}
+{% include alert.html type='note' content='We log in as admin to do the final step of removing the user account\'s wheel privileges in order to make the operation of removing those privileges depend on having access to your admin account, and the admin account functioning correctly first.' %}
 
 5. Log in as `admin`
 6. `run0`
