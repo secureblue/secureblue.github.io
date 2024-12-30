@@ -1,6 +1,6 @@
-domain: esselownitro.github.io
-url: https://esselownitro.github.io
-baseurl: /esselownitro.github.io/
+domain: secureblue-staging.github.io
+url: https://secureblue-staging.github.io
+baseurl: /secureblue-staging.github.io/
 
 defaults:
   -
