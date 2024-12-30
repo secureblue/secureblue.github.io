@@ -1,6 +1,5 @@
 ---
 title: "Post-install instructions | secureblue"
-short_title: "Post-install"
 description: "Instructions meant to be followed succeeding a secureblue rebase"
 permalink: /post-install
 ---
@@ -10,7 +9,7 @@ permalink: /post-install
 After rebasing to secureblue, follow the following steps in order:
 
 - [Subscribe to secureblue release notifications](#release-notifications)
-- [Set Nvidia-specific kargs if applicable](#nvidia)
+- [Set NVIDIA-specific kargs if applicable](#nvidia)
 - [Enroll secureboot key](#secureboot)
 - [Set hardened kargs](#kargs)
 - - [32-bit support](#kargs-32-bit)
@@ -32,16 +31,16 @@ After rebasing to secureblue, follow the following steps in order:
 
 [FAQ](/faq#releases)
 
-## Set Nvidia-specific kargs if applicable
+## Set NVIDIA-specific kargs if applicable
 {: #nvidia}
 
-If you are using an nvidia image, run this after installation:
+If you are using an `nvidia` image, run this after installation:
 
 ```
 ujust set-kargs-nvidia
 ```
 
-You may also need this (solves flickering and luks issues on some nvidia hardware):
+You may also need this (solves flickering and luks issues on some NVIDIA hardware):
 
 ```
 rpm-ostree kargs \
@@ -118,9 +117,8 @@ Creating a dedicated wheel user and removing wheel from your primary user helps 
 - https://www.kicksecure.com/wiki/Dev/Strong_Linux_User_Account_Isolation#LD_PRELOAD
 - https://www.kicksecure.com/wiki/Root#Prevent_Malware_from_Sniffing_the_Root_Password
 
-> [!CAUTION]
-> If you do these steps out of order, it is possible to end up without the ability to administrate your system. You will not be able to use the [traditional GRUB-based method](https://linuxconfig.org/recover-reset-forgotten-linux-root-password) of fixing mistakes like this, either, as this will leave your system in a broken state. However, simply rolling back to an older snapshot of your system, should resolve the problem.
-> 
+{% include alert.html type='caution' content='If you do these steps out of order, it is possible to end up without the ability to administrate your system. You will not be able to use the <a href="https://linuxconfig.org/recover-reset-forgotten-linux-root-password">traditional GRUB-based method</a> of fixing mistakes like this, either, as this will leave your system in a broken state. However, simply rolling back to an older snapshot of your system, should resolve the problem.' %}
+
 1. `run0`
 2. `adduser admin`
 3. `usermod -aG wheel admin`
@@ -128,8 +126,7 @@ Creating a dedicated wheel user and removing wheel from your primary user helps 
 5. `exit`
 6. `reboot`
 
-> [!NOTE]
-> We log in as admin to do the final step of removing the user account's wheel privileges in order to make the operation of removing those privileges depend on having access to your admin account, and the admin account functioning correctly first.
+{% include alert.html type='note' content='We log in as admin to do the final step of removing the user account's wheel privileges in order to make the operation of removing those privileges depend on having access to your admin account, and the admin account functioning correctly first.' %}
 
 5. Log in as `admin`
 6. `run0`
@@ -141,9 +138,9 @@ When using a non-wheel user, you can add the user to other groups if you want. F
 - use libvirt: `libvirt`
 - use `adb` and `fastboot`: `plugdev`
 - use systemwide flatpaks: `flatpak`
+- use usbguard: `usbguard`
 
-> [!NOTE]
-> You don't need to login using your wheel user to use it for privileged operations. When logged in as your non-wheel user, polkit will prompt you to authenticate as your wheel user as needed, or when requested by calling `run0`.
+{% include alert.html type='note' content='You don't need to login using your wheel user to use it for privileged operations. When logged in as your non-wheel user, polkit will prompt you to authenticate as your wheel user as needed, or when requested by calling <code>run0</code>.' %}
 
 ## Setup system DNS
 {: #dns}
@@ -168,8 +165,7 @@ ujust toggle-bash-environment-lockdown
 ## LUKS TPM2 Unlock
 {: #luks-tpm2}
 
-> [!WARNING]
-> Do not use this if you have an AMD CPU.
+{% include alert.html type='warning' content='Do not use this if you have an AMD CPU.' %}
 
 To enable TPM2 LUKS unlocking, run:
 

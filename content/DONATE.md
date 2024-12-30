@@ -1,6 +1,5 @@
 ---
 title: "Donate to secureblue"
-short_title: "Donate"
 description: "Donation options for secureblue"
 permalink: /donate
 ---

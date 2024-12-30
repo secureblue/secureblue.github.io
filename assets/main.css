@@ -251,6 +251,19 @@ footer a, footer a:visited {
     color: #616161; /* grey500 */
 }
 
+#social {
+    line-height: 2;
+    margin-top: 2em;
+    padding: 0;
+    list-style-type: none;
+    max-inline-size: 60ch;
+}
+
+#social li {
+    display: inline-block;
+    padding: 0 0.5em;
+}
+
 .error-text {
     /* Baseline Material error color */
     color: #b00020;

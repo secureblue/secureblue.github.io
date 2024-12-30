@@ -1,6 +1,5 @@
 ---
 title: "kargs | secureblue"
-short_title: "kargs"
 description: "An overview of the hardened boot kargs used in secureblue"
 permalink: /articles/kargs
 ---
@@ -17,25 +16,11 @@ Table of contents
 
 Stable kargs that are always applied by the `set-kargs-hardening` ujust script.
 
-**Zero newly allocated pages and heaps, mitigating use-after-free vulnerabilities**
-
-`init_on_alloc=1` 
-
-**Fills freed pages and heaps with zeroes, mitigating use-after-free vulnerabilities**
-
-`init_on_free=1` 
-
-**Disables the merging of slabs, increasing difficulty of heap exploitation**
-
-`slab_nomerge`
-
-**Enables page allocator freelist randomization, reducing page allocation predictability**
-
-`page_alloc.shuffle=1` 
-
-**Randomize kernel stack offset on each syscall, making certain types of attacks more difficult**
-
-`randomize_kstack_offset=on` 
+- `init_on_alloc=1`: Zero newly allocated pages and heaps, mitigating use-after-free vulnerabilities
+- `init_on_free=1`: Fills freed pages and heaps with zeroes, mitigating use-after-free vulnerabilities
+- `slab_nomerge`: Disables the merging of slabs, increasing difficulty of heap exploitation
+- `page_alloc.shuffle=1`: Enables page allocator freelist randomization, reducing page allocation predictability
+- `randomize_kstack_offset=on`: Randomize kernel stack offset on each syscall, making certain types of attacks more difficult
 
 **Disable vsyscall as it is both obsolete and enables an ROP attack vector**
 
@@ -102,7 +87,7 @@ Stable kargs that are always applied by the `set-kargs-hardening` ujust script.
 # Additional
 {: #additional}
 
-Sets of additional kargs that can be selectively set alongside the standard kargs detailed above. The `set-kargs-hardening` command prompts the user on whether to add the 3 sets of kargs detailed below:
+Sets of additional kargs that can be selectively set alongside the standard kargs detailed above. The `set-kargs-hardening` command prompts the user on whether to add any of the 3 sets of kargs detailed below:
 
 ## Disable 32-bit processes and syscalls
 {: #32-bit}

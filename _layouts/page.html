@@ -11,8 +11,11 @@
         {% if current_page == "" %}
             {% include hero.html %}
         {% endif %}
+
         <main>
             {{ content }}
         </main>
+
+        {% include footer.html %}
     </body>
 </html>

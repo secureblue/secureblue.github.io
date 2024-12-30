@@ -1,6 +1,5 @@
 ---
 title: "Contributing | secureblue"
-short_title: "Contributing"
 description: "How to contribute to secureblue"
 permalink: /contributing
 ---

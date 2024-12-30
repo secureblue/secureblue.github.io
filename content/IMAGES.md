@@ -1,6 +1,5 @@
 ---
 title: "Images | secureblue"
-short_title: "Images"
 description: "List of available secureblue hardened operating system images"
 permalink: /images
 ---
@@ -23,11 +22,11 @@ Table of Contents
 - - - [Cosmic](#cosmic)
 - [Server](#server)
 
+*`nvidia-open` images are recommended for systems with NVIDIA GPUs Turing or newer. These include the new [open kernel modules](https://github.com/NVIDIA/open-gpu-kernel-modules) from NVIDIA, not Nouveau.*
+
+*`nvidia` images are recommended for systems with NVIDIA GPUs Pascal or older. These include the closed kernel modules from NVIDIA.*
+
 ## Desktop
-
-*`nvidia-open` images are recommended for systems with Nvidia GPUs Turing or newer. These include the new [open kernel modules](https://github.com/NVIDIA/open-gpu-kernel-modules) from Nvidia, not Nouveau.*
-
-*`nvidia` images are recommended for systems with Nvidia GPUs Pascal or older. These include the closed kernel modules from Nvidia.*
 
 ### Recommended
 
@@ -35,7 +34,7 @@ Table of Contents
 
 {% include alert.html type='note' content='This is a relative recommendation between the desktop environments available on secureblue. GNOME has some extra security niceties like the ones listed below. It however does not solve any of the fundamental issues with desktop linux security.' %}
 
-| Name                                      | Base      | Nvidia Support         |
+| Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
 | `silverblue-main-hardened`               | Silverblue| No                      |
 | `silverblue-nvidia-hardened`             | Silverblue| Yes, closed drivers     |
@@ -47,7 +46,7 @@ Table of Contents
 
 #### Kinoite
 
-| Name                                      | Base      | Nvidia Support         |
+| Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
 | `kinoite-main-hardened`                  | Kinoite   | No                      |
 | `kinoite-nvidia-hardened`                | Kinoite   | Yes, closed drivers     |
@@ -55,7 +54,7 @@ Table of Contents
 
 #### Sericea
 
-| Name                                      | Base      | Nvidia Support         |
+| Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
 | `sericea-main-hardened`                  | Sericea   | No                      |
 | `sericea-nvidia-hardened`                | Sericea   | Yes, closed drivers     |
@@ -67,7 +66,7 @@ Table of Contents
 
 #### Wayfire
 
-| Name                                      | Base                  | Nvidia Support         |
+| Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
 | `wayblue-wayfire-main-hardened`          | Wayblue-Wayfire       | No                      |
 | `wayblue-wayfire-nvidia-hardened`        | Wayblue-Wayfire       | Yes, closed drivers     |
@@ -75,7 +74,7 @@ Table of Contents
 
 #### Hyprland
 
-| Name                                      | Base                  | Nvidia Support         |
+| Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
 | `wayblue-hyprland-main-hardened`         | Wayblue-Hyprland      | No                      |
 | `wayblue-hyprland-nvidia-hardened`       | Wayblue-Hyprland      | Yes, closed drivers     |
@@ -83,7 +82,7 @@ Table of Contents
 
 #### River
 
-| Name                                      | Base                  | Nvidia Support         |
+| Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
 | `wayblue-river-main-hardened`            | Wayblue-River         | No                      |
 | `wayblue-river-nvidia-hardened`          | Wayblue-River         | Yes, closed drivers     |
@@ -92,7 +91,7 @@ Table of Contents
 
 #### Sway
 
-| Name                                      | Base                  | Nvidia Support         |
+| Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
 | `wayblue-sway-main-hardened`             | Wayblue-Sway          | No                      |
 | `wayblue-sway-nvidia-hardened`           | Wayblue-Sway          | Yes, closed drivers     |
@@ -102,7 +101,7 @@ Table of Contents
 
 #### Cosmic
 
-| Name                                      | Base                  | Nvidia Support         |
+| Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
 | `cosmic-main-hardened`          | Cosmic       | No                      |
 | `cosmic-nvidia-hardened`        | Cosmic       | Yes, closed drivers     |
@@ -112,7 +111,7 @@ Table of Contents
 
 {% include alert.html type='note' content='After you finish setting up your <a href="https://fedoraproject.org/coreos/">Fedora CoreOS</a> installation, you will need to disable `zincati.service` before rebasing to securecore.' %}
 
-| Name                                      | Base      | Nvidia Support         | ZFS Support |
+| Name                                      | Base      | NVIDIA Support         | ZFS Support |
 |-------------------------------------------|-----------|-------------------------|-------------|
 | `securecore-main-hardened`               | CoreOS    | No                      | No          |
 | `securecore-nvidia-hardened`             | CoreOS    | Yes, closed drivers     | No          |

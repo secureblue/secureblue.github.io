@@ -1,6 +1,5 @@
 ---
 title: "Code of Conduct | secureblue"
-short_title: "Code of Conduct"
 description: "secureblue's Code of Conduct"
 permalink: /code-of-conduct
 ---
