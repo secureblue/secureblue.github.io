@@ -12,7 +12,7 @@ The actual information present in the website is contained in the `content/` dir
 
 Static files, however, do follow directory structure. Any file that Jekyll isn't instructed to ignore and that doesn't contain front matter is treated as a static file and respects its directory placement in the repository. This is the reason why a few otherwise seemingly random files are at the root of the repository: they are static assets and must be located at the root of the website. The rest is lumped under `assets/` and its subdirectories to keep it tidy.
 
-By default, most files not relevant to the generated website are already excluded by default, an an exclusion for this `README.md` file is added in `_config.yaml`.
+By default, most files not relevant to the generated website are already excluded by default, and a manual exclusion for this `README.md` file is added in `_config.yaml`.
 
 ## Layout
 
