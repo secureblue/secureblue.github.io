@@ -149,7 +149,7 @@ The DNSSEC setting we set in `/etc/systemd/resolved.conf.d/securedns.conf` cause
 
 To subscribe to release notifications, on the secureblue GitHub page, click "Watch", and then "Custom", and select Releases like so:
 
-![image](https://github.com/user-attachments/assets/38146394-f730-4b84-8bfa-4fbbf29350ff)
+![image](/assets/release-notifications.png)
 
 #### Why don't my AppImages work?
 {: #appimage}
