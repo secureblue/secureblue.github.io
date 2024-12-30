@@ -1,6 +1,6 @@
 # secureblue.io
 
-This repo contains the source files of [secureblue's static website](https://esselownitro.github.io) (provisory domain), generated using Jekyll and currently being deployed to GitHub Pages. We plan on deploying to Cloudflare Pages in the future. It is a fork of [GrapheneOS's static website](https://github.com/GrapheneOS/grapheneos.org) and borrows pieces of HTML and general ideas from it as well as a mostly , but uses a website generation workflow we consider more convenient.
+This repo contains the source files of [secureblue's static website](https://esselownitro.github.io) (provisory domain), generated using Jekyll and currently being deployed to GitHub Pages. We plan on deploying to Cloudflare Pages in the future. It is a fork of [GrapheneOS's static website](https://github.com/GrapheneOS/grapheneos.org) and borrows pieces of HTML and general ideas from it as well as a mostly identical CSS, but uses a website generation workflow we consider more convenient.
 
 ## Content
 
