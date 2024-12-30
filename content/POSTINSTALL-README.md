@@ -140,7 +140,7 @@ When using a non-wheel user, you can add the user to other groups if you want. F
 - use systemwide flatpaks: `flatpak`
 - use usbguard: `usbguard`
 
-{% include alert.html type='note' content='You don't need to login using your wheel user to use it for privileged operations. When logged in as your non-wheel user, polkit will prompt you to authenticate as your wheel user as needed, or when requested by calling <code>run0</code>.' %}
+{% include alert.html type='note' content='You don\'t need to login using your wheel user to use it for privileged operations. When logged in as your non-wheel user, polkit will prompt you to authenticate as your wheel user as needed, or when requested by calling <code>run0</code>.' %}
 
 ## Setup system DNS
 {: #dns}
