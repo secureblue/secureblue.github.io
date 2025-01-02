@@ -4,9 +4,7 @@ description: "Steps to install secureblue"
 permalink: /install
 ---
 
-To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) ISO to install Fedora Atomic, then rebase to a secureblue image using the installer. Unless specified otherwise, secureblue is used to refer to both the secureblue set of images and the securecore set of images, for the sake of brevity. The install script presented in a later step lets you choose between them.
-
-Following the recommended method, you *must not* rebase from a Fedora Atomic Desktop install to securecore, or from a Fedora CoreOS install to secureblue, or from secureblue to securecore or vice-versa.
+To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) ISO to install Fedora Atomic, then rebase to a secureblue image using the installer. Unless specified otherwise, secureblue is used to refer to both the secureblue set of images and the securecore set of images, for the sake of brevity. The install script presented in a later step lets you choose between them. You *must* start from a Fedora Atomic ISO for secureblue desktop images, and *must* start from a Fedora CoreOS ISO for securecore images.
 
 Table of Contents
 - [Pre-install](#pre-install)
