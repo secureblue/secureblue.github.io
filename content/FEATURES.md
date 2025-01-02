@@ -1,5 +1,5 @@
 ---
-title: "secureblue features"
+title: "Features | secureblue"
 description: "List of secureblue features"
 permalink: /features
 ---
