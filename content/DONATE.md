@@ -26,7 +26,7 @@ There are multiple options available for donation:
 
 ## Litecoin
 
-<img src="/assets/litcoin.png" width=200 />
+<img src="/assets/litecoin.png" width=200 />
 
 `ltc1q65hpetza8stgje640pcn25mef6xpdzxqazcawq`
 
