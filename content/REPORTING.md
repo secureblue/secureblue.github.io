@@ -1,5 +1,5 @@
 ---
-title: "Security policy | secureblue"
+title: "Reporting | secureblue"
 description: "Project security policy"
 permalink: /reporting
 ---
