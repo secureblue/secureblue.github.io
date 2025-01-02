@@ -1,7 +1,7 @@
 ---
 title: "Flatpak | secureblue"
 description: "Flatpak: the good, the bad, the ugly"
-permalink: /articles/kargs
+permalink: /articles/flatpak
 ---
 
 # Flatpak
