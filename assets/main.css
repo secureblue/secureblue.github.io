@@ -296,12 +296,6 @@ main.normalize {
     align-items: center;
     flex-flow: row nowrap;
     justify-content: space-between;
-    max-width: 832px;
-    margin: auto;
-    padding-top: 3.5rem;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
 }
 
 .hero h1 {
