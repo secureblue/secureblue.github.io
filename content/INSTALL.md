@@ -207,7 +207,19 @@ To mitigate [LD_PRELOAD attacks](https://github.com/Aishou/wayland-keylogger), r
 ujust toggle-bash-environment-lockdown
 ```
 
-### LUKS TPM2 Unlock
+### LUKS Hardware-Unlock
+
+#### LUKS FIDO2 Unlock
+{: #luks-fido2}
+
+
+To enable FIDO2 LUKS unlocking with your FIDO2 security key, run:
+
+```
+ujust setup-luks-fido2-unlock
+```
+
+#### LUKS TPM2 Unlock
 {: #luks-tpm2}
 
 {% include alert.html type='warning' content='Do not use this if you have an AMD CPU.' %}
