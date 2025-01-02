@@ -37,7 +37,7 @@ Table of contents:
 #### Why is Flatpak included? Should I use Flatpak?
 {: #flatpak}
 
-[https://github.com/secureblue/secureblue/issues/125#issuecomment-1859610560](https://github.com/secureblue/secureblue/issues/125#issuecomment-1859610560)
+Consult our <a href="/articles/flatpak">Flatpak article</a>.
 
 #### Should I use Electron apps? Why don't they work well with hardened_malloc?
 {: #electron}
