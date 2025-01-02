@@ -7,7 +7,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     min-height: -webkit-fill-available; /* replace with stretch when standardized */
-    font-family: Roboto, sans-serif;
+    font-family: Cantarell, sans-serif;
     line-height: 1.5;
     letter-spacing: 0.009375rem;
     background-color: #f6fafe;
@@ -296,6 +296,12 @@ main.normalize {
     align-items: center;
     flex-flow: row nowrap;
     justify-content: space-between;
+    max-width: 832px;
+    margin: auto;
+    padding-top: 3.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .hero h1 {
