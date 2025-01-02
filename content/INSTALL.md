@@ -106,7 +106,7 @@ ujust enroll-secure-boot-key
 ### Set hardened kargs
 {: #kargs}
 
-{% include alert.html type='info' content='Learn about the hardening applied by the kargs set by the command below [here](/articles/kargs).' %}
+{% include alert.html type='note' content='Learn about the hardening applied by the kargs set by the command below [here](/articles/kargs).' %}
 
 ```
 ujust set-kargs-hardening
@@ -196,7 +196,7 @@ Interactively setup system DNS resolution for systemd-resolved (optionally also 
 ujust dns-selector
 ```
 
-{% include alert.html type='info' content='If you intend to use a VPN, use the system default state (network provided resolver). This will ensure your system uses the VPN provided DNS resolver to prevent DNS leaks. ESPECIALLY avoid setting the browser DNS policy in this case.' %}
+{% include alert.html type='note' content='If you intend to use a VPN, use the system default state (network provided resolver). This will ensure your system uses the VPN provided DNS resolver to prevent DNS leaks. ESPECIALLY avoid setting the browser DNS policy in this case.' %}
 
 ## Bash environment lockdown
 {: #bash}
