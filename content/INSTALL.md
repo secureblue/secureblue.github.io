@@ -4,6 +4,8 @@ description: "Steps to install secureblue"
 permalink: /install
 ---
 
+# Install
+
 To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) ISO to install Fedora Atomic, then rebase to a secureblue image using the installer. Unless specified otherwise, secureblue is used to refer to both the secureblue set of images and the securecore set of images, for the sake of brevity. The install script presented in a later step lets you choose between them. You *must* start from a Fedora Atomic ISO for secureblue desktop images, and *must* start from a Fedora CoreOS ISO for securecore images.
 
 Table of Contents
@@ -13,7 +15,7 @@ Table of Contents
 - [Rebase](#rebase)
 - [Post-install](#post-install)
 
-# Pre-install
+## Pre-install
 
 The following is advice on what to do before and during the installation of a Fedora ISO, and how.
 
@@ -25,19 +27,19 @@ The following is advice on what to do before and during the installation of a Fe
 
 Before rebasing and during the installation, the following checks are recommended.
 
-## Fedora installation
+### Fedora installation
 - Select the option to encrypt the drive you're installing to.
 - Use a [strong password](https://security.harvard.edu/use-strong-passwords) when prompted.
 - Leave the root account disabled.
 - Select wheel group membership for your user.
 
-## BIOS hardening
+### BIOS hardening
 - Ensure secureboot is enabled.
 - Ensure your BIOS is up to date by checking its manufacturer's website.
 - Disable booting from USB (some manufacturers allow firmware changes from live systems).
 - Set a BIOS password to prevent tampering.
 
-# Rebase
+## Rebase
 
 To rebase a Fedora Atomic or Fedora CoreOS installation to a secureblue image, download the script below. This script does not install secureblue into the existing system. It rebases (fully replaces the existing system) with secureblue.
 
@@ -49,7 +51,7 @@ Then, run it from the directory you downloaded it to:
 bash install_secureblue.sh
 ```
 
-# Post-install
+## Post-install
 
 After installation, [yafti](https://github.com/ublue-os/yafti) will open. Make sure to follow the steps listed carefully and read the directions closely.
 
@@ -73,12 +75,12 @@ Then, follow the following steps in order:
 - [Optional: `hardened-chromium` Flags](#hardened-chromium-flags)
 - [Read the FAQ](#faq)
 
-## Subscribe to secureblue release notifications
+### Subscribe to secureblue release notifications
 {: #release-notifications}
 
 [FAQ](/faq#releases)
 
-## Set NVIDIA-specific kargs if applicable
+### Set NVIDIA-specific kargs if applicable
 {: #nvidia}
 
 If you are using an `nvidia` image, run this after installation:
@@ -94,18 +96,17 @@ rpm-ostree kargs \
     --append-if-missing=initcall_blacklist=simpledrm_platform_driver_init
 ```
 
-## Enroll secureboot key
+### Enroll secureboot key
 {: #secureboot}
 
 ```
 ujust enroll-secure-boot-key
 ```
 
-## Set hardened kargs
+### Set hardened kargs
 {: #kargs}
 
-[!NOTE]
-Learn about the hardening applied by the kargs set by the command below [here](/articles/kargs).
+{% include alert.html type='info' content='Learn about the hardening applied by the kargs set by the command below [here](/articles/kargs).' %}
 
 ```
 ujust set-kargs-hardening
@@ -113,24 +114,24 @@ ujust set-kargs-hardening
 
 This command applies a fixed set of hardened boot parameters, and asks you whether or not the following kargs should *also* be set along with those (all of which are documented in the link above):
 
-### 32-bit support
+#### 32-bit support
 {: #kargs-32-bit}
 
 If you answer `N`, or press enter without any input, support for 32-bit programs will be disabled on the next boot. If you run exclusively modern software, chances are likely you don't need this, so it's safe to disable for additional attack surface reduction.
 
 However, there are certain exceptions. A couple common usecases are if you need Steam, or run an occasional application in Wine you'll likely want to keep support for 32-bit programs. If this is the case, answer `Y`.
 
-### Force disable simultaneous multithreading
+#### Force disable simultaneous multithreading
 {: #kargs-smt}
 
 If you answer `Y` when prompted, simultaneous multithreading (SMT, often called Hyperthreading) will be forcefully disabled, regardless of known vulnerabilities in the running hardware. This can cause a reduction in the performance of certain tasks in favor of security.
 
-### Unstable hardening kargs
+#### Unstable hardening kargs
 {: #kargs-unstable}
 
 If you answer `Y` when prompted, unstable hardening kargs will be additionally applied, which can cause issues on some hardware, but are stable on other hardware.
 
-## Setup USBGuard
+### Setup USBGuard
 {: #usbguard}
 
 *This will generate a policy based on your currently attached USB devices and block all others, then enable usbguard.*
@@ -139,10 +140,10 @@ If you answer `Y` when prompted, unstable hardening kargs will be additionally a
 ujust setup-usbguard
 ```
 
-## GRUB
+### GRUB
 {: #grub}
 
-### Set a password
+#### Set a password
 {: #grub-password}
 
 Setting a GRUB password helps protect the device from physical tampering and mitigates various attack vectors, such as booting from malicious media devices and changing boot or kernel parameters.
@@ -159,10 +160,7 @@ If you wish to password-protect booting existing entries, you can add the `grub_
 ## Create a separate wheel account for admin purposes
 {: #wheel}
 
-Creating a dedicated wheel user and removing wheel from your primary user helps prevent certain attack vectors, like:
-
-- https://www.kicksecure.com/wiki/Dev/Strong_Linux_User_Account_Isolation#LD_PRELOAD
-- https://www.kicksecure.com/wiki/Root#Prevent_Malware_from_Sniffing_the_Root_Password
+Creating a dedicated wheel user and removing wheel from your primary user helps prevent certain privilege escalation attack vectors and password sniffing.
 
 {% include alert.html type='caution' content='If you do these steps out of order, it is possible to end up without the ability to administrate your system. You will not be able to use the <a href="https://linuxconfig.org/recover-reset-forgotten-linux-root-password">traditional GRUB-based method</a> of fixing mistakes like this, either, as this will leave your system in a broken state. However, simply rolling back to an older snapshot of your system, should resolve the problem.' %}
 
@@ -189,7 +187,7 @@ When using a non-wheel user, you can add the user to other groups if you want. F
 
 {% include alert.html type='note' content='You don\'t need to login using your wheel user to use it for privileged operations. When logged in as your non-wheel user, polkit will prompt you to authenticate as your wheel user as needed, or when requested by calling <code>run0</code>.' %}
 
-## Setup system DNS
+### Setup system DNS
 {: #dns}
 
 Interactively setup system DNS resolution for systemd-resolved (optionally also set the resolver for hardened-chromium via management policy):
@@ -198,7 +196,7 @@ Interactively setup system DNS resolution for systemd-resolved (optionally also 
 ujust dns-selector
 ```
 
-NOTE: If you intend to use a VPN, use the system default state (network provided resolver). This will ensure your system uses the VPN provided DNS resolver to prevent DNS leaks. ESPECIALLY avoid setting the browser DNS policy in this case.
+{% include alert.html type='info' content='If you intend to use a VPN, use the system default state (network provided resolver). This will ensure your system uses the VPN provided DNS resolver to prevent DNS leaks. ESPECIALLY avoid setting the browser DNS policy in this case.' %}
 
 ## Bash environment lockdown
 {: #bash}
@@ -209,7 +207,7 @@ To mitigate [LD_PRELOAD attacks](https://github.com/Aishou/wayland-keylogger), r
 ujust toggle-bash-environment-lockdown
 ```
 
-## LUKS TPM2 Unlock
+### LUKS TPM2 Unlock
 {: #luks-tpm2}
 
 {% include alert.html type='warning' content='Do not use this if you have an AMD CPU.' %}
@@ -222,7 +220,7 @@ ujust setup-luks-tpm-unlock
 
 Type `Y` when asked if you want to set a PIN.
 
-## Validation
+### Validation
 {: #validation}
 
 To validate your secureblue setup, run:
@@ -231,14 +229,14 @@ To validate your secureblue setup, run:
 ujust audit-secureblue
 ```
 
-## Optional: `hardened-chromium` Flags
+### Optional: `hardened-chromium` Flags
 {: #hardened-chromium-flags}
 
 The included [hardened-chromium](https://github.com/secureblue/hardened-chromium) browser has some additional settings in `chrome://flags` you *may* want to set for additional hardening and convenience (can cause functionality issues in some cases).
 
 You can read about these settings [here](https://github.com/secureblue/hardened-chromium?tab=readme-ov-file#post-install).
 
-## Read the FAQ
+### Read the FAQ
 {: #faq}
 
 Lots of important stuff is covered in the [FAQ](/faq). AppImage toggles, GNOME extension toggles, Xwayland toggles, etc.

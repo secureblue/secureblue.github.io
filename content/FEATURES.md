@@ -44,5 +44,5 @@ permalink: /features
 - Installing bubblejail for additional sandboxing tooling
 - Tooling for automatically setting up and enabling LUKS TPM2 integration for unlocking LUKS drives
 - Tooling for automatically setting up and enabling LUKS FIDO2 integration for unlocking LUKS drives
-- Toggles for controlling access to (unprivileged user namespaces)[/articles/userns] via SELinux
+- Toggles for controlling access to [unprivileged user namespaces](/articles/userns) via SELinux
 - Toggles for a variety of the hardening set by default, for user convenience (`ujust --choose`)
