@@ -1,4 +1,4 @@
-{% assign current_page = page.permalink | slice: 1, 100 %}
+{% assign current_page = page.permalink | remove_once: "/" %}
 
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
