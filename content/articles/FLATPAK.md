@@ -10,7 +10,7 @@ Flatpak is an application packaging and distribution system for desktop linux. I
 
 As with any application sandboxing system, flatpaks should be scoped down by default to as few permissions as they need to function. Even better, permissions should be granted directly by the user at app runtime like in android. Sadly, neither of these are the case today. Flatpak manifest maintainers define the set of permissions they believe to be necessary and sufficient for operation of their applications. When a flatpak is installed by a user, the flatpak's permissions default to those defined by the manifest.
 
-This is of course not ideal, but it's also <a href="https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good">not a reason to abandon flatpak entirely</a>. There are many ways we can mitigate this issue: 
+This is of course not ideal, but it's also [not a reason to abandon flatpak entirely](https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good). There are many ways we can mitigate this issue: 
 
 - users should configure permissions to their liking
 - users should submit default permissions changes to upstream flatpaks at their repos.
