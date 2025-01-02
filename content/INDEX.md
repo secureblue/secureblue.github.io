@@ -14,4 +14,4 @@ secureblue is for those whose first priority is using linux, and second priority
 
 ## Support and community
 
-Opening [GitHub issues](https://github.com/secureblue/secureblue) for support is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well and it counts with a broader community of secureblue users.
+Both [GitHub issues](https://github.com/secureblue/secureblue) and [Discord](https://discord.gg/qMTv5cKfbF) are available for support from the secureblue community.
