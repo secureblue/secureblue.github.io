@@ -9,17 +9,9 @@ permalink: /images
 Table of Contents
 - [Desktop](#desktop)
 - - [Recommended](#recommended)
-- - - [Silverblue](#silverblue)
 - - [Stable](#stable)
-- - - [Kinoite](#kinoite)
-- - - [Sericea](#sericea)
 - - [Beta](#beta)
-- - - [Wayfire](#wayfire)
-- - - [Hyprland](#hyprland)
-- - - [River](#river)
-- - - [Sway](#sway)
 - - [Experimental](#experimental)
-- - - [Cosmic](#cosmic)
 - [Server](#server)
 
 *`nvidia-open` images are recommended for systems with NVIDIA GPUs Turing or newer. These include the new [open kernel modules](https://github.com/NVIDIA/open-gpu-kernel-modules) from NVIDIA, not Nouveau.*
