@@ -4,14 +4,6 @@ description: "How to contribute to secureblue"
 permalink: /contributing
 ---
 
-# Welcome to secureblue
-
-Thanks for taking the time to look into helping out!
-All contributions are appreciated!
-Please refer to our [Code of Conduct](/code-of-conduct) while you're at it!
-
-Feel free to report issues as you find them!
-
 # Contributing
 
 All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions.
@@ -36,8 +28,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the
-CONTRIBUTING.md Code of Conduct.
+This project and everyone participating in it is governed by the [Code of Conduct](/code-of-conduct).
 By participating, you are expected to uphold this code. Please report unacceptable behavior
 to secureblueadmin@proton.me
 

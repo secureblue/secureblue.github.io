@@ -1,5 +1,5 @@
 ---
-title: "userns | secureblue"
+title: "User Namespaces | secureblue"
 description: "Brief explanation of unprivileged user namespaces and how the feature is handled in secureblue"
 permalink: /articles/userns
 ---

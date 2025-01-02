@@ -32,11 +32,12 @@ Table of contents:
 - [Why won't `hardened-chromium` start on Nvidia?](#hardened-chromium-start-nvidia)
 - [Why don't some websites that require JIT/WebAssembly work in `hardened-chromium` even with the V8 Optimizer toggle enabled?](#hardened-chromium-exceptions)
 - [Why don't extensions work in `hardened-chromium`?](#hardened-chromium-extensions)
+- [How do I customize secureblue?](#customization)
 
 #### Why is Flatpak included? Should I use Flatpak?
 {: #flatpak}
 
-[https://github.com/secureblue/secureblue/issues/125#issuecomment-1859610560](https://github.com/secureblue/secureblue/issues/125#issuecomment-1859610560)
+Consult our <a href="/articles/flatpak">Flatpak article</a>.
 
 #### Should I use Electron apps? Why don't they work well with hardened_malloc?
 {: #electron}
@@ -209,3 +210,8 @@ Extensions in `hardened-chromium` are disabled by default, for security reasons 
 \
 \
 If the extension you installed doesn't work, it is likely because it requires WebAssembly (WASM) for some cryptographic library or some other optimizations (this is the case with the Bitwarden extension). To re-enable JavaScript JIT and WASM for extensions, enable the feature `chrome://flags/#internal-page-jit`.
+
+#### How do I customize secureblue?
+{: #customization}
+
+If you want to add your own customizations on top of secureblue, you are advised strongly against forking. Instead, create a repo for your own image by using the [BlueBuild template](https://github.com/blue-build/template), then change your `base-image` to a secureblue image. This will allow you to apply your customizations to secureblue in a concise and maintainable way, without the need to constantly sync with upstream. For local development, [building locally](/contributing#building-locally) is the recommended approach.
