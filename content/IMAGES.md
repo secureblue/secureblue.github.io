@@ -14,7 +14,7 @@ Table of Contents
 - - [Experimental](#experimental)
 - [Server](#server)
 
-{% include alert.html type='note' content='`nvidia-open` images are recommended for systems with NVIDIA GPUs Turing or newer. These include the new [open kernel modules](https://github.com/NVIDIA/open-gpu-kernel-modules) from NVIDIA, not Nouveau. `nvidia` images are recommended for systems with NVIDIA GPUs Pascal or older. These include the closed kernel modules from NVIDIA.'}
+{% include alert.html type='note' content='`nvidia-open` images are recommended for systems with NVIDIA GPUs Turing or newer. These include the new [open kernel modules](https://github.com/NVIDIA/open-gpu-kernel-modules) from NVIDIA, not Nouveau. `nvidia` images are recommended for systems with NVIDIA GPUs Pascal or older. These include the closed kernel modules from NVIDIA.' %}
 
 ## Desktop
 
