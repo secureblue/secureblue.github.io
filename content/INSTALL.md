@@ -209,6 +209,9 @@ ujust toggle-bash-environment-lockdown
 
 ### LUKS Hardware-Unlock
 
+{% include alert.html type='note' content='There are two options available for hardware-based unlocking. You can either enroll FIDO2 or TPM2 for your luks volume. It's recommended that you choose only one of these, and not both at the same time.' %}
+
+
 #### LUKS FIDO2 Unlock
 {: #luks-fido2}
 
