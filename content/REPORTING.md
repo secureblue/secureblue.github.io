@@ -1,7 +1,7 @@
 ---
 title: "Security policy | secureblue"
 description: "Project security policy"
-permalink: /security
+permalink: /reporting
 ---
 
 # Security Policy
