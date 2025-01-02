@@ -1,4 +1,4 @@
-{% assign current_page = page.permalink | remove_once: "/" %}
+{% assign current_page = page.permalink | remove_first: "/" %}
 
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
