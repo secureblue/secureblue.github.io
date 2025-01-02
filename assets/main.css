@@ -7,7 +7,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     min-height: -webkit-fill-available; /* replace with stretch when standardized */
-    font-family: Cantarell, sans-serif;
+    font-family: Roboto, sans-serif;
     line-height: 1.5;
     letter-spacing: 0.009375rem;
     background-color: #f6fafe;
