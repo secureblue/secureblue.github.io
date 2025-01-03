@@ -4,7 +4,7 @@ description: "An overview of the hardened boot kargs used in secureblue"
 permalink: /articles/kargs
 ---
 
-Table of contents
+# Table of contents
 - [Standard](#standard)
 - [Additional](#additional)
 - - [Disable 32-bit processes and syscalls](#32-bit)

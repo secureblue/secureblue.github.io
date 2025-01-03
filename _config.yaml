@@ -9,4 +9,4 @@ defaults:
     values:
       layout: "page"
 
-excludes: "README.md"
+exclude: "README.md"

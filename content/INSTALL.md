@@ -8,7 +8,7 @@ permalink: /install
 
 To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) ISO to install Fedora Atomic, then rebase to a secureblue image using the installer. Unless specified otherwise, secureblue is used to refer to both the secureblue set of images and the securecore set of images, for the sake of brevity. The install script presented in a later step lets you choose between them. You *must* start from a Fedora Atomic ISO for secureblue desktop images, and *must* start from a Fedora CoreOS ISO for securecore images.
 
-Table of Contents
+## Table of Contents
 - [Pre-install](#pre-install)
 - - [Fedora installation](#fedora-installation)
 - - [BIOS hardening](#bios-hardening)
@@ -157,7 +157,7 @@ GRUB will prompt for a username and password. The default username is root.
 
 If you wish to password-protect booting existing entries, you can add the `grub_users root` entry in the specific configuration file located in the `/boot/loader/entries` directory.
 
-## Create a separate wheel account for admin purposes
+### Create a separate wheel account for admin purposes
 {: #wheel}
 
 Creating a dedicated wheel user and removing wheel from your primary user helps prevent certain privilege escalation attack vectors and password sniffing.
@@ -198,7 +198,7 @@ ujust dns-selector
 
 {% include alert.html type='note' content='If you intend to use a VPN, use the system default state (network provided resolver). This will ensure your system uses the VPN provided DNS resolver to prevent DNS leaks. ESPECIALLY avoid setting the browser DNS policy in this case.' %}
 
-## Bash environment lockdown
+### Bash environment lockdown
 {: #bash}
 
 To mitigate [LD_PRELOAD attacks](https://github.com/Aishou/wayland-keylogger), run:

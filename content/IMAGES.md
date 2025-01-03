@@ -6,7 +6,7 @@ permalink: /images
 
 # Images
 
-Table of Contents
+## Table of Contents
 - [Desktop](#desktop)
 - - [Recommended](#recommended)
 - - [Stable](#stable)

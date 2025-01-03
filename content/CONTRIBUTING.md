@@ -8,11 +8,12 @@ permalink: /contributing
 
 All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions.
 
-> And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
-> - Star the project [in GitHub](https://github.com/secureblue/secureblue)
-> - Tweet about it
-> - Refer this project in your project's readme
-> - Mention the project at local meetups and tell your friends/colleagues
+And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
+
+- Star the project [in GitHub](https://github.com/secureblue/secureblue)
+- Tweet about it
+- Refer this project in your project's readme
+- Mention the project at local meetups and tell your friends/colleagues
 
 ## Table of Contents
 
@@ -34,15 +35,17 @@ to secureblueadmin@proton.me
 
 ## I Have a Question
 
-> If you want to ask a question, opening a [GitHub issue](https://github.com/secureblue/secureblue) for it is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well.
+If you want to ask a question, opening a [GitHub issue](https://github.com/secureblue/secureblue) for it is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well.
 
 ## I Want To Contribute
 
-> ### Legal Notice
-> When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license. 
+### Legal Notice
 
-> ### AI Content Policy
-> In the interest of accuracy, quality, and license of the project, contributing using AI generated code and content of any kind is forbidden.
+When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license. 
+
+### AI Content Policy
+
+In the interest of accuracy, quality, and license of the project, contributing using AI generated code and content of any kind is forbidden.
 
 ### Reporting Bugs
 
