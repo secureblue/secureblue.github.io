@@ -22,7 +22,6 @@ permalink: /faq
 - [Why doesn't my Xwayland app work?](#xwayland)
 - [Why I can't install nor use any GNOME user extensions?](#gnome-extensions)
 - [My clock is wrong and it's not getting automatically set. How do I fix this?](#clock)
-- [Why is DNS broken on my secureblue VM?](#vm-dns)
 - [How do I get notified of new releases?](#releases)
 - [Why don't my AppImages work?](#appimage)
 - [Why don't KDE Vaults work?](#kde-vaults)
@@ -139,11 +138,6 @@ ujust toggle-gnome-extensions
 If your system time is off by an excessive amount due to rare conditions like a CMOS reset, your network will not connect. A one-time manual reset will fix this. This should never be required except under very rare circumstances.
 
 For more technical detail, see [#268](https://github.com/secureblue/secureblue/issues/268)
-
-### Why is DNS broken on my secureblue VM?
-{: #vm-dns}
-
-The DNSSEC setting we set in `/etc/systemd/resolved.conf.d/securedns.conf` causes known issues with network connectivity when secureblue is used in a VM. To fix it, comment out `DNSSEC=allow-downgrade` in that file and manually set a dns provider in network settings.
 
 ### How do I get notified of new releases?
 {: #releases}
