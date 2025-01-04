@@ -14,13 +14,13 @@ permalink: /images
 - - [Experimental](#experimental)
 - [Server](#server)
 
-{% include alert.html type='note' content='<b>nvidia-open</b> images are recommended for systems with NVIDIA GPUs Turing or newer. These include the new <a href="https://github.com/NVIDIA/open-gpu-kernel-modules">open kernel modules</a> from NVIDIA, not Nouveau. <b>nvidia</b> images are recommended for systems with NVIDIA GPUs Pascal or older. These include the closed kernel modules from NVIDIA.' %}
+{% include alert.html type='note' content='<b>nvidia-open</b> images are recommended for systems with NVIDIA GPUs Turing or newer. These include the new <a href="https://github.com/NVIDIA/open-gpu-kernel-modules">open kernel modules</a> from NVIDIA, not Nouveau.<br><b>nvidia</b> images are recommended for systems with NVIDIA GPUs Pascal or older. These include the closed kernel modules from NVIDIA.' %}
 
 ## Desktop
 
 ### Recommended
 
-{% include alert.html type='note' content='Silverblue utilizes GNOME, which is the only desktop that secures privileged wayland protocols like screencopy. This means that on non-GNOME systems, applications can access screen content of the entire desktop. This implicitly includes the content of other applications. It\'s primarily for this reason that GNOME images are recommended. KDE has <a href="https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/issues/7">plans</a> to fix this.GNOME also provides <a href="https://gitlab.gnome.org/GNOME/gnome-desktop/-/issues/213">thumbnailer sandboxing</a> in Gnome Files, which mitigates attacks <a href="https://scarybeastsecurity.blogspot.com/2016/11/0day-exploit-compromising-linux-desktop.html">via thumbnailers</a>. The recommendation of GNOME is a relative recommendation between the desktop environments available on secureblue. GNOME has some extra security niceties like the ones listed below. It however does not solve any of the fundamental issues with desktop linux security.' %}
+{% include alert.html type='note' content='Silverblue utilizes GNOME, which is the only desktop that secures privileged wayland protocols like screencopy. This means that on non-GNOME systems, applications can access screen content of the entire desktop. This implicitly includes the content of other applications. It\'s primarily for this reason that Silverblue images are recommended. KDE has <a href="https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/issues/7">plans to fix this</a>. GNOME also provides <a href="https://gitlab.gnome.org/GNOME/gnome-desktop/-/issues/213">thumbnailer sandboxing</a> in Gnome Files, which mitigates <a href="https://scarybeastsecurity.blogspot.com/2016/11/0day-exploit-compromising-linux-desktop.html">attacks via thumbnailers</a>. Despite this, it should be noted that no desktop choice solves any of the fundamental issues with desktop linux security.' %}
 
 #### Silverblue
 
@@ -51,7 +51,7 @@ permalink: /images
 
 ### Beta
 
-{% include alert.html type='note' content='Learn about wayblue <a href="https://github.com/wayblueorg/wayblue">here</a>.' %}
+{% include alert.html type='note' content='Learn about wayblue in <a href="https://github.com/wayblueorg/wayblue">wayblue's repository</a>.' %}
 
 #### Wayfire
 

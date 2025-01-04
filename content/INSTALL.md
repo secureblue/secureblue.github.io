@@ -19,7 +19,7 @@ To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) 
 
 The following is advice on what to do before and during the installation of a Fedora ISO, and how.
 
-{% include alert.html type='note' content='The cross-platform Fedora Media Writer is the <em>official, tested and supported</em> method for the creation of bootable media. Instructions (alongside a word on alternative methods) are available <a href="https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/">here</a>.' %}
+{% include alert.html type='note' content='The cross-platform Fedora Media Writer is the <em>official, tested and supported</em> method for the creation of bootable media. Instructions (alongside a word on alternative methods) are available in the <a href="https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/">Fedora documentation</a>.' %}
 
 {% include alert.html type='tip' content='If you don\'t already have a Fedora Atomic installation, use a Fedora Atomic ISO that matches your secureblue target image to install one. If you want to use a secureblue Silverblue image, start with the Fedora Silverblue ISO, Kinoite for Kinoite, Sericea (Sway Atomic) for Sericea and all the Wayblue images, and CoreOS for all the securecore images.<br>For more details on the available images, have a look at the <a href="/images">list of available images</a> before proceeding.' %}
 
@@ -249,7 +249,7 @@ ujust audit-secureblue
 
 The included [hardened-chromium](https://github.com/secureblue/hardened-chromium) browser has some additional settings in `chrome://flags` you *may* want to set for additional hardening and convenience (can cause functionality issues in some cases).
 
-You can read about these settings [here](https://github.com/secureblue/hardened-chromium?tab=readme-ov-file#post-install).
+You can read about these settings in the [hardened-chromium post-install](https://github.com/secureblue/hardened-chromium?tab=readme-ov-file#post-install) instructions.
 
 ### Read the FAQ
 {: #faq}

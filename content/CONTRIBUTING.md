@@ -146,7 +146,7 @@ Copy `/etc/containers/policy.json` to `~/.config/containers/policy.json` and the
 
 ### Making changes
 
-Configuration is stored in `recipes` folder in form of YAML files. Other files to be added to the image are stored in `files`. `common` holds pluggable modules to add to your custom image. `general` and `securecore` hold configs for the desktop and server images, respectively. Documentation for modules can be found [here](https://blue-build.org/learn/getting-started/).
+Configuration is stored in `recipes` folder in form of YAML files. Other files to be added to the image are stored in `files`. `common` holds pluggable modules to add to your custom image. `general` and `securecore` hold configs for the desktop and server images, respectively. Modules are detailed in [BlueBuild's documentation](https://blue-build.org/learn/getting-started/).
 
 ### Building
 

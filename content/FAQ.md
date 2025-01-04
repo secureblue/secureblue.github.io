@@ -84,7 +84,7 @@ ujust install-steam
 ### Another security project has a feature that's missing in secureblue, can you add it?
 {: #feature-request}
 
-First check [this](/#hardening) on whether it already lists an equivalent or better feature. If it doesn't, open a new [GitHub issue](https://github.com/secureblue/secureblue/issues).
+First check our [features list](/features) on whether it already lists an equivalent or better feature. If it doesn't, open a new [GitHub issue](https://github.com/secureblue/secureblue/issues).
 
 ### Why are bluetooth kernel modules disabled? How do I enable them?
 {: #bluetooth}
@@ -144,7 +144,7 @@ For more technical detail, see [#268](https://github.com/secureblue/secureblue/i
 
 To subscribe to release notifications, on the secureblue GitHub page, click "Watch", and then "Custom", and select Releases like so:
 
-![image](/assets/release-notifications.png)
+<img alt="GitHub screenshot" src="/assets/release-notifications.png" />
 
 ### Why don't my AppImages work?
 {: #appimage}
