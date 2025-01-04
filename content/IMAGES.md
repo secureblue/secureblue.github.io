@@ -51,7 +51,7 @@ permalink: /images
 
 ### Beta
 
-{% include alert.html type='note' content='Learn about wayblue in <a href="https://github.com/wayblueorg/wayblue">wayblue's repository</a>.' %}
+{% include alert.html type='note' content='Learn about wayblue in <a href="https://github.com/wayblueorg/wayblue">wayblue\'s repository</a>.' %}
 
 #### Wayfire
 
