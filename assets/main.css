@@ -19,15 +19,11 @@ body {
 
 a {
     color: #1a5fb4;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 a:visited {
     color: #613583;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 h1 a, h1 a:visited, h2 a, h2 a:visited, h3 a, h3 a:visited, h4 a, h4 a:visited, h5 a, h5 a:visited, h6 a, h6 a:visited {
@@ -141,6 +137,10 @@ var {
 
 #site-menu ul li[aria-current] a {
     color: #76c9f6;
+}
+
+#site-menu ul li[aria-current]:hover a {
+    color: #aedff9;
 }
 
 #site-menu img {
