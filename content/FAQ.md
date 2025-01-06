@@ -32,6 +32,8 @@ permalink: /faq
 - [Why don't some websites that require JIT/WebAssembly work in `hardened-chromium` even with the V8 Optimizer toggle enabled?](#hardened-chromium-exceptions)
 - [Why don't extensions work in `hardened-chromium`?](#hardened-chromium-extensions)
 - [How do I customize secureblue?](#customization)
+- [How do I add another device to my usbguard allow list?](#usbguard-allow)
+- [How do I setup Virtual Machine Manager to use QEMU based virtual machines?](#vm-setup)
 
 ### Why is Flatpak included? Should I use Flatpak?
 {: #flatpak}
@@ -209,3 +211,36 @@ If the extension you installed doesn't work, it is likely because it requires We
 {: #customization}
 
 If you want to add your own customizations on top of secureblue, you are advised strongly against forking. Instead, create a repo for your own image by using the [BlueBuild template](https://github.com/blue-build/template), then change your `base-image` to a secureblue image. This will allow you to apply your customizations to secureblue in a concise and maintainable way, without the need to constantly sync with upstream. For local development, [building locally](/contributing#building-locally) is the recommended approach.
+
+### How do I add another device to my usbguard allow list?
+{: #usbguard-allow}
+
+Start in a root shell by running `run0`. Then run `usbguard list-devices`. Identify which device you are trying to allow by noticing if it's labeled blocked or you recognize the name. Note the number it's identified as and run `usbguard allow-device {number} -p`. If you don't want the device to connect after a reboot, simply omit the `-p`.
+
+### How do I setup Virtual Machine Manager to use QEMU based virtual machines?
+{: #vm-setup}
+
+Start by running:
+```
+rpm-ostree install virt-manager qemu libvirt
+```
+Then reboot (`systemctl reboot`), and run:
+```
+systemctl start libvirtd
+```
+Check it's running with:
+```
+systemctl status libvirtd
+```
+If you want the libvirtd service to startup automatically on boot run:
+```
+systemctl renable libvirtd
+```
+If networking in the VM is not working you may need to run (on the host PC):
+```
+run0 echo 'firewall_backend="iptables"' >> "/etc/libvirt/network.conf"
+```
+```
+systemctl restart libvirtd
+```
+If you continue to have issues you may need to manually set the dns resolver (in the vm) to something like 1.1.1.1 or disable your VPN.
