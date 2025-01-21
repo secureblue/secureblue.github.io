@@ -72,7 +72,7 @@ Then, follow the following steps in order:
 - [Bash environment lockdown](#bash)
 - [LUKS TPM2 Unlock](#luks-tpm2)
 - [Validation](#validation)
-- [Optional: `hardened-chromium` Flags](#hardened-chromium-flags)
+- [Optional: Trivalent Flags](#trivalent-flags)
 - [Read the FAQ](#faq)
 
 ### Subscribe to secureblue release notifications
@@ -190,7 +190,7 @@ When using a non-wheel user, you can add the user to other groups if you want. F
 ### Setup system DNS
 {: #dns}
 
-Interactively setup system DNS resolution for systemd-resolved (optionally also set the resolver for hardened-chromium via management policy):
+Interactively setup system DNS resolution for systemd-resolved (optionally also set the resolver for Trivalent via management policy):
 
 ```
 ujust dns-selector
@@ -244,12 +244,12 @@ To validate your secureblue setup, run:
 ujust audit-secureblue
 ```
 
-### Optional: `hardened-chromium` Flags
-{: #hardened-chromium-flags}
+### Optional: Trivalent Flags
+{: #trivalent-flags}
 
-The included [hardened-chromium](https://github.com/secureblue/hardened-chromium) browser has some additional settings in `chrome://flags` you *may* want to set for additional hardening and convenience (can cause functionality issues in some cases).
+The included [Trivalent](https://github.com/secureblue/Trivalent) browser has some additional settings in `chrome://flags` you *may* want to set for additional hardening and convenience (can cause functionality issues in some cases).
 
-You can read about these settings in the [hardened-chromium post-install](https://github.com/secureblue/hardened-chromium?tab=readme-ov-file#post-install) instructions.
+You can read about these settings in the [Trivalent post-install](https://github.com/secureblue/Trivalent?tab=readme-ov-file#post-install) instructions.
 
 ### Read the FAQ
 {: #faq}

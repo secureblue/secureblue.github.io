@@ -1,6 +1,6 @@
 ---
 title: "Articles | secureblue"
-description: "List of articles related to secureblue and hardened-chromium"
+description: "List of articles related to secureblue and Trivalent"
 permalink: /articles
 ---
 
