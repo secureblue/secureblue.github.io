@@ -26,10 +26,9 @@ permalink: /faq
 - [Why don't my AppImages work?](#appimage)
 - [Why don't KDE Vaults work?](#kde-vaults)
 - [How do I provision signed distroboxes?](#distrobox-assemble)
-- [Why aren't my apps loading on Nvidia Optimus?](#nvidia-optimus)
-- [Why won't Trivalent start?](#trivalent-start)
-- [Why won't Trivalent start on Nvidia?](#trivalent-start-nvidia)
-- [Why don't some websites that require JIT/WebAssembly work in Trivalent even with the V8 Optimizer toggle enabled?](#trivalent-exceptions)
+- [Why won't Trivalent start when bubblejailed?](#trivalent-bubblejail)
+- [Why won't Trivalent start on Nvidia?](#trivalent-nvidia)
+- [Why don't some websites that require JIT/WebAssembly work in Trivalent even with the V8 Optimizer toggle enabled?](#trivalent-v8-exceptions)
 - [Why don't extensions work in Trivalent?](#trivalent-extensions)
 - [How do I customize secureblue?](#customization)
 
@@ -169,31 +168,18 @@ Similar to the AppImage FAQ, the KDE Vault default backend `cryfs` depends on fu
 ujust distrobox-assemble
 ```
 
-### Why aren't my apps loading on Nvidia Optimus?
-{: #nvidia-optimus}
-
-There is an [upstream bug](https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/21). You may need to run:
-
-```
-mkdir -p ~/.config/environment.d && echo "GSK_RENDERER=gl" >> ~/.config/environment.d/gsk.conf
-```
-
-This should no longer be required as of F41: https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/42
-
-### Why won't Trivalent start?
-{: #trivalent-start}
-
-Try starting Trivalent from the command line by running `trivalent`. If you get an error about the current profile already running on another device, this is an issue with upstream Chromium which can happen when you `rpm-ostree upgrade` or `rpm-ostree rebase`. To fix this, simply run `rm ~/.config/chromium/SingletonLock`.
+### Why won't Trivalent start when bubblejailed?
+{: #trivalent-bubblejail}
 
 `bubblejail` **SHOULD NOT** be used on Trivalent, there are issues reported with the pairing and removing the `bubblejail` config after it is applied can be difficult. It should also be noted that applying additional sandboxing may interfere with chromium's own internal sandbox, so it can end up reducing security.
 
 ### Why won't Trivalent start on Nvidia?
-{: #trivalent-start-nvidia}
+{: #trivalent-nvidia}
 
 On some Nvidia machines, Trivalent defaults to the X11 backend. Since secureblue disables Xwayland by default, this means that you will need to run `ujust toggle-xwayland` and reboot, for Trivalent to work.
 
 ### Why don't some websites that require JIT/WebAssembly work in Trivalent even with the V8 Optimizer toggle enabled?
-{: #trivalent-exceptions}
+{: #trivalent-v8-exceptions}
 
 This is an [upstream bug](https://issues.chromium.org/issues/373893056) that prevents V8 optimization settings from being applied to iframes embedded within a parent website. As a result, WebAssembly may not function on services that use a separate URL for their content delivery network or other included domains, such as VSCode Web ([https://github.dev](https://github.dev)). To make VSCode Web work properly, you need to manually allow V8 optimizations for the CDN by adding `https://[*.]vscode-cdn.net` to your list of trusted websites.
 
