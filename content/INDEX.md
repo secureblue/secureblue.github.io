@@ -10,7 +10,7 @@ secureblue is a security-focused desktop and server linux operating system, deve
 
 ## Who is secureblue for?
 
-secureblue is for those whose first priority is using linux, and second priority is security. secureblue does not claim to be the most secure option available. We are limited in that regard by the current state of desktop linux standardization, tooling, and upstream security development. What we aim for instead is to be the most secure option for those who already intend to use linux. As such, if security is your first priority, secureblue may not the best option for you.
+secureblue is for those whose first priority is using linux, and second priority is security. secureblue does not claim to be the most secure option available on the desktop. We are limited in that regard by the current state of desktop linux standardization, tooling, and upstream security development. What we aim for instead is to be the most secure option for those who already intend to use linux. As such, if security is your first priority, secureblue may not the best option for you.
 
 ## Support and community
 
