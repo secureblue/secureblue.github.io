@@ -26,11 +26,10 @@ permalink: /faq
 - [Why don't my AppImages work?](#appimage)
 - [Why don't KDE Vaults work?](#kde-vaults)
 - [How do I provision signed distroboxes?](#distrobox-assemble)
-- [Why aren't my apps loading on Nvidia Optimus?](#nvidia-optimus)
-- [Why won't `hardened-chromium` start?](#hardened-chromium-start)
-- [Why won't `hardened-chromium` start on Nvidia?](#hardened-chromium-start-nvidia)
-- [Why don't some websites that require JIT/WebAssembly work in `hardened-chromium` even with the V8 Optimizer toggle enabled?](#hardened-chromium-exceptions)
-- [Why don't extensions work in `hardened-chromium`?](#hardened-chromium-extensions)
+- [Why won't Trivalent start when bubblejailed?](#trivalent-bubblejail)
+- [Why won't Trivalent start on Nvidia?](#trivalent-nvidia)
+- [Why don't some websites that require JIT/WebAssembly work in Trivalent even with the V8 Optimizer toggle enabled?](#trivalent-v8-exceptions)
+- [Why don't extensions work in Trivalent?](#trivalent-extensions)
 - [How do I customize secureblue?](#customization)
 
 ### Why is Flatpak included? Should I use Flatpak?
@@ -169,38 +168,25 @@ Similar to the AppImage FAQ, the KDE Vault default backend `cryfs` depends on fu
 ujust distrobox-assemble
 ```
 
-### Why aren't my apps loading on Nvidia Optimus?
-{: #nvidia-optimus}
+### Why won't Trivalent start when bubblejailed?
+{: #trivalent-bubblejail}
 
-There is an [upstream bug](https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/21). You may need to run:
+`bubblejail` **SHOULD NOT** be used on Trivalent, there are issues reported with the pairing and removing the `bubblejail` config after it is applied can be difficult. It should also be noted that applying additional sandboxing may interfere with chromium's own internal sandbox, so it can end up reducing security.
 
-```
-mkdir -p ~/.config/environment.d && echo "GSK_RENDERER=gl" >> ~/.config/environment.d/gsk.conf
-```
+### Why won't Trivalent start on Nvidia?
+{: #trivalent-nvidia}
 
-This should no longer be required as of F41: https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/42
+On some Nvidia machines, Trivalent defaults to the X11 backend. Since secureblue disables Xwayland by default, this means that you will need to run `ujust toggle-xwayland` and reboot, for Trivalent to work.
 
-### Why won't `hardened-chromium` start?
-{: #hardened-chromium-start}
-
-Try starting `hardened-chromium` from the commandline by running `chromium-browser`. If you get an error about the current profile already running on another device, this is an issue with upstream chromium which can happen when you `rpm-ostree update` or `rpm-ostree rebase`. To fix this, simply run `rm ~/.config/chromium/SingletonLock`.
-
-`bubblejail` **SHOULD NOT** be used on `hardened-chromium`, there are issues reported with the pairing and removing the `bubblejail` config after it is applied can be difficult. It should also be noted that applying additional sandboxing may interfere with chromium's own internal sandbox, so it can end up reducing security.
-
-### Why won't `hardened-chromium` start on Nvidia?
-{: #hardened-chromium-start-nvidia}
-
-On some Nvidia machines, `hardened-chromium` defaults to the X11 backend. Since secureblue disables Xwayland by default, this means that you will need to run `ujust toggle-xwayland` and reboot, for `hardened-chromium` to work.
-
-### Why don't some websites that require JIT/WebAssembly work in `hardened-chromium` even with the V8 Optimizer toggle enabled?
-{: #hardened-chromium-exceptions}
+### Why don't some websites that require JIT/WebAssembly work in Trivalent even with the V8 Optimizer toggle enabled?
+{: #trivalent-v8-exceptions}
 
 This is an [upstream bug](https://issues.chromium.org/issues/373893056) that prevents V8 optimization settings from being applied to iframes embedded within a parent website. As a result, WebAssembly may not function on services that use a separate URL for their content delivery network or other included domains, such as VSCode Web ([https://github.dev](https://github.dev)). To make VSCode Web work properly, you need to manually allow V8 optimizations for the CDN by adding `https://[*.]vscode-cdn.net` to your list of trusted websites.
 
-### Why don't extensions work in `hardened-chromium`?
-{: #hardened-chromium-extensions}
+### Why don't extensions work in Trivalent?
+{: #trivalent-extensions}
 
-Extensions in `hardened-chromium` are disabled by default, for security reasons it is not advised to use them. If you want content/ad blocking, that is already built into `hardened-chromium` and enabled by default. If you require extensions, you can re-enable them by disabling the `Disable Extensions` toggle under `chrome://settings/security`, then restart your browser (this toggle is per-profile).
+Extensions in Trivalent are disabled by default, for security reasons it is not advised to use them. If you want content/ad blocking, that is already built into Trivalent and enabled by default. If you require extensions, you can re-enable them by disabling the `Disable Extensions` toggle under `chrome://settings/security`, then restart your browser (this toggle is per-profile).
 \
 \
 If the extension you installed doesn't work, it is likely because it requires WebAssembly (WASM) for some cryptographic library or some other optimizations (this is the case with the Bitwarden extension). To re-enable JavaScript JIT and WASM for extensions, enable the feature `chrome://flags/#internal-page-jit`.
