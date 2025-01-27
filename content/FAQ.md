@@ -5,8 +5,10 @@ permalink: /faq
 ---
 
 # FAQ
+{: #faq}
 
 ## Table of contents:
+{: #table-of-contents}
 - [Why is Flatpak included? Should I use Flatpak?](#flatpak)
 - [Should I use Electron apps? Why don't they work well with hardened_malloc?](#electron)
 - [My fans are really loud, is this normal?](#fans)
@@ -35,7 +37,7 @@ permalink: /faq
 ### Why is Flatpak included? Should I use Flatpak?
 {: #flatpak}
 
-Consult our <a href="/articles/flatpak">Flatpak article</a>.
+Consult our [Flatpak article](/articles/flatpak).
 
 ### Should I use Electron apps? Why don't they work well with hardened_malloc?
 {: #electron}
@@ -45,7 +47,7 @@ Consult our <a href="/articles/flatpak">Flatpak article</a>.
 ### My fans are really loud, is this normal?
 {: #fans}
 
-During rpm-ostree operations, it's normal. Outside of that, make sure you followed the NVIDIA steps in the [post-install instructions](/post-install#nvidia) if you're using an NVIDIA GPU.
+During rpm-ostree operations, it's normal. Outside of that, make sure you followed the NVIDIA steps in the [post-install instructions](/install#nvidia) if you're using an NVIDIA GPU.
 
 ### Should I use firejail?
 {: #firejail}
@@ -67,8 +69,8 @@ During rpm-ostree operations, it's normal. Outside of that, make sure you follow
 {: #software}
 
 1. Check if it's already installed using `rpm -qa | grep x`
-2. For GUI packages, you can install the flatpak if available using the Software store or using `flatpak install`. A catalogue of flatpaks is available at https://flathub.org.
-3. For CLI packages, you can install from brew if available using `brew install`. A catalogue of brew packages is available at https://formulae.brew.sh.
+2. For GUI packages, you can install the flatpak if available using the Software store or using `flatpak install`. You can browse this [catalogue of flatpaks](https://flathub.org) to discover the available packages.
+3. For CLI packages, you can install from brew if available using `brew install`. You can browse this [catalogue of Homebrew Formulaes](https://formulae.brew.sh) to discover the available formulaes.
 4. If a package isn't available via the other two options, or if a package requires greater system integration, `rpm-ostree install` can be used to layer rpms directly into your subsequent deployments.
 
 Steam is an exception to the above.
@@ -136,7 +138,7 @@ ujust toggle-gnome-extensions
 
 If your system time is off by an excessive amount due to rare conditions like a CMOS reset, your network will not connect. A one-time manual reset will fix this. This should never be required except under very rare circumstances.
 
-For more technical detail, see [#268](https://github.com/secureblue/secureblue/issues/268)
+For more technical detail, see [issue #268](https://github.com/secureblue/secureblue/issues/268)
 
 ### How do I get notified of new releases?
 {: #releases}

@@ -5,8 +5,10 @@ permalink: /features
 ---
 
 # Features
+{: #features}
 
 ## Exploit mitigation
+{: #exploit-mitigation}
 - Installing and enabling [hardened_malloc](https://github.com/GrapheneOS/hardened_malloc) globally, including for flatpaks. <sup>[Thanks to rusty-snake's spec](https://github.com/rusty-snake/fedora-extras)</sup>
 - Installing [Trivalent](https://github.com/secureblue/Trivalent), which is inspired by [Vanadium](https://github.com/GrapheneOS/Vanadium). <sup>[Why chromium?](https://grapheneos.org/usage#web-browsing)</sup> <sup>[Why not flatpak chromium?](https://forum.vivaldi.net/post/669805)</sup>
 - Setting numerous hardened sysctl values <sup>[details](https://github.com/secureblue/secureblue/blob/live/files/system/etc/sysctl.d/hardening.conf)</sup>
@@ -16,6 +18,7 @@ permalink: /features
 - Installing usbguard and providing `ujust` commands to automatically configure it
 
 ## Filling holes in the linux security posture
+{: #security-posture}
 - Remove SUID-root from [numerous binaries](https://github.com/secureblue/secureblue/blob/live/files/scripts/removesuid.sh), replacing functionality [using capabilities](https://github.com/secureblue/secureblue/blob/live/files/system/usr/bin/setcapsforunsuidbinaries), and remove `sudo`, `su`, and `pkexec` entirely in favor of `run0` <sup>[why?](https://mastodon.social/@pid_eins/112353324518585654)</sup>
 - Disable Xwayland by default (for GNOME, Plasma, and Sway images)
 - Mitigation of [LD_PRELOAD attacks](https://github.com/Aishou/wayland-keylogger) via `ujust toggle-bash-environment-lockdown`
@@ -26,21 +29,25 @@ permalink: /features
 - Disabling unprivileged user namespaces by default for the unconfined domain and the container domain <sup>[why?](/articles/userns)</sup>
 
 ## Security by default
+{: #security-by-default}
 - Disabling all ports and services for firewalld
 - Use HTTPS for all rpm mirrors
 - Set all default container policies to `reject`, `signedBy`, or `sigstoreSigned`
 - Enabling only the [flathub-verified](https://flathub.org/apps/collection/verified/1) remote by default
 
 ## Reduce information leakage
+{: #reduce-information-leakage}
 - Adds per-network MAC randomization
 - Disabling coredumps
 
 ## Attack surface reduction
+{: #attack-surface-reduction}
 - Blacklisting numerous unused kernel modules to reduce attack surface <sup>[details](https://github.com/secureblue/secureblue/blob/live/files/system/etc/modprobe.d/blacklist.conf)</sup>
 - Brute force protection by locking user accounts for 24 hours after 50 failed login attempts, hardened password encryption and password quality suggestions
 - Disable and mask a variety of services by default (including cups, geoclue, passim, and others)
 
 ## Security ease-of-use
+{: #security-ease-of-use}
 - Installing bubblejail for additional sandboxing tooling
 - Tooling for automatically setting up and enabling LUKS TPM2 integration for unlocking LUKS drives
 - Tooling for automatically setting up and enabling LUKS FIDO2 integration for unlocking LUKS drives
