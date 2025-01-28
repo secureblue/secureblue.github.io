@@ -1,6 +1,6 @@
-# secureblue.io
+# secureblue.dev
 
-This repo contains the source files of [secureblue's static website](https://secureblue.github.io) (provisory domain), generated using Jekyll and currently being deployed to GitHub Pages. We plan on deploying to Cloudflare Pages in the future. It is a fork of [GrapheneOS's static website](https://github.com/GrapheneOS/grapheneos.org) and borrows pieces of HTML and general ideas from it as well as a mostly identical CSS, but uses a website generation workflow we consider more convenient.
+This repo contains the source files of [secureblue's static website](https://secureblue.dev), generated using Jekyll and currently being deployed to Cloudflare Pages. It is a fork of [GrapheneOS's static website](https://github.com/GrapheneOS/grapheneos.org) and borrows pieces of HTML and general ideas from it as well as a mostly identical CSS, but uses a website generation workflow we consider more convenient.
 
 ## Content
 
@@ -29,7 +29,7 @@ By default, most files not relevant to the generated website are already exclude
 > [!NOTE]
 > An alert of the "note" type. It's pretty cool, right?
 > 
-> Another line in the same alert. Click [here](https://secureblue.github.io/faq) to go to the FAQ.
+> Another line in the same alert. Click [here](https://secureblue.dev/faq) to go to the FAQ.
 
 Which can be created with the following, simple sintax:
 
@@ -37,7 +37,7 @@ Which can be created with the following, simple sintax:
 > [!NOTE]
 > An alert of the "note" type. It's pretty cool, right?
 > 
-> Another line in the same alert. Click [here](https://secureblue.github.io/faq) to go to the FAQ.
+> Another line in the same alert. Click [here](https://secureblue.dev/faq) to go to the FAQ.
 ```
 
 Except that as an inclusible HTML fragment, `alert.html` presents an unhiged manner to imitate the above. It has to be included (implying everything is on a same line) and requires two variables to be passed to it, one indicating the type of alert, and the other being one whole string with all the text that needs to be shown. Newlines are not permitted and have to be broken by including `<br>`, not because it means a line break in HTML, but as an arbitrary token that `alert.html` will scan for and use as a breaking point for newlines. This is necessary since Liquid doesn't support initializing arrays, and that arbitrarily chosen token is scanned to create an array from a whole string, separating elements by each occurrence of the token. Each element of the array will be treated as a line of text in the alert. Also, apostrophes (`'`) have to be escaped with a backwards slash (like so: `\'`). Aditionally, since it is an HTML fragment that is being included, the content passed to it is not processed as markdown. Links have to be written as HTML instead of markdown in alerts, etc...
@@ -45,7 +45,7 @@ Except that as an inclusible HTML fragment, `alert.html` presents an unhiged man
 To demonstrate this, the following syntax in a document in this project produces the same effect of the example earlier:
 
 ```
-{% include type='note' content='An alert of the "note" type. It\'s pretty cool, right?<br>Another line in the same alert. Click <a href="https://esselownitro.github.io/faq">here</a> to go to the FAQ.' %}
+{% include type='note' content='An alert of the "note" type. It\'s pretty cool, right?<br>Another line in the same alert. Click <a href="https://secureblue.dev/faq">here</a> to go to the FAQ.' %}
 ```
 
 It easily becomes an eyesore with longer strings.
