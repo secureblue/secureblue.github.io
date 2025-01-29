@@ -14,7 +14,7 @@ module Jekyll
             content.gsub(%r{(#+)\s+(.+)\s*\{:\s+#table-of-contents\}}) do |match|
                 level = $1.length
                 text = $2
-                id = "table-of-contents"
+                id = "table-of-contents-is-this-working"
                 "<nav><h#{level} id=\"#{id}\"><a href=\"##{id}\">#{text}</a></h#{level}></nav>"
             end
             
