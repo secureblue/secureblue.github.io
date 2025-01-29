@@ -35,6 +35,5 @@ module Jekyll
                 "<h#{level} id=\"#{id}\"><a href=\"##{id}\">#{text}</a></h#{level}>"
             end
         end
-        end
     end
 end
