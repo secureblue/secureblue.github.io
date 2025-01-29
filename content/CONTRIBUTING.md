@@ -31,9 +31,7 @@ And if you like the project, but just don't have time to contribute, that's fine
 ## Code of Conduct
 {: #code-of-conduct}
 
-This project and everyone participating in it is governed by the [Code of Conduct](/code-of-conduct).
-By participating, you are expected to uphold this code. Please report unacceptable behavior
-to secureblueadmin@proton.me
+This project and everyone participating in it is governed by the [Code of Conduct](/code-of-conduct). By participating, you are expected to uphold this code. Please report unacceptable behavior to <var>secureblueadmin@proton.me</var>
 
 ## I Have a Question
 { :#i-have-a-question}
@@ -46,12 +44,9 @@ If you want to ask a question, opening a [GitHub issue](https://github.com/secur
 ### Legal Notice
 {: #legal-notice}
 
-When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license. 
+{% include type='note' content='When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.' %}
 
-### AI Content Policy
-{: #ai-content-policy}
-
-In the interest of accuracy, quality, and license of the project, contributing using AI generated code and content of any kind is forbidden.
+{% include type='warning' content='In the interest of accuracy, quality, and license of the project, contributing using AI generated code and content of any kind is <em>forbidden</em>.' %}
 
 ### Reporting Bugs
 {: #reporting-bugs}
