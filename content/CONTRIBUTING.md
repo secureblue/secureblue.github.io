@@ -44,9 +44,9 @@ If you want to ask a question, opening a [GitHub issue](https://github.com/secur
 ### Legal Notice
 {: #legal-notice}
 
-{% include type='note' content='When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.' %}
+{% include alert.html type='note' content='When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.' %}
 
-{% include type='warning' content='In the interest of accuracy, quality, and license of the project, contributing using AI generated code and content of any kind is <em>forbidden</em>.' %}
+{% include alert.html type='warning' content='In the interest of accuracy, quality, and license of the project, contributing using AI generated code and content of any kind is <em>forbidden</em>.' %}
 
 ### Reporting Bugs
 {: #reporting-bugs}
