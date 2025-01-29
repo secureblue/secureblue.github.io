@@ -1,5 +1,6 @@
 module Jekyll
-    class secureblue < Converter
+    # Class names must be constant, that is, starting with an uppercase character :(
+    class Secureblue < Converter
         priority :normal
 
         def matches(ext)
