@@ -1,5 +1,5 @@
 module Jekyll
-    class secureblue_dot_dev < Converter
+    class secureblue < Converter
         priority :normal
 
         def matches(ext)
