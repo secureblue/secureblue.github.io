@@ -31,6 +31,7 @@ module Jekyll
                         list_id = $3
                         "<li><a href='##{list_id}'>#{list_text}</a></li>"
                     end
+                    a += 1
                     list[a] = n
                 end
                 
