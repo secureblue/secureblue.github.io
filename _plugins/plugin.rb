@@ -23,16 +23,20 @@ module Jekyll
                 # includes the list elements of a table of contents here, since they must be wrapped
                 # inside a <nav> element too and are captured with the above regex as such
                 list = $4.split(/\n+/)
+                a = 0
                 list.each do |n|
-                    list[n.to_i] = list[n.to_i].gsub(%r{(-+)\s+\[([^\]]+)\]\(#([^\]]+)\)}) do |match|
-                        level = $1.length
-                        text = $2
-                        id = $3
-                        "<li><a href=\"##{id}\">#{text}</a></li>"
+                    n = n.gsub(%r{(-+)\s+\[([^\]]+)\]\(#([^\]]+)\)}) do |match|
+                        list_level = $1.length
+                        list_text = $2
+                        list_id = $3
+                        "<li><a href='##{list_id}'>#{list_text}</a></li>"
                     end
+                    list[a] = n
                 end
                 
-                "<nav><h#{level} id=\"#{id}\"><a href=\"##{id}\">#{text}</a></h#{level}><ul>#{list}</ul></nav>"
+                list = list.join
+            
+                "<nav><h#{level} id=\"#{id}\"><a href=\"##{id}\">#{text}</a></h#{level}><ul>" + list + "</ul></nav>"
             end
 
             # Seeks every heading with a custom ID and wraps them in a self-referential anchor link
