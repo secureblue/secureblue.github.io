@@ -24,7 +24,8 @@ permalink: /images
 {% include alert.html type='note' content='Silverblue utilizes GNOME, which is the only desktop that secures privileged wayland protocols like screencopy. This means that on non-GNOME systems, applications can access screen content of the entire desktop. This implicitly includes the content of other applications. It\'s primarily for this reason that Silverblue images are recommended. KDE has <a href="https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/issues/7">plans to fix this</a>. GNOME also provides <a href="https://gitlab.gnome.org/GNOME/gnome-desktop/-/issues/213">thumbnailer sandboxing</a> in Gnome Files, which mitigates <a href="https://scarybeastsecurity.blogspot.com/2016/11/0day-exploit-compromising-linux-desktop.html">attacks via thumbnailers</a>. This is a relative recommendation between the desktop environments available on secureblue. GNOME has some extra security niceties like the ones listed above, however it does not solve any of the fundamental issues with desktop linux security.' %}
 
 #### Silverblue
-\
+
+
 | Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
 | `silverblue-main-hardened`               | Silverblue| No                      |
@@ -57,7 +58,8 @@ permalink: /images
 {% include alert.html type='note' content='Learn about wayblue in <a href="https://github.com/wayblueorg/wayblue">wayblue\'s repository</a>.' %}
 
 #### Wayfire
-\
+
+
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
 | `wayblue-wayfire-main-hardened`          | Wayblue-Wayfire       | No                      |
@@ -65,7 +67,8 @@ permalink: /images
 | `wayblue-wayfire-nvidia-open-hardened`   | Wayblue-Wayfire       | Yes, open drivers       |
 
 #### Hyprland
-\
+
+
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
 | `wayblue-hyprland-main-hardened`         | Wayblue-Hyprland      | No                      |
