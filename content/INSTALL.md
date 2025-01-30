@@ -5,7 +5,6 @@ permalink: /install
 ---
 
 # Install
-{: #install}
 
 To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) ISO to install Fedora Atomic, then rebase to a secureblue image using the installer. Unless specified otherwise, secureblue is used to refer to both the secureblue set of images and the securecore set of images, for the sake of brevity. The install script presented in a later step lets you choose between them. You *must* start from a Fedora Atomic ISO for secureblue desktop images, and *must* start from a Fedora CoreOS ISO for securecore images.
 
@@ -18,7 +17,6 @@ To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) 
 - [Post-install](#post-install)
 
 ## Pre-install
-{: #pre-install}
 
 The following is advice on what to do before and during the installation of a Fedora ISO, and how.
 
@@ -31,21 +29,18 @@ The following is advice on what to do before and during the installation of a Fe
 Before rebasing and during the installation, the following checks are recommended.
 
 ### Fedora installation
-{: #fedora-installation}
 - Select the option to encrypt the drive you're installing to.
 - Use a [strong password](https://security.harvard.edu/use-strong-passwords) when prompted.
 - Leave the root account disabled.
 - Select wheel group membership for your user.
 
 ### BIOS hardening
-{: #bios-hardening}
 - Ensure secureboot is enabled.
 - Ensure your BIOS is up to date by checking its manufacturer's website.
 - Disable booting from USB (some manufacturers allow firmware changes from live systems).
 - Set a BIOS password to prevent tampering.
 
 ## Rebase
-{: #rebase}
 
 To rebase a Fedora Atomic or Fedora CoreOS installation to a secureblue image, download the script below. This script does not install secureblue into the existing system. It rebases (fully replaces the existing system) with secureblue.
 
@@ -58,7 +53,6 @@ bash install_secureblue.sh
 ```
 
 ## Post-install
-{: #post-install}
 
 After installation, [yafti](https://github.com/ublue-os/yafti) will open. Make sure to follow the steps listed carefully and read the directions closely.
 
@@ -77,7 +71,7 @@ Then, follow the following steps in order:
 - [Create a separate wheel account for admin purposes](#wheel)
 - [Setup system DNS](#dns)
 - [Bash environment lockdown](#bash)
-- [LUKS TPM2 Unlock](#luks-tpm2)
+- [LUKS Hardware Unlock](#luks-hardware-unlock)
 - [Validation](#validation)
 - [Optional: Trivalent Flags](#trivalent-flags)
 - [Read the FAQ](#faq)
@@ -215,7 +209,6 @@ ujust toggle-bash-environment-lockdown
 ```
 
 ### LUKS Hardware-Unlock
-{: #luks-hardware-unlock}
 
 {% include alert.html type='note' content='There are two options available for hardware-based unlocking. You can either enroll FIDO2 or TPM2 for your luks volume. FIDO2 enrollment is preferable if you own a hardware security key. It\'s recommended that you choose only one of these, and not both at the same time.' %}
 

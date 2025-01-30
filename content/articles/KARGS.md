@@ -13,7 +13,6 @@ permalink: /articles/kargs
 - - [Unstable kargs](#unstable)
 
 # Standard
-{: #standard}
 
 Stable kargs that are always applied by the `set-kargs-hardening` ujust script.
 
@@ -39,7 +38,6 @@ Stable kargs that are always applied by the `set-kargs-hardening` ujust script.
 - `kvm-intel.vmentry_l1d_flush=always`: Enables unconditional flushes, required for complete l1d vuln mitigation.
 
 # Additional
-{: #additional}
 
 Sets of additional kargs that can be selectively set alongside the standard kargs detailed above. The `set-kargs-hardening` command prompts the user on whether to add apply of the 3 sets of kargs detailed below:
 

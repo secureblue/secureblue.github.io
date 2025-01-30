@@ -5,7 +5,6 @@ permalink: /articles/flatpak
 ---
 
 # Flatpak
-{: #flatpak}
 
 Flatpak is an application packaging and distribution system for desktop linux. It uses bubblewrap under the hood to sandbox those applications and provide desktop linux with a de-facto standard sandboxing and permissions system. However, it has flaws and its sandboxing strength can vary significantly depending on how it is configured. secureblue addresses these flaws in a couple different ways.
 

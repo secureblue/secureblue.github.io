@@ -5,7 +5,6 @@ permalink: /articles
 ---
 
 # Articles
-{: #articles}
 
 The main documentation for secureblue is at the top-level of the site, accessible through the header.
 

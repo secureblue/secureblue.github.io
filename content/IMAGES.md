@@ -5,7 +5,6 @@ permalink: /images
 ---
 
 # Images
-{: #images}
 
 ## Table of Contents
 {: #table-of-contents}
@@ -19,15 +18,12 @@ permalink: /images
 {% include alert.html type='note' content='<b>nvidia-open</b> images are recommended for systems with NVIDIA GPUs Turing or newer. These include the new <a href="https://github.com/NVIDIA/open-gpu-kernel-modules">open kernel modules</a> from NVIDIA, not Nouveau.<br><b>nvidia</b> images are recommended for systems with NVIDIA GPUs Pascal or older. These include the closed kernel modules from NVIDIA.' %}
 
 ## Desktop
-{: #desktop}
 
 ### Recommended
-{: #recommended}
 
 {% include alert.html type='note' content='Silverblue utilizes GNOME, which is the only desktop that secures privileged wayland protocols like screencopy. This means that on non-GNOME systems, applications can access screen content of the entire desktop. This implicitly includes the content of other applications. It\'s primarily for this reason that Silverblue images are recommended. KDE has <a href="https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/issues/7">plans to fix this</a>. GNOME also provides <a href="https://gitlab.gnome.org/GNOME/gnome-desktop/-/issues/213">thumbnailer sandboxing</a> in Gnome Files, which mitigates <a href="https://scarybeastsecurity.blogspot.com/2016/11/0day-exploit-compromising-linux-desktop.html">attacks via thumbnailers</a>. This is a relative recommendation between the desktop environments available on secureblue. GNOME has some extra security niceties like the ones listed above, however it does not solve any of the fundamental issues with desktop linux security.' %}
 
 #### Silverblue
-{: #silverblue}
 
 | Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
@@ -37,10 +33,8 @@ permalink: /images
 
 
 ### Stable
-{: #stable}
 
 #### Kinoite
-{: #kinoite}
 
 | Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
@@ -49,7 +43,6 @@ permalink: /images
 | `kinoite-nvidia-open-hardened`           | Kinoite   | Yes, open drivers       |
 
 #### Sericea
-{: #sericea}
 
 | Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
@@ -58,12 +51,10 @@ permalink: /images
 | `sericea-nvidia-open-hardened`           | Sericea   | Yes, open drivers       |
 
 ### Beta
-{: #beta}
 
 {% include alert.html type='note' content='Learn about wayblue in <a href="https://github.com/wayblueorg/wayblue">wayblue\'s repository</a>.' %}
 
 #### Wayfire
-{: #wayfire}
 
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
@@ -72,7 +63,6 @@ permalink: /images
 | `wayblue-wayfire-nvidia-open-hardened`   | Wayblue-Wayfire       | Yes, open drivers       |
 
 #### Hyprland
-{: #hyprland}
 
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
@@ -81,7 +71,6 @@ permalink: /images
 | `wayblue-hyprland-nvidia-open-hardened`  | Wayblue-Hyprland      | Yes, open drivers       |
 
 #### River
-{: #river}
 
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
@@ -91,7 +80,6 @@ permalink: /images
 
 
 #### Sway
-{: #sway}
 
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
@@ -100,10 +88,8 @@ permalink: /images
 | `wayblue-sway-nvidia-open-hardened`      | Wayblue-Sway          | Yes, open drivers       |
 
 ### Experimental
-{: #experimental}
 
 #### Cosmic
-{: #cosmic}
 
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
@@ -112,7 +98,6 @@ permalink: /images
 | `cosmic-nvidia-open-hardened`   | Cosmic       | Yes, open drivers       |
 
 ## Server
-{: server}
 
 {% include alert.html type='note' content='After you finish setting up your <a href="https://fedoraproject.org/coreos/">Fedora CoreOS</a> installation, you will need to disable <code>zincati.service</code> before rebasing to securecore.' %}
 
