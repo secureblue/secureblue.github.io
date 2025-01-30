@@ -13,11 +13,12 @@ module Jekyll
 
         def convert(content)
             # Seeks tables of contents and wraps them in <nav> elements
-            content = content.gsub(%r{(#+)\s+(.+)\s*\{:\s+#table-of-contents\}}) do |match|
+            content = content.gsub(%r{(#+)\s+(.+)\s*\{:\s+#([^\}]+)\}\s((-.*\s)+)}) do |match|
                 level = $1.length
                 text = $2
-                id = "table-of-contents"
-                "<nav><h#{level} id=\"#{id}\"><a href=\"##{id}\">#{text}</a></h#{level}></nav>"
+                id = $3
+                list = $4
+                "<nav><h#{level} id=\"#{id}\"><a href=\"##{id}\">#{text}</a></h#{level}>#{list}</nav>"
             end
 
             # Seeks every heading with a custom ID and wraps them in a self-referential anchor link
