@@ -13,12 +13,26 @@ module Jekyll
 
         def convert(content)
             # Seeks tables of contents and wraps them in <nav> elements
-            content = content.gsub(%r{(#+)\s+(.+)\s*\{:\s+#([^\}]+)\}\s((-.*\s)+)}) do |match|
+            content = content.gsub(%r{(#+)\s+(.+)\s*\{:\s+#([^\}]+)\}\s((-.+\s)+)}) do |match|
                 level = $1.length
                 text = $2
                 id = $3
-                list = $4
-                "<nav><h#{level} id=\"#{id}\"><a href=\"##{id}\">#{text}</a></h#{level}>#{list}</nav>"
+
+                # Logic related to the "list" variable exists because each converter must be wholly
+                # responsible for what it intends to process, for what its regex captures, and that
+                # includes the list elements of a table of contents here, since they must be wrapped
+                # inside a <nav> element too and are captured with the above regex as such
+                list = $4.split(/\n+/)
+                list.each do |n|
+                    list[n.to_i] = list[n.to_i].gsub(%r{(-+)\s+\[([^\]]+)\]\(#([^\]]+)\)}) do |match|
+                        level = $1.length
+                        text = $2
+                        id = $3
+                        "<li><a href=\"##{id}\">#{text}</a></li>"
+                    end
+                end
+                
+                "<nav><h#{level} id=\"#{id}\"><a href=\"##{id}\">#{text}</a></h#{level}><ul>#{list}</ul></nav>"
             end
 
             # Seeks every heading with a custom ID and wraps them in a self-referential anchor link
@@ -26,6 +40,7 @@ module Jekyll
                 level = $1.length
                 text = $2
                 id = $3
+
                 "<h#{level} id=\"#{id}\"><a href=\"##{id}\">#{text}</a></h#{level}>"
             end
 
@@ -34,6 +49,7 @@ module Jekyll
                 level = $1.length
                 text = $2
                 id = $2.downcase.gsub(/\s+/, "-")
+
                 "<h#{level} id=\"#{id}\"><a href=\"##{id}\">#{text}</a></h#{level}>"
             end
         end
