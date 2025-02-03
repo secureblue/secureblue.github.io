@@ -25,7 +25,6 @@ permalink: /images
 
 #### Silverblue
 
-
 | Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
 | `silverblue-main-hardened`               | Silverblue| No                      |
@@ -37,7 +36,6 @@ permalink: /images
 
 #### Kinoite
 
-
 | Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
 | `kinoite-main-hardened`                  | Kinoite   | No                      |
@@ -45,7 +43,6 @@ permalink: /images
 | `kinoite-nvidia-open-hardened`           | Kinoite   | Yes, open drivers       |
 
 #### Sericea
-
 
 | Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
@@ -59,7 +56,6 @@ permalink: /images
 
 #### Wayfire
 
-
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
 | `wayblue-wayfire-main-hardened`          | Wayblue-Wayfire       | No                      |
@@ -68,7 +64,6 @@ permalink: /images
 
 #### Hyprland
 
-
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
 | `wayblue-hyprland-main-hardened`         | Wayblue-Hyprland      | No                      |
@@ -76,7 +71,6 @@ permalink: /images
 | `wayblue-hyprland-nvidia-open-hardened`  | Wayblue-Hyprland      | Yes, open drivers       |
 
 #### River
-
 
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
@@ -87,7 +81,6 @@ permalink: /images
 
 #### Sway
 
-
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
 | `wayblue-sway-main-hardened`             | Wayblue-Sway          | No                      |
@@ -97,7 +90,6 @@ permalink: /images
 ### Experimental
 
 #### Cosmic
-
 
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
