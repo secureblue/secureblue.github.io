@@ -22,7 +22,7 @@ module Jekyll
             end
 
             # Seeks every heading without a custom ID and wraps them in a self-referential anchor link
-            content = content.gsub(%r{(#+)\s+(.+)((?!\{:\s+#))}) do |match|
+            content = content.gsub(%r{(#+)\s+(.+)(.*(?!\n\r?\{.*))}) do |match|
                 level = $1.length
                 text = $2
                 id = $2.downcase.gsub(/\s+/, "-")
