@@ -4,6 +4,8 @@ description: "List of articles related to secureblue and Trivalent"
 permalink: /articles
 ---
 
+# Articles
+
 The main documentation for secureblue is at the top-level of the site, accessible through the header.
 
 Other articles on assorted topics related to secureblue:

@@ -17,6 +17,7 @@ permalink: /features
 - Installing usbguard and providing `ujust` commands to automatically configure it
 
 ## Filling holes in the linux security posture
+{: #security-posture}
 - Remove SUID-root from [numerous binaries](https://github.com/secureblue/secureblue/blob/live/files/scripts/removesuid.sh), replacing functionality [using capabilities](https://github.com/secureblue/secureblue/blob/live/files/system/usr/bin/setcapsforunsuidbinaries), and remove `sudo`, `su`, and `pkexec` entirely in favor of `run0` <sup>[why?](https://mastodon.social/@pid_eins/112353324518585654)</sup>
 - Disable Xwayland by default (for GNOME, Plasma, and Sway images)
 - Mitigation of [LD_PRELOAD attacks](https://github.com/Aishou/wayland-keylogger) via `ujust toggle-bash-environment-lockdown`

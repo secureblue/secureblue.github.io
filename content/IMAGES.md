@@ -7,6 +7,7 @@ permalink: /images
 # Images
 
 ## Table of Contents
+{: #table-of-contents}
 - [Desktop](#desktop)
 - - [Recommended](#recommended)
 - - [Stable](#stable)
@@ -98,7 +99,7 @@ permalink: /images
 
 ## Server
 
-{% include alert.html type='note' content='After you finish setting up your <a href="https://fedoraproject.org/coreos/">Fedora CoreOS</a> installation, you will need to disable `zincati.service` before rebasing to securecore.' %}
+{% include alert.html type='note' content='After you finish setting up your <a href="https://fedoraproject.org/coreos/">Fedora CoreOS</a> installation, you will need to disable <code>zincati.service</code> before rebasing to securecore.' %}
 
 | Name                                      | Base      | NVIDIA Support         | ZFS Support |
 |-------------------------------------------|-----------|-------------------------|-------------|

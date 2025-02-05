@@ -9,6 +9,7 @@ permalink: /install
 To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) ISO to install Fedora Atomic, then rebase to a secureblue image using the installer. Unless specified otherwise, secureblue is used to refer to both the secureblue set of images and the securecore set of images, for the sake of brevity. The install script presented in a later step lets you choose between them. You *must* start from a Fedora Atomic ISO for secureblue desktop images, and *must* start from a Fedora CoreOS ISO for securecore images.
 
 ## Table of Contents
+{: #table-of-contents}
 - [Pre-install](#pre-install)
 - - [Fedora installation](#fedora-installation)
 - - [BIOS hardening](#bios-hardening)
@@ -70,7 +71,7 @@ Then, follow the following steps in order:
 - [Create a separate wheel account for admin purposes](#wheel)
 - [Setup system DNS](#dns)
 - [Bash environment lockdown](#bash)
-- [LUKS TPM2 Unlock](#luks-tpm2)
+- [LUKS Hardware Unlock](#luks-hardware-unlock)
 - [Validation](#validation)
 - [Optional: Trivalent Flags](#trivalent-flags)
 - [Read the FAQ](#faq)
@@ -106,7 +107,7 @@ ujust enroll-secure-boot-key
 ### Set hardened kargs
 {: #kargs}
 
-{% include alert.html type='note' content='Learn about the hardening applied by the kargs set by the command below [here](/articles/kargs).' %}
+{% include alert.html type='note' content='Learn more about the <a href="/articles/kargs">hardened boot kargs</a> applied by the command below.' %}
 
 ```
 ujust set-kargs-hardening
@@ -214,7 +215,6 @@ ujust toggle-bash-environment-lockdown
 
 #### LUKS FIDO2 Unlock
 {: #luks-fido2}
-
 
 To enable FIDO2 LUKS unlocking with your FIDO2 security key, run:
 

@@ -11,6 +11,7 @@ All donations are appreciated. Sponsors get a role on the [Discord](https://disc
 There are multiple options available for donation:
 
 ## Github Sponsors
+{: #github}
 
 [Become a sponsor](https://github.com/sponsors/RoyalOughtness)
 
