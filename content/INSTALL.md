@@ -66,8 +66,6 @@ Then, follow the following steps in order:
 - - [Force disable simultaneous multithreading](#kargs-smt)
 - - [Unstable hardening kargs](#kargs-unstable)
 - [Setup USBGuard](#usbguard)
-- [GRUB](#grub)
-- - [Set a password](#grub-password)
 - [Create a separate wheel account for admin purposes](#wheel)
 - [Setup system DNS](#dns)
 - [Bash environment lockdown](#bash)
@@ -140,23 +138,6 @@ If you answer `Y` when prompted, unstable hardening kargs will be additionally a
 ```
 ujust setup-usbguard
 ```
-
-### GRUB
-{: #grub}
-
-#### Set a password
-{: #grub-password}
-
-Setting a GRUB password helps protect the device from physical tampering and mitigates various attack vectors, such as booting from malicious media devices and changing boot or kernel parameters.
-
-To set a GRUB password, use the following command. By default, the password will be required when modifying boot entries, but not when booting existing entries.
-
-1. `run0`
-2. `grub2-setpassword`
-
-GRUB will prompt for a username and password. The default username is root.
-
-If you wish to password-protect booting existing entries, you can add the `grub_users root` entry in the specific configuration file located in the `/boot/loader/entries` directory.
 
 ### Create a separate wheel account for admin purposes
 {: #wheel}
