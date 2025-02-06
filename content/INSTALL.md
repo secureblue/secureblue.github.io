@@ -54,10 +54,6 @@ bash install_secureblue.sh
 
 ## Post-install
 
-After installation, [yafti](https://github.com/ublue-os/yafti) will open. Make sure to follow the steps listed carefully and read the directions closely.
-
-Then, follow the following steps in order:
-
 - [Subscribe to secureblue release notifications](#release-notifications)
 - [Set NVIDIA-specific kargs if applicable](#nvidia)
 - [Enroll secureboot key](#secureboot)
@@ -73,6 +69,8 @@ Then, follow the following steps in order:
 - [Validation](#validation)
 - [Optional: Trivalent Flags](#trivalent-flags)
 - [Read the FAQ](#faq)
+
+{% include alert.html type='note' content='After installation, [yafti](https://github.com/ublue-os/yafti) will open. Make sure to follow the steps listed carefully and read the directions closely.' %}
 
 ### Subscribe to secureblue release notifications
 {: #release-notifications}
