@@ -8,7 +8,7 @@ permalink: /install
 
 To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) ISO to install Fedora Atomic, then rebase to a secureblue image using the installer. Unless specified otherwise, secureblue is used to refer to both the secureblue set of images and the securecore set of images, for the sake of brevity. The install script presented in a later step lets you choose between them. You *must* start from a Fedora Atomic ISO for secureblue desktop images, and *must* start from a Fedora CoreOS ISO for securecore images.
 
-## Table of Contents
+## [Table of Contents](#table-of-contents)
 {: #table-of-contents}
 - [Pre-install](#pre-install)
 - - [Fedora installation](#fedora-installation)
@@ -36,7 +36,7 @@ Before rebasing and during the installation, the following checks are recommende
 - Leave the root account disabled if prompted.
 - Select wheel group membership for your user if prompted.
 
-### BIOS hardening
+### [BIOS hardening](#bios-hardening)
 - Ensure secureboot is enabled.
 - Ensure your BIOS is up to date by checking its manufacturer's website.
 - Disable booting from USB (some manufacturers allow firmware changes from live systems).
@@ -44,7 +44,7 @@ Before rebasing and during the installation, the following checks are recommende
 
 <hr>
 
-## Rebase
+## [Rebase](#rebase)
 
 Now that you have a Fedora Atomic or Fedora CoreOS installation, rebase it to the secureblue image of your choice using the script below. This script does not install secureblue into the existing system. It rebases (fully replaces the existing system) with secureblue.
 
@@ -58,7 +58,7 @@ bash install_secureblue.sh
 
 <hr>
 
-## Post-install
+## [Post-install](#post-install)
 
 - [Subscribe to secureblue release notifications](#release-notifications)
 - [Set NVIDIA-specific kargs if applicable](#nvidia)
@@ -78,12 +78,12 @@ bash install_secureblue.sh
 
 {% include alert.html type='note' content='After installation, <a href="https://github.com/ublue-os/yafti">yafti</a> will open. Make sure to follow the steps listed carefully and read the directions closely.' %}
 
-### Subscribe to secureblue release notifications
+### [Subscribe to secureblue release notifications](#release-notifications)
 {: #release-notifications}
 
 [How to subscribe to secureblue release notifications](/faq#releases)
 
-### Set NVIDIA-specific kargs if applicable
+### [Set NVIDIA-specific kargs if applicable](#nvidia)
 {: #nvidia}
 
 If you are using an `nvidia` image, run this after installation:
@@ -99,14 +99,14 @@ rpm-ostree kargs \
     --append-if-missing=initcall_blacklist=simpledrm_platform_driver_init
 ```
 
-### Enroll secureboot key
+### [Enroll secureboot key](#secureboot)
 {: #secureboot}
 
 ```
 ujust enroll-secure-boot-key
 ```
 
-### Set hardened kargs
+### [Set hardened kargs](#kargs)
 {: #kargs}
 
 {% include alert.html type='note' content='Learn more about the <a href="/articles/kargs">hardened boot kargs</a> applied by the command below.' %}
@@ -117,24 +117,24 @@ ujust set-kargs-hardening
 
 This command applies a fixed set of hardened boot parameters, and asks you whether or not the following kargs should *also* be set along with those (all of which are documented in the link above):
 
-#### 32-bit support
+#### [32-bit support](#kargs-32-bit)
 {: #kargs-32-bit}
 
 If you answer `N`, or press enter without any input, support for 32-bit programs will be disabled on the next boot. If you run exclusively modern software, chances are likely you don't need this, so it's safe to disable for additional attack surface reduction.
 
 However, there are certain exceptions. A couple common usecases are if you need Steam, or run an occasional application in Wine you'll likely want to keep support for 32-bit programs. If this is the case, answer `Y`.
 
-#### Force disable simultaneous multithreading
+#### [Force disable simultaneous multithreading](#kargs-smt)
 {: #kargs-smt}
 
 If you answer `Y` when prompted, simultaneous multithreading (SMT, often called Hyperthreading) will be forcefully disabled, regardless of known vulnerabilities in the running hardware. This can cause a reduction in the performance of certain tasks in favor of security.
 
-#### Unstable hardening kargs
+#### [Unstable hardening kargs](#kargs-unstable)
 {: #kargs-unstable}
 
 If you answer `Y` when prompted, unstable hardening kargs will be additionally applied, which can cause issues on some hardware, but are stable on other hardware.
 
-### Setup USBGuard
+### [Setup USBGuard](#usbguard)
 {: #usbguard}
 
 *This will generate a policy based on your currently attached USB devices and block all others, then enable usbguard.*
@@ -143,7 +143,7 @@ If you answer `Y` when prompted, unstable hardening kargs will be additionally a
 ujust setup-usbguard
 ```
 
-### Create a separate wheel account for admin purposes
+### [Create a separate wheel account for admin purposes](#wheel)
 {: #wheel}
 
 Creating a dedicated wheel user and removing wheel from your primary user helps prevent certain privilege escalation attack vectors and password sniffing.
@@ -164,7 +164,7 @@ Creating a dedicated wheel user and removing wheel from your primary user helps 
 
 {% include alert.html type='note' content='You don\'t need to login using your wheel user to use it for privileged operations. When logged in as your non-wheel user, polkit will prompt you to authenticate as your wheel user as needed, or when requested by calling <code>run0</code>.' %}
 
-### Setup system DNS
+### [Setup system DNS](#dns)
 {: #dns}
 
 Interactively setup system DNS resolution for systemd-resolved (optionally also set the resolver for Trivalent via management policy):
@@ -175,7 +175,7 @@ ujust dns-selector
 
 {% include alert.html type='note' content='If you intend to use a VPN, use the system default state (network provided resolver). This will ensure your system uses the VPN provided DNS resolver to prevent DNS leaks. ESPECIALLY avoid setting the browser DNS policy in this case.' %}
 
-### Bash environment lockdown
+### [Bash environment lockdown](#bash)
 {: #bash}
 
 To mitigate [LD_PRELOAD attacks](https://github.com/Aishou/wayland-keylogger), run:
@@ -184,12 +184,12 @@ To mitigate [LD_PRELOAD attacks](https://github.com/Aishou/wayland-keylogger), r
 ujust toggle-bash-environment-lockdown
 ```
 
-### LUKS Hardware-Unlock
+### [LUKS Hardware-Unlock](#luks-hardware-unlock)
 
 {% include alert.html type='note' content='There are two options available for hardware-based unlocking. You can either enroll FIDO2 or TPM2 for your luks volume. FIDO2 enrollment is preferable if you own a hardware security key. It\'s recommended that you choose only one of these, and not both at the same time.' %}
 
 
-#### LUKS FIDO2 Unlock
+#### [LUKS FIDO2 Unlock](#luks-fido2)
 {: #luks-fido2}
 
 To enable FIDO2 LUKS unlocking with your FIDO2 security key, run:
@@ -198,7 +198,7 @@ To enable FIDO2 LUKS unlocking with your FIDO2 security key, run:
 ujust setup-luks-fido2-unlock
 ```
 
-#### LUKS TPM2 Unlock
+#### [LUKS TPM2 Unlock](#luks-tpm2)
 {: #luks-tpm2}
 
 {% include alert.html type='warning' content='Do not use this if you have an AMD CPU.' %}
@@ -211,7 +211,7 @@ ujust setup-luks-tpm-unlock
 
 Type `Y` when asked if you want to set a PIN.
 
-### Validation
+### [Validation](#validation)
 {: #validation}
 
 To validate your secureblue setup, run:
@@ -220,14 +220,14 @@ To validate your secureblue setup, run:
 ujust audit-secureblue
 ```
 
-### Optional: Trivalent Flags
+### [Optional: Trivalent Flags](#trivalent-flags)
 {: #trivalent-flags}
 
-The included [Trivalent](https://github.com/secureblue/Trivalent) browser has some additional settings in `chrome://flags` you *may* want to set for additional hardening and convenience (can cause functionality issues in some cases).
+The included [Trivalent](https://github.com/secureblue/Trivalent) browser has some additional settings in `chrome://flags` you may want to set for additional hardening and convenience (can cause functionality issues in some cases).
 
 You can read about these settings in the [Trivalent post-install](https://github.com/secureblue/Trivalent?tab=readme-ov-file#post-install) instructions.
 
-### Read the FAQ
+### [Read the FAQ](#faq)
 {: #faq}
 
 Lots of important stuff is covered in the [FAQ](/faq). AppImage toggles, GNOME extension toggles, Xwayland toggles, etc.

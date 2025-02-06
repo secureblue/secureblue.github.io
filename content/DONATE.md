@@ -10,17 +10,19 @@ All donations are appreciated and help support our mission to make desktop linux
 
 There are multiple options available for donation:
 
-## Github Sponsors
+## [Github Sponsors](#github)
 {: #github}
 
 [Github Sponsors](https://github.com/sponsors/RoyalOughtness)
 
-## Monero
+## [Monero](#monero)
+{: #monero}
 
 <img alt="Monero donation QR code" src="/assets/monero.png" width=200 />
 
 `43fry9taGiwhAtNYEZNfssdzJ8Ra12ewAbQoVsvFzoLS6qMSgsE2FvE7xY52rAnKjPL5r2N88KYvqXpthUfSwa23K1BBMD9`
 
-## Other Crypto
+## [Other Crypto](#crypto)
+{: #crypto}
 
 [Coinbase](https://commerce.coinbase.com/checkout/ed12a6f0-6f14-458e-88a7-854f91e42b19)
