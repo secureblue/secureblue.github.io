@@ -7,6 +7,7 @@ permalink: /features
 # Features
 
 ## [Exploit mitigation](#exploit-mitigation)
+{: #exploit-mitigation}
 - Installing and enabling [hardened_malloc](https://github.com/GrapheneOS/hardened_malloc) globally, including for flatpaks. <sup>[Thanks to rusty-snake's spec](https://github.com/rusty-snake/fedora-extras)</sup>
 - Installing our chromium-based browser [Trivalent](https://github.com/secureblue/Trivalent), which is inspired by [Vanadium](https://github.com/GrapheneOS/Vanadium). <sup>[Why chromium?](https://grapheneos.org/usage#web-browsing)</sup> <sup>[Why not flatpak chromium?](https://forum.vivaldi.net/post/669805)</sup>
 - SELinux-restricted [unprivileged user namespaces](/articles/userns)
@@ -28,21 +29,25 @@ permalink: /features
 - Disabling unprivileged user namespaces by default for the unconfined domain and the container domain <sup>[why?](/articles/userns)</sup>
 
 ## [Security by default](#security-by-default)
+{: #security-by-default}
 - Disabling all ports and services for firewalld
 - Use HTTPS for all rpm mirrors
 - Set all default container policies to `reject`, `signedBy`, or `sigstoreSigned`
 - Enabling only the [flathub-verified](https://flathub.org/apps/collection/verified/1) remote by default
 
 ## [Reduce information leakage](#info-leak)
+{: #info-leak}
 - Adds per-network MAC randomization
 - Disabling coredumps
 
 ## [Attack surface reduction](#attack-surface)
+{: #attack-surface}
 - Blacklisting numerous unused kernel modules to reduce attack surface <sup>[details](https://github.com/secureblue/secureblue/blob/live/files/system/etc/modprobe.d/blacklist.conf)</sup>
 - Brute force protection by locking user accounts for 24 hours after 50 failed login attempts, hardened password encryption and password quality suggestions
 - Disable and mask a variety of services by default (including cups, geoclue, passim, and others)
 
 ## [Security ease-of-use](#ease)
+{: #ease}
 - Installing bubblejail for additional sandboxing tooling
 - Tooling for automatically setting up and enabling LUKS TPM2 integration for unlocking LUKS drives
 - Tooling for automatically setting up and enabling LUKS FIDO2 integration for unlocking LUKS drives
