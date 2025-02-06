@@ -1,6 +1,10 @@
 <meta charset="utf-8"/>
 
 <title>{{ page.title }}</title>
+{% if include.content == "404" %}
+    <!-- The "robots" metadata disallowing page indexing is manually added to the 404 page since accessing it directly returns HTTP Status Code 200 -->
+    <meta name="robots" content="noindex, nofollow" />
+{% endif %}
 <meta name="description" content="{{ page.description }}"/>
 
 <meta name="theme-color" content="#241f31"/>
