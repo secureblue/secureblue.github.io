@@ -1,3 +1,0 @@
-# This is so that the "/404" and "/404.html" paths return a 404 Status Code, like any invalid path
-/404
-    Status-Code: 404
