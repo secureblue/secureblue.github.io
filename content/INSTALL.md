@@ -31,8 +31,8 @@ Before rebasing and during the installation, the following checks are recommende
 ### Fedora installation
 - Select the option to encrypt the drive you're installing to.
 - Use a [strong password](https://security.harvard.edu/use-strong-passwords) when prompted.
-- Leave the root account disabled.
-- Select wheel group membership for your user.
+- Leave the root account disabled if prompted.
+- Select wheel group membership for your user if prompted.
 
 ### BIOS hardening
 - Ensure secureboot is enabled.
