@@ -15,7 +15,7 @@ And if you like the project, but just don't have time to contribute, that's fine
 - Refer this project in your project's readme
 - Mention the project at local meetups and tell your friends/colleagues
 
-## Table of Contents
+## [Table of Contents](#table-of-contents)
 
 - [Code of Conduct](#code-of-conduct)
 - [I Have a Question](#i-have-a-question)
