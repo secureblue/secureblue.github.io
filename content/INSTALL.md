@@ -42,7 +42,7 @@ Before rebasing and during the installation, the following checks are recommende
 
 ## Rebase
 
-To rebase a Fedora Atomic or Fedora CoreOS installation to a secureblue image, download the script below. This script does not install secureblue into the existing system. It rebases (fully replaces the existing system) with secureblue.
+Now that you have a Fedora Atomic or Fedora CoreOS installation, rebase it to the secureblue image of your choice using the script below. This script does not install secureblue into the existing system. It rebases (fully replaces the existing system) with secureblue.
 
 <a class="button" href="https://github.com/secureblue/secureblue/releases/latest/download/install_secureblue.sh">Download secureblue installer</a>
 
