@@ -9,4 +9,4 @@ defaults:
     values:
       layout: "page"
 
-exclude: ["README.md", "404", "404.html"]
+exclude: ["README.md"]
