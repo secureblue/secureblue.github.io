@@ -13,7 +13,7 @@ There are multiple options available for donation:
 ## Github Sponsors
 {: #github}
 
-<iframe src="https://github.com/sponsors/RoyalOughtness/card" title="Sponsor RoyalOughtness" height="225" width="600" style="border: 0;"></iframe>
+<iframe src="https://github.com/sponsors/RoyalOughtness/card" title="Sponsor RoyalOughtness" style="border: 0;"></iframe>
 
 ## Monero
 
@@ -23,4 +23,4 @@ There are multiple options available for donation:
 
 ## Other Crypto
 
-Coinbase: https://commerce.coinbase.com/checkout/ed12a6f0-6f14-458e-88a7-854f91e42b19
+[Coinbase](https://commerce.coinbase.com/checkout/ed12a6f0-6f14-458e-88a7-854f91e42b19)
