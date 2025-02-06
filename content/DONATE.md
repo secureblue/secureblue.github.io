@@ -13,9 +13,7 @@ There are multiple options available for donation:
 ## Github Sponsors
 {: #github}
 
-
-<iframe src="https://github.com/sponsors/RoyalOughtness/button" title="Sponsor RoyalOughtness" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
-
+[Github Sponsors](https://github.com/sponsors/RoyalOughtness)
 
 ## Monero
 
