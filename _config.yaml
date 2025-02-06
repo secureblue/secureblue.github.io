@@ -1,6 +1,6 @@
-domain: secureblue-staging.github.io
-url: https://secureblue-staging.github.io
-baseurl: /secureblue-staging.github.io/
+domain: secureblue.dev
+url: https://secureblue.dev
+baseurl: /secureblue.dev/
 
 defaults:
   -
