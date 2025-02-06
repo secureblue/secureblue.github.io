@@ -18,7 +18,7 @@ To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) 
 
 <hr>
 
-## Pre-install
+## [Pre-install](#pre-install)
 
 The following is advice on what to do before and during the installation of a Fedora ISO, and how.
 
@@ -30,7 +30,7 @@ The following is advice on what to do before and during the installation of a Fe
 
 Before rebasing and during the installation, the following checks are recommended.
 
-### Fedora installation
+### [Fedora installation](#fedora-installation)
 - Select the option to encrypt the drive you're installing to.
 - Use a [strong password](https://security.harvard.edu/use-strong-passwords) when prompted.
 - Leave the root account disabled if prompted.
