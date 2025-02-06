@@ -16,11 +16,13 @@ To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) 
 - [Rebase](#rebase)
 - [Post-install](#post-install)
 
+<hr>
+
 ## Pre-install
 
 The following is advice on what to do before and during the installation of a Fedora ISO, and how.
 
-{% include alert.html type='note' content='The cross-platform Fedora Media Writer is the <em>official, tested and supported</em> method for the creation of bootable media. Instructions (alongside a word on alternative methods) are available in the <a href="https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/">Fedora documentation</a>.' %}
+{% include alert.html type='note' content='The cross-platform Fedora Media Writer is the <em>official, tested, and supported</em> method for the creation of bootable media. Instructions (alongside a word on alternative methods) are available in the <a href="https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/">Fedora documentation</a>.' %}
 
 {% include alert.html type='tip' content='If you don\'t already have a Fedora Atomic installation, use a Fedora Atomic ISO that matches your secureblue target image to install one. If you want to use a secureblue Silverblue image, start with the Fedora Silverblue ISO, Kinoite for Kinoite, Sericea (Sway Atomic) for Sericea and all the Wayblue images, and CoreOS for all the securecore images.<br>For more details on the available images, have a look at the <a href="/images">list of available images</a> before proceeding.' %}
 
@@ -31,8 +33,8 @@ Before rebasing and during the installation, the following checks are recommende
 ### Fedora installation
 - Select the option to encrypt the drive you're installing to.
 - Use a [strong password](https://security.harvard.edu/use-strong-passwords) when prompted.
-- Leave the root account disabled.
-- Select wheel group membership for your user.
+- Leave the root account disabled if prompted.
+- Select wheel group membership for your user if prompted.
 
 ### BIOS hardening
 - Ensure secureboot is enabled.
@@ -40,9 +42,11 @@ Before rebasing and during the installation, the following checks are recommende
 - Disable booting from USB (some manufacturers allow firmware changes from live systems).
 - Set a BIOS password to prevent tampering.
 
+<hr>
+
 ## Rebase
 
-To rebase a Fedora Atomic or Fedora CoreOS installation to a secureblue image, download the script below. This script does not install secureblue into the existing system. It rebases (fully replaces the existing system) with secureblue.
+Now that you have a Fedora Atomic or Fedora CoreOS installation, rebase it to the secureblue image of your choice using the script below. This script does not install secureblue into the existing system. It rebases (fully replaces the existing system) with secureblue.
 
 <a class="button" href="https://github.com/secureblue/secureblue/releases/latest/download/install_secureblue.sh">Download secureblue installer</a>
 
@@ -52,11 +56,9 @@ Then, run it from the directory you downloaded it to:
 bash install_secureblue.sh
 ```
 
+<hr>
+
 ## Post-install
-
-After installation, [yafti](https://github.com/ublue-os/yafti) will open. Make sure to follow the steps listed carefully and read the directions closely.
-
-Then, follow the following steps in order:
 
 - [Subscribe to secureblue release notifications](#release-notifications)
 - [Set NVIDIA-specific kargs if applicable](#nvidia)
@@ -74,10 +76,12 @@ Then, follow the following steps in order:
 - [Optional: Trivalent Flags](#trivalent-flags)
 - [Read the FAQ](#faq)
 
+{% include alert.html type='note' content='After installation, <a href="https://github.com/ublue-os/yafti">yafti</a> will open. Make sure to follow the steps listed carefully and read the directions closely.' %}
+
 ### Subscribe to secureblue release notifications
 {: #release-notifications}
 
-[FAQ](/faq#releases)
+[How to subscribe to secureblue release notifications](/faq#releases)
 
 ### Set NVIDIA-specific kargs if applicable
 {: #nvidia}
@@ -88,7 +92,7 @@ If you are using an `nvidia` image, run this after installation:
 ujust set-kargs-nvidia
 ```
 
-You may also need this (solves flickering and luks issues on some NVIDIA hardware):
+If you encounter flickering or luks issues, you may also (rarely) need this karg:
 
 ```
 rpm-ostree kargs \
@@ -146,26 +150,17 @@ Creating a dedicated wheel user and removing wheel from your primary user helps 
 
 {% include alert.html type='caution' content='If you do these steps out of order, it is possible to end up without the ability to administrate your system. You will not be able to use the <a href="https://linuxconfig.org/recover-reset-forgotten-linux-root-password">traditional GRUB-based method</a> of fixing mistakes like this, either, as this will leave your system in a broken state. However, simply rolling back to an older snapshot of your system, should resolve the problem.' %}
 
+{% include alert.html type='note' content='We log in as admin to do the final step of removing the user account\'s wheel privileges in order to make the operation of removing those privileges depend on having access to your admin account, and the admin account functioning correctly first.' %}
 1. `run0`
 2. `adduser admin`
 3. `usermod -aG wheel admin`
 4. `passwd admin`
 5. `exit`
 6. `reboot`
-
-{% include alert.html type='note' content='We log in as admin to do the final step of removing the user account\'s wheel privileges in order to make the operation of removing those privileges depend on having access to your admin account, and the admin account functioning correctly first.' %}
-
-5. Log in as `admin`
-6. `run0`
-7. `gpasswd -d {your username here} wheel`
-8. `reboot`
-
-When using a non-wheel user, you can add the user to other groups if you want. For example:
-
-- use libvirt: `libvirt`
-- use `adb` and `fastboot`: `plugdev`
-- use systemwide flatpaks: `flatpak`
-- use usbguard: `usbguard`
+7. Log in as `admin`
+8. `run0`
+9. `gpasswd -d {your username here} wheel`
+10. `reboot`
 
 {% include alert.html type='note' content='You don\'t need to login using your wheel user to use it for privileged operations. When logged in as your non-wheel user, polkit will prompt you to authenticate as your wheel user as needed, or when requested by calling <code>run0</code>.' %}
 
