@@ -16,7 +16,9 @@ And if you like the project, but just don't have time to contribute, that's fine
 - Mention the project at local meetups and tell your friends/colleagues
 
 <nav>
+
 ## [Table of Contents](#table-of-contents)
+
 - [Code of Conduct](#code-of-conduct)
 - [I Have a Question](#i-have-a-question)
 - [I Want To Contribute](#i-want-to-contribute)
@@ -28,6 +30,7 @@ And if you like the project, but just don't have time to contribute, that's fine
 - [Building Locally](#building-locally)
 - [Styleguides](#styleguides)
 - - [Commit Messages](#commit-messages)
+
 </nav>
 
 ## [Code of Conduct](#code-of-conduct)
