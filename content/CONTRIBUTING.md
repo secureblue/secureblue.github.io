@@ -33,18 +33,30 @@ And if you like the project, but just don't have time to contribute, that's fine
 
 </nav>
 
+<section markdown="1">
+
 ## [Code of Conduct](#code-of-conduct)
 {: #code-of-conduct}
 
 This project and everyone participating in it is governed by the [Code of Conduct](/code-of-conduct). By participating, you are expected to uphold this code. Please report unacceptable behavior to <var>secureblueadmin@proton.me</var>
+
+</section>
+
+<section markdown="1">
 
 ## [I Have a Question](#i-have-a-question)
 {: #i-have-a-question}
 
 If you want to ask a question, opening a [GitHub issue](https://github.com/secureblue/secureblue) for it is preferred, but [Discord](https://discord.gg/qMTv5cKfbF) is available as well.
 
+</section>
+
+<article markdown="1">
+
 ## [I Want To Contribute](#i-want-to-contribute)
 {: #i-want-to-contribute}
+
+<section markdown="1">
 
 ### [Legal Notice](#legal-notice)
 {: #legal-notice}
@@ -53,6 +65,10 @@ When contributing to this project, you must agree that you have authored 100% of
 
 {% include alert.html type='important' content='In the interest of accuracy, quality, and license of the project, contributing using AI generated code and content of any kind is forbidden.' %}
 {: #ai-content}
+
+</section>
+
+<section markdown="1">
 
 ### [Reporting Bugs](#reporting-bugs)
 {: #reporting-bugs}
@@ -67,6 +83,10 @@ A good bug report should describe the issue in detail. Before submitting one, ge
 - Possibly your input and the output
 - Can you reliably reproduce the issue? And can you also reproduce it with older versions?
 
+</section>
+
+<section markdown="1">
+
 ### [Pull Requests](#pull-requests)
 {: #pull-requests}
 
@@ -77,6 +97,10 @@ A good pull request should be ready for review before it is even created. For al
 - For substantive changes, you include evidence of proper functionality in the pull request in addition to the build results
 - Your commits are [verified](https://docs.github.com/en/authentication/managing-commit-signature-verification)
 
+</section>
+
+<section markdown="1">
+
 ### [How to test incoming changes](#how-to-test-incoming-changes)
 {: #how-to-test-incoming-changes}
 
@@ -84,7 +108,14 @@ One of the nice things about the image model is that we can generate an entire O
 
 We strive towards a model where proposed changes are more thoroughly reviewed and tested by the community. So here's how to do it. If you see a pull request that is opened up on an image you're following you can leave a review on how it's working for you.
 
-## Building your images with Github Actions (recommended)
+</section>
+
+</article>
+
+<section markdown="1">
+
+## [Building your images with Github Actions (recommended)](#building-with-actions)
+{: #building-with-actions}
 
 Start from your own fork with a branch for the pull request/feature you want to develop. Follow the instructions [here](https://blue-build.org/how-to/cosign/) to add your own keys to verify your own custom image. From there it's recommended you go to `.github/workflows/build.yml` and comment out all of the image variants except the ones you use/intend to test. This drastically speeds up your workflow runtime. Then just go to Actions > build-secureblue and select run workflow, making sure you select the branch you just set up.
 
@@ -94,16 +125,26 @@ Once it's done building, go to your VM running Fedora Atomic and rebase to your 
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/YOURUSERNAME/YOURIMAGENAME:br-YOURBRANCHNAME-41`
 ```
 
+</section>
+
 <hr>
 
-## [Building Locally](#building-locally)
+<article markdown="1">
+
+## [Building your images locally](#building-locally)
 {: #building-locally}
 
 The minimum tools required are git and a working machine with podman enabled and configured. Building locally is much faster than building in GitHub and is a good way to move fast before pushing to a remote.
 
+<section markdown="1">
+
 ### Clone the repo
 
     git clone https://github.com/secureblue/secureblue.git
+
+</section>
+
+<section markdown="1">
 
 ### Build the image
 
@@ -117,20 +158,32 @@ Then confirm your image built:
 
 TODO: Set up and push to your own local registry
 
+</section>
+
+<section markdown="1">
+
 ### Make your changes
 
 This usually involved editing the `Containerfile`. Most techniques for building containers apply here. If you're new to containers, using the term "Dockerfile" in your searches usually shows more results when you're searching for information.
 
 Check out CoreOS's [layering examples](https://github.com/coreos/layering-examples) for more information on customizing.
 
+</section>
+
+</article>
+
 <hr>
 
-## [Using Blue-build locally](#blue-build-locally)
-{: #blue-build-locally}
+<article markdown="1">
+
+## [Using Blue-build locally](#building-with-blue-build)
+{: #building-with-blue-build}
 
 This method requires [Blue-build CLI](https://github.com/blue-build/cli), git and a working machine with podman enabled and configured. Secureblue already includes `bluebuild` but running locally requires customizing `policy.json` for your user to allow pulling a few unsigned images.
 
-#### Policy.json configuration
+<section markdown="1">
+
+### Policy.json configuration
 
 On secureblue only pre-configured signed images are allowed to be pulled. Following repos need to be configured:
 
@@ -145,27 +198,51 @@ Copy `/etc/containers/policy.json` to `~/.config/containers/policy.json` and the
 - `podman image trust set --type accept ghcr.io/blue-build`
 - `podman image trust set --type accept quay.io/fedora-ostree-desktops`
 
+</section>
+
+<section markdown="1">
+
 ### Clone the repo
 
     git clone https://github.com/secureblue/secureblue.git
 
+</section>
+
+<section markdown="1">
+
 ### Making changes
 
 Configuration is stored in `recipes` folder in form of YAML files. Other files to be added to the image are stored in `files`. `common` holds pluggable modules to add to your custom image. `general` and `securecore` hold configs for the desktop and server images, respectively. Modules are detailed in [BlueBuild's documentation](https://blue-build.org/learn/getting-started/).
+
+</section>
+
+<section markdown="1">
 
 ### Building
 
 - Open terminal in root of your cloned repo.
 - Run `bluebuild build recipes/<your custom recipe>.yml`
 
+</section>
+
+<section markdown="1">
+
 ### Testing
 
 Run the image using `podman run` to get a root shell in your newly built image and verify the changes made prior.
 
+</section>
+
+</article>
+
 <hr>
+
+<article markdown="1">
 
 ## [Styleguides](#styleguides)
 {: #styleguides}
+
+<section markdown="1">
 
 ### [Commit Messages](#commit-messages)
 {: #commit-messages}
@@ -181,3 +258,7 @@ refactor: share logic between 4d3d3d3 and flarhgunnstow
 style: convert tabs to spaces
 test: ensure Tayne retains clothing
 ```
+
+</section>
+
+</article>
