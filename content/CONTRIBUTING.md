@@ -15,7 +15,7 @@ And if you like the project, but just don't have time to contribute, that's fine
 - Refer this project in your project's readme
 - Mention the project at local meetups and tell your friends/colleagues
 
-<nav>
+<nav markdown="1">
 
 ## [Table of Contents](#table-of-contents)
 
