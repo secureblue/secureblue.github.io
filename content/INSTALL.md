@@ -6,6 +6,24 @@ permalink: /install
 
 # Install
 
+{% include alert.html type='important' content='secureblue includes a combination of software packages, each under its own licensing terms. The license of secureblue is the Apache License 2.0. This secureblue license does not supersede the licenses of code and content contained in secureblue. By downloading secureblue you agree to the license terms of its use.' %}
+
+```
+Copyright 2024-2025 The secureblue authors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
 To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) ISO to install Fedora Atomic, then rebase to a secureblue image using the installer. Unless specified otherwise, secureblue is used to refer to both the secureblue set of images and the securecore set of images, for the sake of brevity. The install script presented in a later step lets you choose between them. You *must* start from a Fedora Atomic ISO for secureblue desktop images, and *must* start from a Fedora CoreOS ISO for securecore images.
 
 ## [Table of Contents](#table-of-contents)
@@ -48,24 +66,6 @@ Before rebasing and during the installation, the following checks are recommende
 
 Now that you have a Fedora Atomic or Fedora CoreOS installation, rebase it to the secureblue image of your choice using the script below. This script does not install secureblue into the existing system. It rebases (fully replaces the existing system) with secureblue.
 
-{% include alert.html type='important' content='secureblue includes a combination of software packages, each under its own licensing terms. The license of secureblue is the Apache License 2.0. This secureblue license does not supersede the licenses of code and content contained in secureblue. By downloading secureblue you agree to the license terms of its use.
-
-```
-Copyright 2024-2025 The secureblue authors
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
-' %}
 
 <a class="button" href="https://github.com/secureblue/secureblue/releases/latest/download/install_secureblue.sh">Download secureblue installer</a>
 
