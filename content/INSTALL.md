@@ -13,12 +13,14 @@ To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) 
 - [Pre-install](#pre-install)
 - - [Fedora installation](#fedora-installation)
 - - [BIOS hardening](#bios-hardening)
+- [Terms of use](#terms)
 - [Rebase](#rebase)
 - [Post-install](#post-install)
 
 <hr>
 
 ## [Pre-install](#pre-install)
+{: #pre-install}
 
 The following is advice on what to do before and during the installation of a Fedora ISO, and how.
 
@@ -31,12 +33,15 @@ The following is advice on what to do before and during the installation of a Fe
 Before rebasing and during the installation, the following checks are recommended.
 
 ### [Fedora installation](#fedora-installation)
+{: #fedora-installation}
+
 - Select the option to encrypt the drive you're installing to.
 - Use a [strong password](https://security.harvard.edu/use-strong-passwords) when prompted.
 - Leave the root account disabled if prompted.
 - Select wheel group membership for your user if prompted.
 
 ### [BIOS hardening](#bios-hardening)
+{: #bios-hardening}
 - Ensure secureboot is enabled.
 - Ensure your BIOS is up to date by checking its manufacturer's website.
 - Disable booting from USB (some manufacturers allow firmware changes from live systems).
@@ -44,13 +49,38 @@ Before rebasing and during the installation, the following checks are recommende
 
 <hr>
 
+## [Terms of use](#terms)
+{: #terms}
+
+secureblue includes a combination of software packages, each under its own licensing terms. The license of secureblue is the Apache License 2.0. The license of secureblue does not supersede the licenses of code and content contained in secureblue. By downloading secureblue you agree to the license terms of its use.
+
+```
+Copyright 2024-2025 The secureblue authors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this software except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
+<hr>
+
 ## [Rebase](#rebase)
+{: #rebase}
 
 Now that you have a Fedora Atomic or Fedora CoreOS installation, rebase it to the secureblue image of your choice using the script below. This script does not install secureblue into the existing system. It rebases (fully replaces the existing system) with secureblue.
 
+
 <a class="button" href="https://github.com/secureblue/secureblue/releases/latest/download/install_secureblue.sh">Download secureblue installer</a>
 
-Then, run it from the directory you downloaded it to:
+After downloading the installer, run it from the directory you downloaded it to:
 
 ```
 bash install_secureblue.sh
@@ -59,6 +89,7 @@ bash install_secureblue.sh
 <hr>
 
 ## [Post-install](#post-install)
+{: #post-install}
 
 - [Subscribe to secureblue release notifications](#release-notifications)
 - [Set NVIDIA-specific kargs if applicable](#nvidia)
@@ -185,6 +216,7 @@ ujust toggle-bash-environment-lockdown
 ```
 
 ### [LUKS Hardware-Unlock](#luks-hardware-unlock)
+{: #luks-hardware-unlock}
 
 {% include alert.html type='note' content='There are two options available for hardware-based unlocking. You can either enroll FIDO2 or TPM2 for your luks volume. FIDO2 enrollment is preferable if you own a hardware security key. It\'s recommended that you choose only one of these, and not both at the same time.' %}
 
