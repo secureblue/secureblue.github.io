@@ -69,7 +69,7 @@ limitations under the License.
 
 <a class="button" href="https://github.com/secureblue/secureblue/releases/latest/download/install_secureblue.sh">Download secureblue installer</a>
 
-Then, run it from the directory you downloaded it to:
+After downloading the installer, run it from the directory you downloaded it to:
 
 ```
 bash install_secureblue.sh
