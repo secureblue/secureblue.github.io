@@ -13,6 +13,7 @@ To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) 
 - [Pre-install](#pre-install)
 - - [Fedora installation](#fedora-installation)
 - - [BIOS hardening](#bios-hardening)
+- [Terms of use](#terms)
 - [Rebase](#rebase)
 - [Post-install](#post-install)
 
