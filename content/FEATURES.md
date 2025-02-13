@@ -17,9 +17,9 @@ permalink: /features
 - Set opportunistic DNSSEC and DNSOverTLS for systemd-resolved
 - Installing usbguard and providing `ujust` commands to automatically configure it
 
-## [Filling holes in the linux security posture](#security-posture)
-{: #security-posture}
-- Remove SUID-root from [numerous binaries](https://github.com/secureblue/secureblue/blob/live/files/scripts/removesuid.sh), replacing functionality [using capabilities](https://github.com/secureblue/secureblue/blob/live/files/system/usr/bin/setcapsforunsuidbinaries), and remove `sudo`, `su`, and `pkexec` entirely in favor of `run0` <sup>[why?](https://mastodon.social/@pid_eins/112353324518585654)</sup>
+## [Filling known security holes](#filling-security-holes)
+{: #filling-security-holes}
+- Remove [SUID-root](https://en.wikipedia.org/wiki/Setuid) from [numerous binaries](https://github.com/secureblue/secureblue/blob/live/files/scripts/removesuid.sh), replacing functionality [using capabilities](https://github.com/secureblue/secureblue/blob/live/files/system/usr/bin/setcapsforunsuidbinaries), and remove `sudo`, `su`, and `pkexec` entirely in favor of `run0` <sup>[why?](https://mastodon.social/@pid_eins/112353324518585654)</sup>
 - Disable Xwayland by default (for GNOME, Plasma, and Sway images)
 - Mitigation of [LD_PRELOAD attacks](https://github.com/Aishou/wayland-keylogger) via `ujust toggle-bash-environment-lockdown`
 - Disable install & usage of GNOME user extensions by default
