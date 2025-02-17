@@ -15,7 +15,6 @@ permalink: /images
 - - [Experimental](#experimental)
 - [Server](#server)
 
-{% include alert.html type='note' content='<b>nvidia-open</b> images are recommended for systems with NVIDIA GPUs Turing or newer. These include the new <a href="https://github.com/NVIDIA/open-gpu-kernel-modules">open kernel modules</a> from NVIDIA, not Nouveau.<br><b>nvidia</b> images are recommended for systems with NVIDIA GPUs Pascal or older. These include the closed kernel modules from NVIDIA.' %}
 
 ## Security recommendation
 
@@ -24,13 +23,15 @@ permalink: /images
 | DE/WM      | Secures privileged wayland protocols? | Sandboxes thumbnailers? | Stability    | Recommendation                                                                                           |
 |------------|---------------------------------------|-------------------------|--------------|----------------------------------------------------------------------------------------------------------|
 | GNOME      | Yes                                   | Yes                     | Stable       | Recommended                                                                                              |
-| KDE Plasma | No                                    | No                      | Stable       | Not recommended until at least https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/issues/7 is closed |
+| KDE Plasma | No                                    | No                      | Stable       | Not recommended until Plasma secures privileged wayland protocols |
 | Sway       | No                                    | No                      | Stable       | Not currently recommended                                                                                |
 | River      | Yes                                   | No                      | Beta         | Recommended for those interested in trying out a WM                                                      |
 | Hyprland   | No                                    | No                      | Beta         | Not currently recommended                                                                                |
 | Wayfire    | No                                    | No                      | Beta         | Not currently recommended                                                                                |
 | COSMIC     | No                                    | No                      | Experimental | Not currently recommended                                                                                |
 
+
+{% include alert.html type='note' content='<b>nvidia-open</b> images are recommended for systems with NVIDIA GPUs Turing or newer. These include the new <a href="https://github.com/NVIDIA/open-gpu-kernel-modules">open kernel modules</a> from NVIDIA, not Nouveau.<br><b>nvidia</b> images are recommended for systems with NVIDIA GPUs Pascal or older. These include the closed kernel modules from NVIDIA.' %}
 
 ## [Desktop](#desktop)
 
