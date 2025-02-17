@@ -15,15 +15,29 @@ permalink: /images
 - - [Experimental](#experimental)
 - [Server](#server)
 
-{% include alert.html type='note' content='<b>nvidia-open</b> images are recommended for systems with NVIDIA GPUs Turing or newer. These include the new <a href="https://github.com/NVIDIA/open-gpu-kernel-modules">open kernel modules</a> from NVIDIA, not Nouveau.<br><b>nvidia</b> images are recommended for systems with NVIDIA GPUs Pascal or older. These include the closed kernel modules from NVIDIA.' %}
+
+## Security recommendation
+
+Our Silverblue images utilize GNOME, which is the only desktop environment that secures privileged wayland protocols like screencopy. This means that on non-GNOME systems, applications can access screen content of the entire desktop. This implicitly includes the content of other applications. It\'s primarily for this reason that Silverblue images are recommended. KDE has <a href="https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/issues/7">plans to fix this</a>. GNOME also provides <a href="https://gitlab.gnome.org/GNOME/gnome-desktop/-/issues/213">thumbnailer sandboxing</a> in Gnome Files, which mitigates <a href="https://scarybeastsecurity.blogspot.com/2016/11/0day-exploit-compromising-linux-desktop.html">attacks via thumbnailers</a>. This is a relative recommendation between the desktop environments available on secureblue. GNOME has some extra security niceties like the ones listed above, however it does not solve any of the fundamental issues with desktop linux security. For more details, consult the table below.
+
+| DE/WM      | Secures privileged wayland protocols? | Sandboxes thumbnailers? | Stability    | Recommendation                                                                                           |
+|------------|---------------------------------------|-------------------------|--------------|----------------------------------------------------------------------------------------------------------|
+| GNOME      | Yes                                   | Yes                     | Stable       | Recommended                                                                                              |
+| KDE Plasma | No                                    | No                      | Stable       | Not recommended until Plasma secures privileged wayland protocols |
+| Sway       | No                                    | No                      | Stable       | Not currently recommended                                                                                |
+| River      | Yes                                   | No                      | Beta         | Recommended for those interested in trying out a WM                                                      |
+| Hyprland   | No                                    | No                      | Beta         | Not currently recommended                                                                                |
+| Wayfire    | No                                    | No                      | Beta         | Not currently recommended                                                                                |
+| COSMIC     | No                                    | No                      | Experimental | Not currently recommended                                                                                |
+
 
 ## [Desktop](#desktop)
 
-### [Recommended](#recommended)
+<b>nvidia-open</b> images are recommended for systems with NVIDIA GPUs Turing or newer. These include the new <a href="https://github.com/NVIDIA/open-gpu-kernel-modules">open kernel modules</a> from NVIDIA, not Nouveau.<br><b>nvidia</b> images are recommended for systems with NVIDIA GPUs Pascal or older. These include the closed kernel modules from NVIDIA.
 
-{% include alert.html type='note' content='Silverblue utilizes GNOME, which is the only desktop that secures privileged wayland protocols like screencopy. This means that on non-GNOME systems, applications can access screen content of the entire desktop. This implicitly includes the content of other applications. It\'s primarily for this reason that Silverblue images are recommended. KDE has <a href="https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/issues/7">plans to fix this</a>. GNOME also provides <a href="https://gitlab.gnome.org/GNOME/gnome-desktop/-/issues/213">thumbnailer sandboxing</a> in Gnome Files, which mitigates <a href="https://scarybeastsecurity.blogspot.com/2016/11/0day-exploit-compromising-linux-desktop.html">attacks via thumbnailers</a>. This is a relative recommendation between the desktop environments available on secureblue. GNOME has some extra security niceties like the ones listed above, however it does not solve any of the fundamental issues with desktop linux security.' %}
+### [Stable](#stable)
 
-#### Silverblue
+#### Silverblue (GNOME)
 
 | Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
@@ -32,9 +46,7 @@ permalink: /images
 | `silverblue-nvidia-open-hardened`        | Silverblue| Yes, open drivers       |
 
 
-### [Stable](#stable)
-
-#### Kinoite
+#### Kinoite (KDE Plasma)
 
 | Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
@@ -42,7 +54,7 @@ permalink: /images
 | `kinoite-nvidia-hardened`                | Kinoite   | Yes, closed drivers     |
 | `kinoite-nvidia-open-hardened`           | Kinoite   | Yes, open drivers       |
 
-#### Sericea
+#### Sericea (Sway)
 
 | Name                                      | Base      | NVIDIA Support         |
 |-------------------------------------------|-----------|-------------------------|
@@ -89,13 +101,13 @@ permalink: /images
 
 ### [Experimental](#experimental)
 
-#### Cosmic
+#### COSMIC
 
 | Name                                      | Base                  | NVIDIA Support         |
 |-------------------------------------------|-----------------------|-------------------------|
-| `cosmic-main-hardened`          | Cosmic       | No                      |
-| `cosmic-nvidia-hardened`        | Cosmic       | Yes, closed drivers     |
-| `cosmic-nvidia-open-hardened`   | Cosmic       | Yes, open drivers       |
+| `cosmic-main-hardened`          | COSMIC       | No                      |
+| `cosmic-nvidia-hardened`        | COSMIC       | Yes, closed drivers     |
+| `cosmic-nvidia-open-hardened`   | COSMIC       | Yes, open drivers       |
 
 ## [Server](#server)
 
