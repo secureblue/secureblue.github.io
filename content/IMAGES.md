@@ -9,10 +9,10 @@ permalink: /images
 ## Table of Contents
 {: #table-of-contents}
 - [Desktop](#desktop)
-- - [Recommended](#recommended)
-- - [Stable](#stable)
-- - [Beta](#beta)
-- - [Experimental](#experimental)
+  - [Recommended](#recommended)
+  - [Stable](#stable)
+  - [Beta](#beta)
+  - [Experimental](#experimental)
 - [Server](#server)
 
 

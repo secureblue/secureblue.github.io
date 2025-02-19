@@ -8,9 +8,9 @@ permalink: /articles/kargs
 {: #table-of-contents}
 - [Standard](#standard)
 - [Additional](#additional)
-- - [Disable 32-bit processes and syscalls](#32-bit)
-- - [Force disable simultaneous multithreading](#smt)
-- - [Unstable kargs](#unstable)
+  - [Disable 32-bit processes and syscalls](#32-bit)
+  - [Force disable simultaneous multithreading](#smt)
+  - [Unstable kargs](#unstable)
 
 # Standard
 
