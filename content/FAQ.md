@@ -17,6 +17,9 @@ permalink: /faq
 - [On secureblue half of my CPU cores are gone. Why is this?](#smt)
 - [How do I install software?](#software)
 - [How do I install Steam?](#steam)
+- [Does games with anticheat software work?](#anticheat)
+- [How do I install Docker?](#docker)
+- [userns]
 - [Another security project has a feature that's missing in secureblue, can you add it?](#feature-request)
 - [Why are bluetooth kernel modules disabled? How do I enable them?](#bluetooth)
 - [Why are upgrades so large?](#upgrade-size)
@@ -73,7 +76,22 @@ During rpm-ostree operations, it's normal. Outside of that, make sure you follow
 3. For CLI packages, you can install from brew if available using `brew install`. You can browse this [catalogue of Homebrew Formulaes](https://formulae.brew.sh) to discover the available formulaes.
 4. If a package isn't available via the other two options, or if a package requires greater system integration, `rpm-ostree install` can be used to layer rpms directly into your subsequent deployments.
 
-Steam is an exception to the above.
+You can add the unfiltered Flathub repo with `ujust enable-flatpak-unfiltered`.
+
+Docker and Steam are exceptions to the above, and the recommended, most convenient ways of installing those are documented below.
+
+### [How do I install Docker?](#docker)
+{: #docker}
+
+```
+ujust install-docker
+```
+
+Similarly, you can uninstall Docker with:
+
+```
+ujust uninstall-docker
+```
 
 ### [How do I install Steam?](#steam)
 {: #steam}
@@ -81,6 +99,19 @@ Steam is an exception to the above.
 ```
 ujust install-steam
 ```
+
+### [Does games with anticheat software work?](#anticheat)
+{: #anticheat}
+
+{% include alert.html type='note' content='Kernel-level anticheat solutions are wholly unsupported.' %}
+
+Anticheat solutions generally require process tracing to work - the ability to monitor syscalls (and other signals) from other processes. In Linux, process tracing is controlled by the `kernel.yama.ptrace_scope` kernel parameter. [By default, secureblue doesn't allow ptrace attachment](https://github.com/secureblue/secureblue/blob/605c8cfcd4723fef1e1e4764dcb6870e50514252/files/system/etc/sysctl.d/60-hardening.conf) at all, addressing [basic security concerns](https://www.kernel.org/doc/Documentation/security/Yama.txt). The command below toggles between this restrictive default setting where `ptrace_scope` is set to `3`, breaking anticheat software, and a much less restrictive setting where `ptrace_scope` is set to `1`, which allows parent processes to trace child processes, enabling some anticheat solutions to work.
+
+```
+ujust toggle-anticheat-support
+```
+
+The ujust above is also aliased as `toggle-ptrace-scope`. You must reboot your computer after running it.
 
 ### [Another security project has a feature that's missing in secureblue, can you add it?](#feature-request)
 {: #feature-request}
