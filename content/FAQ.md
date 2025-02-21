@@ -34,6 +34,7 @@ permalink: /faq
 - [Why don't extensions work in Trivalent?](#trivalent-extensions)
 - [How do I customize secureblue?](#customization)
 - [How do I add a repo?](#adding-repos)
+- [How do I install proprietary codecs?](#install-codecs)
 ### [Why is Flatpak included? Should I use Flatpak?](#flatpak)
 {: #flatpak}
 
@@ -202,3 +203,8 @@ If you want to add your own customizations on top of secureblue that go beyond i
 {: #adding-repos}
 
 The process of adding a repository to Secureblue is the same as [on Fedora](https://docs.fedoraproject.org/en-US/quick-docs/adding-or-removing-software-repositories-in-fedora/#_for_fedora_41_or_later_dnf_5)
+
+### [How do I install proprietary codecs?](#install-codecs)
+{: #install-codecs}
+
+There is no need, they are already included in the image. 
