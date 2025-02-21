@@ -35,6 +35,7 @@ permalink: /faq
 - [How do I customize secureblue?](#customization)
 - [How do I add a repo?](#adding-repos)
 - [How do I install proprietary codecs?](#install-codecs)
+- [How do I change my DE?](#change-de)
 ### [Why is Flatpak included? Should I use Flatpak?](#flatpak)
 {: #flatpak}
 
@@ -208,3 +209,9 @@ The process of adding a repository to Secureblue is the same as [on Fedora](http
 {: #install-codecs}
 
 There is no need, they are already included in the image. 
+
+### [How do I change my DE?](#change-de)
+{: #change-de}
+
+
+Choose whatever you like from the [available options](https://secureblue.dev/images) by running `ujust rebase-secureblue`. 
