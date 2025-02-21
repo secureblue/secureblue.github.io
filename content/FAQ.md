@@ -200,10 +200,10 @@ If the extension you installed doesn't work, it is likely because it requires We
 
 If you want to add your own customizations on top of secureblue that go beyond installing packages, you are advised strongly against forking. Instead, create a repo for your own image by using the [BlueBuild template](https://github.com/blue-build/template), then change your `base-image` to a secureblue image. This will allow you to apply your customizations to secureblue in a concise and maintainable way, without the need to constantly sync with upstream. For local development, [building locally](/contributing#building-locally) is the recommended approach.
 
-### [How do I add a repo to Secureblue?](#adding-repos)
+### [How do I add a repo to secureblue?](#adding-repos)
 {: #adding-repos}
 
-The process of adding a repository to Secureblue is the same as [on Fedora](https://docs.fedoraproject.org/en-US/quick-docs/adding-or-removing-software-repositories-in-fedora/#_for_fedora_41_or_later_dnf_5)
+The process of adding a repository to secureblue is the same as [on Fedora](https://docs.fedoraproject.org/en-US/quick-docs/adding-or-removing-software-repositories-in-fedora/#_for_fedora_41_or_later_dnf_5)
 
 ### [How do I install proprietary codecs?](#install-codecs)
 {: #install-codecs}
