@@ -201,4 +201,4 @@ If you want to add your own customizations on top of secureblue that go beyond i
 ### [How do I add a repo to Secureblue?](#adding-repos)
 {: #adding-repos}
 
-The process of adding a repository to Secureblue is the same as [on fedora](https://docs.fedoraproject.org/en-US/quick-docs/adding-or-removing-software-repositories-in-fedora/#_for_fedora_41_or_later_dnf_5)
+The process of adding a repository to Secureblue is the same as [on Fedora](https://docs.fedoraproject.org/en-US/quick-docs/adding-or-removing-software-repositories-in-fedora/#_for_fedora_41_or_later_dnf_5)
