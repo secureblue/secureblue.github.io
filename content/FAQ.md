@@ -9,6 +9,7 @@ permalink: /faq
 
 ## [Table of contents](#table-of-contents)
 {: #table-of-contents}
+- [What is this? Why did you make this?](#whatisthis)
 - [Why is Flatpak included? Should I use Flatpak?](#flatpak)
 - [Should I use Electron apps? Why don't they work well with hardened_malloc?](#electron)
 - [My fans are really loud, is this normal?](#fans)
@@ -36,6 +37,11 @@ permalink: /faq
 - [How do I add a repo?](#adding-repos)
 - [How do I install proprietary codecs?](#install-codecs)
 - [How do I change my DE?](#change-de)
+### [What is this? Why did you make this?](#whatisthis)
+{: #whatisthis}
+
+Hardened images of Fedora. Secureblue was created to minimize the many security issues with desktop Linux, there is a general overview [article](https://netrunner.academy/os-security/linux/) on [netrunner.academy](https://netrunner.academy). For a detailed list of features, consult our [features page](https://secureblue.dev/features).
+
 ### [Why is Flatpak included? Should I use Flatpak?](#flatpak)
 {: #flatpak}
 
