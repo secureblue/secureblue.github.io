@@ -101,7 +101,7 @@ ujust toggle-bluetooth-modules
 ### [Why are upgrades so large?](#upgrade-size)
 {: #upgrade-size}
 
-This is an issue with rpm-ostree image-based systems generally, and not specific to secureblue. Ideally upgrades would come in the form of a zstd-compressed container diff, but it's not there yet. Check out [this upstream issue](https://github.com/coreos/rpm-ostree/issues/4012) for more information.
+This is an issue with rpm-ostree image-based systems generally, and not specific to secureblue. Ideally upgrades would come in the form of a zstd-compressed container diff, but it's not there yet. Check out [this upstream issue](https://github.com/coreos/rpm-ostree/issues/4012) for more information. Please note that even though rpm-ostree stores two instances of your image for rollback, it is not a backup solution and you should make backups of your data.
 
 ### [Why can't I install new KDE themes?](#ghns)
 {: #ghns}
