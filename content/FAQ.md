@@ -17,7 +17,7 @@ permalink: /faq
 - [On secureblue half of my CPU cores are gone. Why is this?](#smt)
 - [How do I install software?](#software)
 - [How do I install Steam?](#steam)
-- [Does games with anticheat software work?](#anticheat)
+- [How can I enable anticheat support?](#anticheat)
 - [How do I install Docker?](#docker)
 - [Why am I unable to start containers or use bubblejail?](#userns)
 - [Another security project has a feature that's missing in secureblue, can you add it?](#feature-request)
@@ -78,7 +78,6 @@ During rpm-ostree operations, it's normal. Outside of that, make sure you follow
 
 You can add the unfiltered Flathub repo with `ujust enable-flatpak-unfiltered`.
 
-Docker and Steam are exceptions to the above, and the recommended, most convenient ways of installing those are documented below.
 
 ### [How do I install Steam?](#steam)
 {: #steam}
@@ -87,7 +86,7 @@ Docker and Steam are exceptions to the above, and the recommended, most convenie
 ujust install-steam
 ```
 
-### [Does games with anticheat software work?](#anticheat)
+### [How can I enable anticheat support?](#anticheat)
 {: #anticheat}
 
 {% include alert.html type='note' content='Kernel-level anticheat solutions are wholly unsupported.' %}
