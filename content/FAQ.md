@@ -19,7 +19,8 @@ permalink: /faq
 - [How do I install Steam?](#steam)
 - [How can I enable anticheat support?](#anticheat)
 - [How do I install Docker?](#docker)
-- [Why am I unable to start containers or use bubblejail?](#userns)
+- [Why am I unable to start containers?](#container-userns)
+- [How do I enable userns for other apps?](#unconfined-userns)
 - [Another security project has a feature that's missing in secureblue, can you add it?](#feature-request)
 - [Why are bluetooth kernel modules disabled? How do I enable them?](#bluetooth)
 - [Why are upgrades so large?](#upgrade-size)
@@ -78,7 +79,6 @@ During rpm-ostree operations, it's normal. Outside of that, make sure you follow
 
 You can add the unfiltered Flathub repo with `ujust enable-flatpak-unfiltered`.
 
-
 ### [How do I install Steam?](#steam)
 {: #steam}
 
@@ -112,24 +112,27 @@ Similarly, you can uninstall Docker with:
 ujust uninstall-docker
 ```
 
-### [Why am I unable to start containers or use bubblejail?](#userns)
-{: #userns}
+### [Why am I unable to start containers?](#container-userns)
+{: #container-userns}
 
-The privilege to create user namespaces is globally disabled by default in secureblue, being granted to flatpak and Trivalent to not weaken their sandbox functions. Software such as podman and distrobox need to be able to create user namespaces to work without root. This privilege can be granted with:
+Software such as podman and distrobox need to be able to create user namespaces to work without root. The privilege to do so is denied by default in secureblue, but can be granted by running the following command:
 
 ```
 ujust toggle-container-domain-userns-creation
 ```
 
-Trying to start a container without first enabling the ability toggled by the ujust above will result in an `OCI permission denied` error.
+Trying to start a container without first enabling the ability toggled by the ujust above will result in an `OCI permission denied` error, but beware that enabling it results in a security degradation. Consult our [user namespaces article](/userns) for more details.
 
-If you need to use any other software that requires user namespace creation privileges, such as bubblejail, run:
+### [How do I enable userns for other apps?](#unconfined-userns)
+{: #unconfined-userns}
+
+The following command will toggle the ability of processes in the unconfined SELinux domain to create user namespaces. It's necessary for any apps that require this feature, such as bubblewrap when it can't use SUID-root.
 
 ```
 ujust toggle-unconfined-domain-userns-creation
 ```
 
-Enabling either is a security degradation. Consult our [user namespaces article](/userns) for more details.
+For one example, attempting to bubblewrap a program without first enabling the ability toggled by the ujust above will result in a `bwrap: Creating new namespace failed: Permission denied` error, but beware that enabling it results in a security degradation. Consult our [user namespaces article](/userns) for more details.
 
 ### [Another security project has a feature that's missing in secureblue, can you add it?](#feature-request)
 {: #feature-request}
