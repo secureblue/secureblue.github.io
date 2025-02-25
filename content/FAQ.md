@@ -98,7 +98,7 @@ Anticheat solutions generally require process tracing to work - the ability to m
 ujust toggle-anticheat-support
 ```
 
-The ujust above is also aliased as `toggle-ptrace-scope`. You must reboot your computer after running it.
+The ujust above is aliased as `toggle-ptrace-scope`. You must reboot your computer after running it.
 
 ### [How do I install Docker?](#docker)
 {: #docker}
