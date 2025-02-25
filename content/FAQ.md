@@ -19,7 +19,7 @@ permalink: /faq
 - [How do I install Steam?](#steam)
 - [Does games with anticheat software work?](#anticheat)
 - [How do I install Docker?](#docker)
-- [userns]
+- [Why am I unable to start containers or use bubblejail?](#userns)
 - [Another security project has a feature that's missing in secureblue, can you add it?](#feature-request)
 - [Why are bluetooth kernel modules disabled? How do I enable them?](#bluetooth)
 - [Why are upgrades so large?](#upgrade-size)
@@ -80,19 +80,6 @@ You can add the unfiltered Flathub repo with `ujust enable-flatpak-unfiltered`.
 
 Docker and Steam are exceptions to the above, and the recommended, most convenient ways of installing those are documented below.
 
-### [How do I install Docker?](#docker)
-{: #docker}
-
-```
-ujust install-docker
-```
-
-Similarly, you can uninstall Docker with:
-
-```
-ujust uninstall-docker
-```
-
 ### [How do I install Steam?](#steam)
 {: #steam}
 
@@ -112,6 +99,38 @@ ujust toggle-anticheat-support
 ```
 
 The ujust above is also aliased as `toggle-ptrace-scope`. You must reboot your computer after running it.
+
+### [How do I install Docker?](#docker)
+{: #docker}
+
+```
+ujust install-docker
+```
+
+Similarly, you can uninstall Docker with:
+
+```
+ujust uninstall-docker
+```
+
+### [Why am I unable to start containers or use bubblejail?](#userns)
+{: #userns}
+
+The privilege to create user namespaces is globally disabled by default in secureblue, being granted to flatpak and Trivalent to not weaken their sandbox functions. Software such as podman and distrobox need to be able to create user namespaces to work without root. This privilege can be granted with:
+
+```
+ujust toggle-container-domain-userns-creation
+```
+
+Trying to start a container without first enabling the ability toggled by the ujust above will result in an `OCI permission denied` error.
+
+If you need to use any other software that requires user namespace creation privileges, such as bubblejail, run:
+
+```
+ujust toggle-unconfined-domain-userns-creation
+```
+
+Enabling either is a security degradation. Consult our [user namespaces article](/userns) for more details.
 
 ### [Another security project has a feature that's missing in secureblue, can you add it?](#feature-request)
 {: #feature-request}
