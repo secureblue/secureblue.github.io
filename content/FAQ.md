@@ -17,6 +17,10 @@ permalink: /faq
 - [On secureblue half of my CPU cores are gone. Why is this?](#smt)
 - [How do I install software?](#software)
 - [How do I install Steam?](#steam)
+- [How do I enable anticheat support?](#anticheat)
+- [How do I install Docker?](#docker)
+- [Why am I unable to start containers?](#container-userns)
+- [How do I enable userns for other apps?](#unconfined-userns)
 - [Another security project has a feature that's missing in secureblue, can you add it?](#feature-request)
 - [Why are bluetooth kernel modules disabled? How do I enable them?](#bluetooth)
 - [Why are upgrades so large?](#upgrade-size)
@@ -75,7 +79,7 @@ During rpm-ostree operations, it's normal. Outside of that, make sure you follow
 3. For CLI packages, you can install from brew if available using `brew install`. You can browse this [catalogue of Homebrew Formulaes](https://formulae.brew.sh) to discover the available formulaes.
 4. If a package isn't available via the other two options, or if a package requires greater system integration, `rpm-ostree install` can be used to layer rpms directly into your subsequent deployments.
 
-Steam is an exception to the above.
+You can add the unfiltered Flathub repo with `ujust enable-flatpak-unfiltered`.
 
 ### [How do I install Steam?](#steam)
 {: #steam}
@@ -83,6 +87,54 @@ Steam is an exception to the above.
 ```
 ujust install-steam
 ```
+
+### [How do I enable anticheat support?](#anticheat)
+{: #anticheat}
+
+{% include alert.html type='note' content='Kernel-level anticheat solutions are generally unsupported on desktop Linux.' %}
+
+Anticheat solutions generally require process tracing to work - the ability to monitor syscalls (and other signals) from other processes. In Linux, process tracing is controlled by the `kernel.yama.ptrace_scope` kernel parameter. [By default, secureblue doesn't allow ptrace attachment](https://github.com/secureblue/secureblue/blob/605c8cfcd4723fef1e1e4764dcb6870e50514252/files/system/etc/sysctl.d/60-hardening.conf) at all, addressing [basic security concerns](https://www.kernel.org/doc/Documentation/security/Yama.txt). The command below toggles between this restrictive default setting where `ptrace_scope` is set to `3`, breaking anticheat software, and a much less restrictive setting where `ptrace_scope` is set to `1`, which allows parent processes to trace child processes, enabling some anticheat solutions to work.
+
+```
+ujust toggle-anticheat-support
+```
+
+The ujust above is aliased as `toggle-ptrace-scope`. You must reboot your computer after running it.
+
+### [How do I install Docker?](#docker)
+{: #docker}
+
+```
+ujust install-docker
+```
+
+Similarly, you can uninstall Docker with:
+
+```
+ujust uninstall-docker
+```
+
+### [Why am I unable to start containers?](#container-userns)
+{: #container-userns}
+
+Software such as podman and distrobox need to be able to create user namespaces to work without root. The privilege to do so is denied by default in secureblue, but can be granted by running the following command:
+
+```
+ujust toggle-container-domain-userns-creation
+```
+
+Trying to start a container without first enabling the ability toggled by the ujust above will result in an `OCI permission denied` error, but beware that enabling it results in a security degradation. Consult our [user namespaces article](/userns) for more details.
+
+### [How do I enable userns for other apps?](#unconfined-userns)
+{: #unconfined-userns}
+
+The following command will toggle the ability of processes in the unconfined SELinux domain to create user namespaces. It's necessary for any apps that require this feature, such as bubblewrap when it isn't SUID-root.
+
+```
+ujust toggle-unconfined-domain-userns-creation
+```
+
+For one example, attempting to bubblewrap a program without first enabling the ability toggled by the ujust above will result in a `bwrap: Creating new namespace failed: Permission denied` error, but beware that enabling it results in a security degradation. Consult our [user namespaces article](/userns) for more details.
 
 ### [Another security project has a feature that's missing in secureblue, can you add it?](#feature-request)
 {: #feature-request}

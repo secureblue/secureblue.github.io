@@ -26,6 +26,7 @@ permalink: /features
 - Disable KDE GHNS by default <sup>[why?](https://blog.davidedmundson.co.uk/blog/kde-store-content/)</sup>
 - Removal of the unmaintained and suid-root fuse2 by default
 - Disabling unprivileged user namespaces by default for the unconfined domain and the container domain <sup>[why?](/articles/userns)</sup>
+- Prohibiting ptrace attachment <sup>[why?](https://www.kernel.org/doc/Documentation/security/Yama.txt)</sup>
 
 ## [Security by default](#security-by-default)
 {: #security-by-default}
