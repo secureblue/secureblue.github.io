@@ -17,7 +17,7 @@ permalink: /faq
 - [On secureblue half of my CPU cores are gone. Why is this?](#smt)
 - [How do I install software?](#software)
 - [How do I install Steam?](#steam)
-- [How can I enable anticheat support?](#anticheat)
+- [How do I enable anticheat support?](#anticheat)
 - [How do I install Docker?](#docker)
 - [Why am I unable to start containers?](#container-userns)
 - [How do I enable userns for other apps?](#unconfined-userns)
@@ -86,10 +86,10 @@ You can add the unfiltered Flathub repo with `ujust enable-flatpak-unfiltered`.
 ujust install-steam
 ```
 
-### [How can I enable anticheat support?](#anticheat)
+### [How do I enable anticheat support?](#anticheat)
 {: #anticheat}
 
-{% include alert.html type='note' content='Kernel-level anticheat solutions are wholly unsupported.' %}
+{% include alert.html type='note' content='Kernel-level anticheat solutions are generally unsupported in desktop Linux.' %}
 
 Anticheat solutions generally require process tracing to work - the ability to monitor syscalls (and other signals) from other processes. In Linux, process tracing is controlled by the `kernel.yama.ptrace_scope` kernel parameter. [By default, secureblue doesn't allow ptrace attachment](https://github.com/secureblue/secureblue/blob/605c8cfcd4723fef1e1e4764dcb6870e50514252/files/system/etc/sysctl.d/60-hardening.conf) at all, addressing [basic security concerns](https://www.kernel.org/doc/Documentation/security/Yama.txt). The command below toggles between this restrictive default setting where `ptrace_scope` is set to `3`, breaking anticheat software, and a much less restrictive setting where `ptrace_scope` is set to `1`, which allows parent processes to trace child processes, enabling some anticheat solutions to work.
 
@@ -126,7 +126,7 @@ Trying to start a container without first enabling the ability toggled by the uj
 ### [How do I enable userns for other apps?](#unconfined-userns)
 {: #unconfined-userns}
 
-The following command will toggle the ability of processes in the unconfined SELinux domain to create user namespaces. It's necessary for any apps that require this feature, such as bubblewrap when it can't use SUID-root.
+The following command will toggle the ability of processes in the unconfined SELinux domain to create user namespaces. It's necessary for any apps that require this feature, such as bubblewrap when it isn't SUID-root.
 
 ```
 ujust toggle-unconfined-domain-userns-creation
