@@ -12,7 +12,7 @@ As with any application sandboxing system, flatpaks should be scoped down by def
 
 This is of course not ideal, but it's also [not a reason to abandon flatpak entirely](https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good). There are many ways this issue can be mitigated, with different degrees of difficulty:
 
-- Users can configure permissions to their liking
+- Users can configure permissions to their liking.
 - Users can submit issues and/or PRs to make changes to the default permissions for specific flatpaks.
 - Developers can, over the long term, improve flatpak and xdg portals to introduce a more robust permissions model.
 
