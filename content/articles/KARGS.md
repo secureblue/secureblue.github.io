@@ -23,8 +23,8 @@ Stable kargs that are always applied by the `set-kargs-hardening` ujust script.
 - `randomize_kstack_offset=on`: Randomize kernel stack offset on each syscall, making certain types of attacks more difficult.
 - `vsyscall=none`: Disable vsyscall as it is both obsolete and enables an ROP attack vector.
 - `lockdown=confidentiality`: Enable kernel lockdown in the strictest mode.
-- `random.trust_cpu=off`: Disable CPU-based entropy sources as it's not auditable and has resulted in vulnerabilities.
-- `random.trust_bootloader=off`: Disable trusting the use of the a seed passed by the bootloader.
+- `random.trust_cpu=off`: Disable CPU-based entropy sources, as it's not auditable and has resulted in vulnerabilities.
+- `random.trust_bootloader=off`: Disable trusting the use of the seed passed by the bootloader.
 - `iommu=force`, `intel_iommu=on` and `amd_iommu=force_isolation`: Mitigate DMA attacks by enabling IOMMU.
 - `iommu.passthrough=0`: Disable IOMMU bypass.
 - `iommu.strict=1`: Synchronously invalidate IOMMU hardware TLBs.
@@ -60,4 +60,4 @@ Sets of additional kargs that can be selectively set alongside the standard karg
 
 - `efi=disable_early_pci_dma`: Fill IOMMU protection gap by setting the busmaster bit during early boot
 - `debugfs=off`: Disable debugfs to prevent exposure of sensitive kernel information
-- `gather_data_sampling=force`: Mitigate unprivileged speculative access to data by using the microcode mitigation when available or by disabling AVX on affected systems where the microcode hasn’t been updated to include the mitigation.
+- `gather_data_sampling=force`: Mitigate unprivileged speculative access to data by using the microcode mitigation when available, or by disabling AVX on affected systems where the microcode hasn’t been updated to include the mitigation.
