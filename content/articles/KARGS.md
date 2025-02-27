@@ -35,7 +35,7 @@ Stable kargs that are always applied by the `set-kargs-hardening` ujust script.
 - `spec_store_bypass_disable=on`: Disable spec store bypass for all programs.
 - `l1d_flush=on`: Enable the mechanism to flush the L1D cache on context switch.
 - `l1tf=full,force`: Force enables all available mitigations for the L1TF vulnerability.
-- `kvm-intel.vmentry_l1d_flush=always`: Enables unconditional flushes, required for complete l1d vuln mitigation.
+- `kvm-intel.vmentry_l1d_flush=always`: Enables unconditional flushes, required for complete l1d vulnerability mitigation.
 
 # Additional
 
@@ -58,6 +58,6 @@ Sets of additional kargs that can be selectively set alongside the standard karg
 
 {% include alert.html type='caution' content='These may cause issues on some hardware.' %}
 
-- `efi=disable_early_pci_dma`: Fill IOMMU protection gap by setting the busmaster bit during early boot
+- `efi=disable_early_pci_dma`: Fill IOMMU protection gap by setting the BUSMASTER bit during early boot
 - `debugfs=off`: Disable debugfs to prevent exposure of sensitive kernel information
 - `gather_data_sampling=force`: Mitigate unprivileged speculative access to data by using the microcode mitigation when available, or by disabling AVX on affected systems where the microcode hasn’t been updated to include the mitigation.
