@@ -123,7 +123,7 @@ Software such as podman and distrobox need to be able to create user namespaces 
 ujust toggle-container-domain-userns-creation
 ```
 
-Trying to start a container without first enabling the ability toggled by the ujust above will result in an `OCI permission denied` error, but beware that enabling it results in a security degradation. Consult our [user namespaces article](/userns) for more details.
+Trying to start a container without first enabling the ability toggled by the ujust above will result in an `OCI permission denied` error, but beware that enabling it results in a security degradation. Consult our [user namespaces article](/articles/userns) for more details.
 
 ### [How do I enable userns for other apps?](#unconfined-userns)
 {: #unconfined-userns}
@@ -134,7 +134,7 @@ The following command will toggle the ability of processes in the unconfined SEL
 ujust toggle-unconfined-domain-userns-creation
 ```
 
-For one example, attempting to bubblewrap a program without first enabling the ability toggled by the ujust above will result in a `bwrap: Creating new namespace failed: Permission denied` error, but beware that enabling it results in a security degradation. Consult our [user namespaces article](/userns) for more details.
+For one example, attempting to bubblewrap a program without first enabling the ability toggled by the ujust above will result in a `bwrap: Creating new namespace failed: Permission denied` error, but beware that enabling it results in a security degradation. Consult our [user namespaces article](/articles/userns) for more details.
 
 ### [Another security project has a feature that's missing in secureblue, can you add it?](#feature-request)
 {: #feature-request}
