@@ -12,7 +12,7 @@ And if you like the project, but just don't have time to contribute, that's fine
 
 - Star the project [in GitHub](https://github.com/secureblue/secureblue)
 - Tweet about it
-- Refer this project in your project's readme
+- Refer this project in your project's README
 - Mention the project at local meetups and tell your friends/colleagues
 
 ## [Table of Contents](#table-of-contents)
