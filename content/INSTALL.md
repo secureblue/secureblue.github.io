@@ -6,7 +6,7 @@ permalink: /install
 
 # Install
 
-To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) ISO to install Fedora Atomic, then rebase to a secureblue image using the installer. Unless specified otherwise, secureblue is used to refer to both the secureblue set of images and the securecore set of images, for the sake of brevity. The install script presented in a later step lets you choose between them. You *must* start from a Fedora Atomic ISO for secureblue desktop images, and *must* start from a Fedora CoreOS ISO for securecore images.
+To install secureblue, you will use a Fedora Atomic (or CoreOS, for securecore) ISO to install Fedora Atomic, then rebase to a secureblue image using the installer. Unless specified otherwise, secureblue is used to refer to both the secureblue set of images and the securecore set of images, for the sake of brevity. The installation script presented in a later step lets you choose between them. You *must* start from a Fedora Atomic ISO for secureblue desktop images, and *must* start from a Fedora CoreOS ISO for securecore images.
 
 ## [Table of Contents](#table-of-contents)
 {: #table-of-contents}
@@ -43,7 +43,7 @@ Before rebasing and during the installation, the following checks are recommende
 ### [BIOS hardening](#bios-hardening)
 {: #bios-hardening}
 - Ensure secureboot is enabled.
-- Ensure your BIOS is up to date by checking its manufacturer's website.
+- Ensure your BIOS is up-to-date by checking its manufacturer's website.
 - Disable booting from USB (some manufacturers allow firmware changes from live systems).
 - Set a BIOS password to prevent tampering.
 
@@ -193,7 +193,7 @@ Creating a dedicated wheel user and removing wheel from your primary user helps 
 9. `gpasswd -d {your username here} wheel`
 10. `reboot`
 
-{% include alert.html type='note' content='You don\'t need to login using your wheel user to use it for privileged operations. When logged in as your non-wheel user, polkit will prompt you to authenticate as your wheel user as needed, or when requested by calling <code>run0</code>.' %}
+{% include alert.html type='note' content='You don\'t need to log in using your wheel user to use it for privileged operations. When logged in as your non-wheel user, polkit will prompt you to authenticate as your wheel user as needed, or when requested by calling <code>run0</code>.' %}
 
 ### [Setup system DNS](#dns)
 {: #dns}
