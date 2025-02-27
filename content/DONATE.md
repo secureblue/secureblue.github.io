@@ -10,10 +10,10 @@ All donations are appreciated and help support our mission to make desktop Linux
 
 There are multiple options available for donation:
 
-## [Github Sponsors](#github)
+## [GitHub Sponsors](#github)
 {: #github}
 
-[Github Sponsors](https://github.com/sponsors/RoyalOughtness)
+[GitHub Sponsors](https://github.com/sponsors/RoyalOughtness)
 
 ## [Monero](#monero)
 {: #monero}
