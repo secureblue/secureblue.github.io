@@ -27,7 +27,7 @@ permalink: /faq
 - [Why can't I install new KDE themes?](#ghns)
 - [Why doesn't my Xwayland app work?](#xwayland)
 - [Why I can't install nor use any GNOME user extensions?](#gnome-extensions)
-- [My clock is wrong and it's not getting automatically set. How do I fix this?](#clock)
+- [My clock is wrong, and it's not getting automatically set. How do I fix this?](#clock)
 - [How do I get notified of new releases?](#releases)
 - [Why don't my AppImages work?](#appimage)
 - [Why don't KDE Vaults work?](#kde-vaults)
@@ -93,7 +93,7 @@ ujust install-steam
 
 {% include alert.html type='note' content='Kernel-level anticheat solutions are generally unsupported on desktop Linux.' %}
 
-Anticheat solutions generally require process tracing to work - the ability to monitor syscalls (and other signals) from other processes. In Linux, process tracing is controlled by the `kernel.yama.ptrace_scope` kernel parameter. [By default, secureblue doesn't allow ptrace attachment](https://github.com/secureblue/secureblue/blob/605c8cfcd4723fef1e1e4764dcb6870e50514252/files/system/etc/sysctl.d/60-hardening.conf) at all, addressing [basic security concerns](https://www.kernel.org/doc/Documentation/security/Yama.txt). The command below toggles between this restrictive default setting where `ptrace_scope` is set to `3`, breaking anticheat software, and a much less restrictive setting where `ptrace_scope` is set to `1`, which allows parent processes to trace child processes, enabling some anticheat solutions to work.
+Anticheat solutions typically require process tracing to work - the ability to monitor syscalls (and other signals) from other processes. On Linux, process tracing is controlled by the `kernel.yama.ptrace_scope` kernel parameter. [By default, secureblue doesn't allow ptrace attachment](https://github.com/secureblue/secureblue/blob/605c8cfcd4723fef1e1e4764dcb6870e50514252/files/system/etc/sysctl.d/60-hardening.conf) at all, addressing [basic security concerns](https://www.kernel.org/doc/Documentation/security/Yama.txt). The command below toggles between this restrictive default setting where `ptrace_scope` is set to `3`, breaking anticheat software, and a much less restrictive setting where `ptrace_scope` is set to `1`, which allows parent processes to trace child processes, enabling some anticheat solutions to work.
 
 ```
 ujust toggle-anticheat-support
@@ -139,7 +139,7 @@ For one example, attempting to bubblewrap a program without first enabling the a
 ### [Another security project has a feature that's missing in secureblue, can you add it?](#feature-request)
 {: #feature-request}
 
-First check our [features list](/features) on whether it already lists an equivalent or better feature. If it doesn't, open a new [GitHub issue](https://github.com/secureblue/secureblue/issues).
+First, check our [features list](/features) on whether it already lists an equivalent or better feature. If it doesn't, open a new [GitHub issue](https://github.com/secureblue/secureblue/issues).
 
 ### [Why are bluetooth kernel modules disabled? How do I enable them?](#bluetooth)
 {: #bluetooth}
@@ -153,7 +153,7 @@ ujust toggle-bluetooth-modules
 ### [Why are upgrades so large?](#upgrade-size)
 {: #upgrade-size}
 
-This is an issue with rpm-ostree image-based systems generally, and not specific to secureblue. Ideally upgrades would come in the form of a zstd-compressed container diff, but it's not there yet. Check out [this upstream issue](https://github.com/coreos/rpm-ostree/issues/4012) for more information.
+This is an issue with rpm-ostree image-based systems generally, and not specific to secureblue. Ideally, upgrades would come in the form of a zstd-compressed container diff, but it's not there yet. Check out [this upstream issue](https://github.com/coreos/rpm-ostree/issues/4012) for more information.
 
 ### [Why can't I install new KDE themes?](#ghns)
 {: #ghns}
@@ -187,7 +187,7 @@ To enable support for installing GNOME user extensions, you can run ujust comman
 ujust toggle-gnome-extensions
 ```
 
-### [My clock is wrong and it's not getting automatically set. How do I fix this?](#clock)
+### [My clock is wrong, and it's not getting automatically set. How do I fix this?](#clock)
 {: #clock}
 
 If your system time is off by an excessive amount due to rare conditions like a CMOS reset, your network will not connect. A one-time manual reset will fix this. This should never be required except under very rare circumstances.
@@ -204,7 +204,7 @@ To subscribe to release notifications, on the secureblue GitHub page, click "Wat
 ### [Why don't my AppImages work?](#appimage)
 {: #appimage}
 
-AppImages depend on fuse2, which is unmaintained and depends on a suid root binary. For this reason, fuse2 support is removed by default. It's strongly recommended that you find alternative mechanisms to install your applications (flatpak, distrobox, etc). If you can't find an alternative and still need fuse2, you can add it back by layering something that depends on it.
+AppImages depend on fuse2, which is unmaintained and depends on a suid root binary. For this reason, fuse2 support is removed by default. It's strongly recommended that you find alternative mechanisms to install your applications (flatpak, distrobox, etc.). If you can't find an alternative and still need fuse2, you can add it back by layering something that depends on it.
 
 For example:
 
@@ -215,7 +215,7 @@ rpm-ostree install zfs-fuse
 ### [Why don't KDE Vaults work?](#kde-vaults)
 {: #kde-vaults}
 
-Similar to the AppImage FAQ, the KDE Vault default backend `cryfs` depends on fuse2. For this reason it's recommended that you migrate to an alternative that doesn't depend on fuse2, for example `fscrypt`. If you don't want to do so, you can add fuse2 back by layering something that depends on it, as described in the AppImage FAQ.
+Similar to the AppImage FAQ, the KDE Vault default backend `cryfs` depends on fuse2. For this reason, it's recommended that you migrate to an alternative that doesn't depend on fuse2, for example `fscrypt`. If you don't want to do so, you can add fuse2 back by layering something that depends on it, as described in the AppImage FAQ.
 
 ### [How do I provision signed distroboxes?](#distrobox-assemble)
 {: #distrobox-assemble}
@@ -250,7 +250,7 @@ If the extension you installed doesn't work, it is likely because it requires We
 ### [How do I customize secureblue?](#customization)
 {: #customization}
 
-If you want to add your own customizations on top of secureblue that go beyond installing packages, you are advised strongly against forking. Instead, create a repo for your own image by using the [BlueBuild template](https://github.com/blue-build/template), then change your `base-image` to a secureblue image. This will allow you to apply your customizations to secureblue in a concise and maintainable way, without the need to constantly sync with upstream. For local development, [building locally](/contributing#building-locally) is the recommended approach.
+If you want to add your own customizations on top of secureblue that go beyond installing packages, you are advised strongly against forking. Instead, create a repo for your own image by using the [BlueBuild template](https://github.com/blue-build/template), then change your `base-image` to a secureblue image. This allows you to apply your customizations to secureblue in a concise and maintainable way, without the need to constantly sync with upstream. For local development, [building locally](/contributing#building-locally) is the recommended approach.
 
 ### [How do I add a repo to secureblue?](#adding-repos)
 {: #adding-repos}
