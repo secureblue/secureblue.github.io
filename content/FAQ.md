@@ -10,6 +10,7 @@ permalink: /faq
 ## [Table of contents](#table-of-contents)
 {: #table-of-contents}
 - [Why secureblue?](#why)
+- [Why not upstream your changes?](#upstream)
 - [Is this an install script?](#script)
 - [Why is Flatpak included? Should I use Flatpak?](#flatpak)
 - [Should I use Electron apps? Why don't they work well with hardened_malloc?](#electron)
