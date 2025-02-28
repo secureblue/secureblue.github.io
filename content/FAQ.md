@@ -9,6 +9,9 @@ permalink: /faq
 
 ## [Table of contents](#table-of-contents)
 {: #table-of-contents}
+- [Why secureblue?](#secureblue)
+- [Why not upstream your changes?](#upstream)
+- [Is this an install script?](#script)
 - [Why is Flatpak included? Should I use Flatpak?](#flatpak)
 - [Should I use Electron apps? Why don't they work well with hardened_malloc?](#electron)
 - [My fans are really loud, is this normal?](#fans)
@@ -40,6 +43,23 @@ permalink: /faq
 - [How do I add a repo?](#adding-repos)
 - [How do I install proprietary codecs?](#install-codecs)
 - [How do I change my DE?](#change-de)
+
+
+### [Why secureblue?](#secureblue)
+{: #secureblue}
+
+secureblue is a collaborative effort to ship a maximally secure Linux operating system. It leverages [bootable container](https://github.com/containers/bootc) technology to build on top of Fedora Atomic, avoiding the need to become a distro in the traditional sense. secureblue has benefitted massively by not being a distro, and instead shipping as bootable OCI container images. This has meant a ton of overhead is taken care of for us by Fedora. We don’t need general repos or packaging, except for a handful of specific packages (Trivalent, hardened_malloc, etc). The Fedora Atomic ecosystem is also rich in tooling and automation (see: [BlueBuild](https://blue-build.org/)), plus the backdrop of robust container technology that already exists. All of this has largely enabled us to focus our energy on improving secureblue's hardening and UX, developing [Trivalent](https://github.com/secureblue/Trivalent), and building out userspace SELinux policies.
+
+### [Why not upstream your changes?](#upstream)
+{: #upstream}
+
+When possible, we do upstream our changes. For example, collaborating with KDE to make [portal improvements](https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/merge_requests/347). However, it's important to note that many of the changes we make are not possible to upstream, generally due to upstream not desiring them. This is for good reason. Many of the changes secureblue makes will necessarily break someone’s use case by default. Otherwise, secureblue could just submit all of our changes upstream to Fedora. Take appimage support as an example. Appimages depend on the suid-root, deprecated, unmaintained fuse2 interface. They also encourage users to follow the security antipattern of downloading and executing binaries from the browser. Yet, since Appimages are widely used, Fedora can’t remove support for them. secureblue is willing to do so by default to improve security, with mechanisms available for users to re-enable support if needed for their use cases.
+
+### [Is this an install script?](#script)
+{: #script}
+
+No. When you run our installer, you are *fully replacing* the system. secureblue is not an install script, nor an addon to a Fedora installation, nor a distro in the traditional sense. It is a set of [bootable container](https://github.com/containers/bootc) images shipped via GitHub's container registry. These images are rebuilt daily and pushed to GitHub's container registry. These images are then then pulled in by `rpm-ostree`, which stages updates as a pending deployment for the next boot. To view information about your current local deployments and remotes, run `rpm-ostree status`.
+
 ### [Why is Flatpak included? Should I use Flatpak?](#flatpak)
 {: #flatpak}
 
