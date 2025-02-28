@@ -52,7 +52,7 @@ Before rebasing and during the installation, the following checks are recommende
 ## [Terms of use](#terms)
 {: #terms}
 
-secureblue includes a combination of software packages, each under its own licensing terms. The license of secureblue is the Apache License 2.0. The license of secureblue does not supersede the licenses of code and content contained in secureblue. By downloading secureblue you agree to the license terms of its use.
+secureblue includes a combination of software packages, each under its own licensing terms. The license of secureblue is the Apache License 2.0. The license of secureblue does not supersede the licenses of upstream code and content contained in secureblue images. By downloading secureblue you agree to the license terms of its use.
 
 ```
 Copyright 2024-2025 The secureblue authors
