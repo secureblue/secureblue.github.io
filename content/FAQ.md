@@ -40,6 +40,7 @@ permalink: /faq
 - [How do I add a repo?](#adding-repos)
 - [How do I install proprietary codecs?](#install-codecs)
 - [How do I change my DE?](#change-de)
+
 ### [Why is Flatpak included? Should I use Flatpak?](#flatpak)
 {: #flatpak}
 
