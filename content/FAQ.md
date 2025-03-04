@@ -85,7 +85,7 @@ You can add the unfiltered Flathub repo with `ujust enable-flatpak-unfiltered`.
 ### [How do I install my VPN?](#vpn)
 {: #vpn}
 If the VPN software is packaged for Fedora, you can layer it, though that has the potential of needing to add another software repository.
-The ProtonVPN Flatpak is not reccomended, as it is an unoffical distribution unafilliated with Proton.
+The ProtonVPN Flatpak is not recommended, as it is an unoffical distribution unaffiliated with Proton.
 The Mullvad VPN GUI runs on Electron and will not launch unless unprivileged user namespaces are enabled. This can be toggled with `ujust toggle-unconfined-domain-userns-creation`. If you do not want to enable this, Mullvad has the option of only using the cli interface instead. 
 As these cases are all not ideal, the reccomended approach is to use Wireguard profiles. These can be downloaded from your VPN provider's website. In Gnome you use these by navigating to the network settings, adding a VPN and using the "Import from File" option. It will then be useable through the system GUI.
 
