@@ -40,7 +40,7 @@ permalink: /features
 - Add per-network MAC randomization
 - Disable coredumps
 
-## [Reducing attack surface](#attack-surface)
+## [Attack surface reduction](#attack-surface)
 {: #attack-surface}
 - Blacklist numerous unused kernel modules to reduce attack surface <sup>[details](https://github.com/secureblue/secureblue/blob/live/files/system/etc/modprobe.d/blacklist.conf)</sup>
 - Protect against brute force by locking user accounts for 24 hours after 50 failed login attempts, providing password quality suggestions and making use of hardened password encryption
