@@ -10,7 +10,7 @@ permalink: /features
 {: #exploit-mitigation}
 - Install and enable [hardened_malloc](https://github.com/GrapheneOS/hardened_malloc) globally, including for Flatpaks. <sup>[Thanks to rusty-snake's spec](https://github.com/rusty-snake/fedora-extras)</sup>
 - Install our Chromium-based browser [Trivalent](https://github.com/secureblue/Trivalent), which is inspired by [Vanadium](https://github.com/GrapheneOS/Vanadium). <sup>[Why Chromium?](https://grapheneos.org/usage#web-browsing)</sup> <sup>[Why not Flatpak Chromium?](https://forum.vivaldi.net/post/669805)</sup>
-- Confine [unprivileged user namespaces](/articles/userns) via SELinux policy
+- Restrict [unprivileged user namespaces](/articles/userns) via SELinux policy
 - Harden the kernel via numerous sysctl values <sup>[details](https://github.com/secureblue/secureblue/blob/live/files/system/etc/sysctl.d/60-hardening.conf)</sup>
 - Harden the kernel via numerous kernel arguments (Inspired by [Madaidan's Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)) <sup>[details](/articles/kargs)</sup>
 - Configure chronyd to use Network Time Security (NTS) <sup>[using chrony config from GrapheneOS](https://github.com/GrapheneOS/infrastructure/blob/main/chrony.conf)</sup>
